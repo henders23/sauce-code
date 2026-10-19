@@ -37,9 +37,7 @@ export function TasteTest({ item, style, onAnswered }: ActivityProps<TasteTestIt
       </div>
 
       <section className="panel stack" aria-label="Your answer">
-        <div className="row">
-          <span style={{ fontWeight: 600, fontSize: 17, marginRight: 6 }}>{item.question}</span>
-        </div>
+        <span style={{ fontWeight: 600, fontSize: 17 }}>Your choice:</span>
         <div className="row" role="radiogroup" aria-label="Pick a version">
           {item.versions.map((v) => (
             <button

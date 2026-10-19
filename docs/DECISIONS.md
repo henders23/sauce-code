@@ -59,8 +59,10 @@ House-style choices, flagged in the app where relevant:
 * **Page numbers only for quotations** (enforced by `npm test`). Summaries of a
   source's overall argument take no page number in any of the eight
   conventions. Paraphrases of one specific passage are avoided, because the
-  conventions disagree (MLA, Chicago and OSCOLA expect a page; APA makes it
-  optional; Harvard guidance varies).
+  conventions disagree (Harvard (Cite Them Right), MLA, Chicago and OSCOLA
+  expect a page; APA makes it optional; Vancouver guides vary). Cite Them
+  Right's own guide is behind a login; the Harvard rule here follows UK
+  university library guides based on it (e.g. Wolverhampton, Sheffield).
 * **No block quotations**: quotations are kept under about 30 words, below
   every convention's block-quotation threshold.
 * **Stacked citations** are written in an order that is both alphabetical and

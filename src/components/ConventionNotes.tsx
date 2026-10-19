@@ -7,7 +7,7 @@ import { disciplineLabel } from '../content';
 /** One line on what is distinctive about each convention, shown after every item. */
 export const STYLE_BASICS: Record<StyleId, string> = {
   harvard:
-    'Harvard is not one fixed style: details vary between institutions. This app follows Cite Them Right, a widely used UK guide — check your own institution’s guide for small differences.',
+    'Harvard gives author and year in the text — (Okafor, 2021). Add a page number for a quotation or a paraphrase of a specific passage — (Okafor, 2021, p. 42) — but not when you summarise a work’s overall argument. Harvard varies between institutions: this app follows Cite Them Right, so check your own guide for small differences.',
   apa: 'APA gives author and year in the text — (Okafor, 2021). Page numbers are required for quotations; for paraphrases they are optional.',
   mla: 'MLA gives author and page, with no year — (Okafor 42). The first time you name an author in your own sentence, give their full name; after that, the surname.',
   'chicago-ad':

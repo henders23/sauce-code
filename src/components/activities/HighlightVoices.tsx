@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { HighlightVoicesItem, Voice } from '../../content/types';
 import { Paragraph } from '../Paragraph';
 import { Feedback } from '../Feedback';
+import { InlineToggle } from '../InlineToggle';
 import { useRendered, type ActivityProps } from './useRendered';
 
 const CYCLE: (Voice | null)[] = [null, 'source', 'writer', 'both'];
@@ -43,17 +44,18 @@ export function HighlightVoices({ item, style, onAnswered }: ActivityProps<Highl
           renderSpan={(id, children, index) => {
             const shown = checked ? item.key[id].voice : marks[id];
             return (
-              <button
-                type="button"
+              <InlineToggle
                 className={`voice-btn voice-${shown ?? 'none'}`}
-                onClick={() => cycle(id)}
-                aria-label={`Part ${index + 1}: ${shown ? LABEL[shown] : 'not marked'}. ${checked ? '' : 'Activate to change.'}`}
+                pressed={Boolean(shown)}
+                disabled={checked}
+                onToggle={() => cycle(id)}
+                label={`Part ${index + 1}: ${shown ? LABEL[shown] : 'not marked'}.${checked ? '' : ' Activate to change.'}`}
               >
                 <span className="voice-badge" aria-hidden="true">
                   {shown ? BADGE[shown] : index + 1}
                 </span>
                 {children}
-              </button>
+              </InlineToggle>
             );
           }}
         />

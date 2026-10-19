@@ -4,7 +4,9 @@
   "module": "remix",
   "activity": "spot-patchwriting",
   "title": "New words, old sentence",
-  "disciplines": ["life-sciences"],
+  "disciplines": [
+    "life-sciences"
+  ],
   "difficulty": 1,
   "context": "A student has paraphrased part of an abstract. Compare the paraphrase with the original.",
   "question": "Select every phrase in the student's paragraph that is lifted too closely from the original.",
@@ -13,7 +15,7 @@
     "where": "from the abstract",
     "text": "Small urban gardens, when planted with a variety of flowering species, can support surprisingly diverse communities of wild bees. In our survey, gardens of less than 200 square metres hosted on average 31 bee species, compared with 12 species in nearby parks dominated by mown grass."
   },
-  "text": "Cities are often described as hostile to pollinators, but this picture may be too simple. [[p1:Small urban gardens]], if [[p2:planted with a variety of]] flowers, [[p3:can support surprisingly diverse communities of wild bees]] {{cite:aziz2019}}. The same study found that gardens [[p4:of less than 200 square metres]] had [[p5:on average 31 bee species]], [[p6:compared with 12 species in nearby parks]] that were mostly mown grass. This suggests that the way green space is managed may matter more than how much of it there is. City councils that measure their green space only in hectares may therefore be missing an important part of the picture.",
+  "text": "[[x1:Cities are often described as hostile to pollinators,]] [[x2:but this picture may be too simple.]] [[p1:Small urban gardens]], if [[p2:planted with a variety of]] flowers, [[p3:can support surprisingly diverse communities of wild bees]] {{cite:aziz2019}}. [[x3:The same study found that gardens]] [[p4:of less than 200 square metres]] had [[p5:on average 31 bee species]], [[p6:compared with 12 species in nearby parks]] [[x4:that were mostly lawn.]] [[x5:This suggests that the way green space is managed]] [[x6:may matter more than how much of it there is.]] [[x7:City councils that measure their green space only in hectares]] [[x8:may therefore be missing an important part of the picture.]]",
   "lifted": {
     "p1": "Copied word for word, and in the same position at the start of the idea.",
     "p2": "A five-word run from the original. Only the word after it has changed.",
@@ -26,7 +28,7 @@
     "all": "You found every lifted phrase. Notice the pattern: the student changed a few single words ('flowers' for 'flowering species', 'had' for 'hosted') but kept the original's sentence structure. That is patchwriting — and it counts as poor practice even with a citation, because the wording is still mostly the source's.",
     "some": "You found some of the lifted phrases, but not all of them. Compare the two passages again, phrase by phrase: most of the student's second and third sentences follow the original's word order exactly.",
     "none": "These lifted phrases are easy to miss, because the citation makes the paragraph look properly referenced. Compare the passages phrase by phrase: most of the student's second and third sentences follow the original's word order exactly.",
-    "falsePositives": "Some of what you selected is the student's own wording. The first sentence and the last two sentences are the writer's framing and interpretation — and they are the strongest part of the paragraph."
+    "falsePositives": "Some of the phrases you selected are the student's own wording. The opening sentence and the last two sentences are the writer's framing and interpretation — and they are the strongest part of the paragraph."
   },
   "followUp": {
     "question": "Which is the best way to fix 'can support surprisingly diverse communities of wild bees'?",
@@ -51,10 +53,14 @@
   },
   "notes": [
     {
-      "text": "This paraphrase comes from the abstract and restates the study's main finding, so no page number is needed. If you paraphrase a specific passage from inside a paginated source, check whether your convention expects a page."
+      "text": "This paraphrase restates the study's main finding from the abstract, so no page number is needed. If you paraphrase a specific passage from inside a paginated source, most conventions expect the page — including Harvard (Cite Them Right), MLA, Chicago and OSCOLA."
     },
     {
-      "disciplines": ["life-sciences", "health", "engineering"],
+      "disciplines": [
+        "life-sciences",
+        "health",
+        "engineering"
+      ],
       "text": "In the sciences, quotation is rare. You are expected to report findings in your own words, so the skill of paraphrasing without patchwriting matters even more."
     }
   ],

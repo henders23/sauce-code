@@ -7,6 +7,9 @@
 - **Context first.** Before asking the user to do anything, tell them briefly what
   the app (or the screen) is for and what they are about to do. A screen should
   never open on a task with no explanation.
+- **Activities: instruction first.** Show the instruction, then reveal the text
+  with a button — don't open on a wall of text.
+- **Select phrases, not words.** Never make students select text word by word.
 - Dark mode. Tone: light and tongue-in-cheek in labels, plain in instructions.
 
 ## Accuracy

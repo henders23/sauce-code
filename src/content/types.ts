@@ -75,10 +75,10 @@ export interface TasteTestItem extends ItemBase {
 
 export interface FindSeamItem extends ItemBase {
   activity: 'find-seam';
-  /** Paragraph containing exactly one {{seam}}. */
+  /** Paragraph whose selectable phrases are [[spans]]. */
   text: string;
-  /** How many words either side of the seam still count. */
-  tolerance: number;
+  /** Id of the span where the writer's own point begins. */
+  answer: string;
   feedback: { correct: string; early: string; late: string };
 }
 
@@ -118,9 +118,9 @@ export interface FixSauceItem extends ItemBase {
 export interface SpotPatchwritingItem extends ItemBase {
   activity: 'spot-patchwriting';
   sourcePassage: SourcePassage;
-  /** The "paraphrase", with each lifted phrase as a [[span]]. */
+  /** The "paraphrase", divided into selectable [[spans]]. */
   text: string;
-  /** Optional comment per lifted span. */
+  /** The spans that are lifted from the source, with a comment on each. */
   lifted: Record<string, string>;
   feedback: { all: string; some: string; none: string; falsePositives: string };
 }

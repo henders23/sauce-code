@@ -3,7 +3,7 @@ import { alphaKey, STYLES, type StyleDef } from './styles';
 import { rich, richToString } from './names';
 import type { CiteRef, Rich, Source, StyleId } from './types';
 
-export type SegKind = 'text' | 'quote' | 'cite' | 'fn' | 'qopen' | 'qclose' | 'seam' | 'gap';
+export type SegKind = 'text' | 'quote' | 'cite' | 'fn' | 'qopen' | 'qclose' | 'gap';
 
 export interface Seg {
   k: SegKind;
@@ -102,9 +102,6 @@ export function renderText(
           span: tok.span,
         });
         break;
-      case 'seam':
-        segs.push({ k: 'seam', t: '', span: tok.span });
-        break;
       case 'q':
         if (!tok.scare) flags.quotation = true;
         segs.push({ k: 'qopen', t: style.quotes[0], span: tok.span });
@@ -196,7 +193,7 @@ export function renderText(
       text: style.reference(s),
     }));
 
-  return { style: styleId, segs: segs.filter((s) => s.t !== '' || s.k === 'seam' || s.k === 'gap'), notes, references, flags };
+  return { style: styleId, segs: segs.filter((s) => s.t !== '' || s.k === 'gap'), notes, references, flags };
 }
 
 /** Footnotes end with a full stop. American styles keep it inside a closing quotation mark. */

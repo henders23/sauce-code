@@ -4,15 +4,17 @@
   "module": "seasoning",
   "activity": "find-seam",
   "title": "Find the seam",
-  "disciplines": ["humanities"],
+  "disciplines": [
+    "humanities"
+  ],
   "difficulty": 2,
   "context": "A history student is writing about how Britain came to use a single standard time.",
-  "question": "Click the word where Whitcombe's idea ends and the writer's own point begins.",
-  "text": "By the late 1840s, most British railway companies had adopted London time, and many towns along their lines gradually followed. {{cite:whitcombe2016|integral}} {{v:argues|argued}} that this shift was driven less by public demand than by the practical problem of printing timetables that passengers could trust. {{seam}}This would explain why many towns on a railway line changed their public clocks before the law required them to. If Whitcombe is right, standard time was not a national decision imposed from above but a commercial habit that spread along the tracks. That interpretation also helps to explain why legal recognition came so late, in 1880, long after most clocks had already changed.",
-  "tolerance": 0,
+  "question": "Click the phrase where Whitcombe's idea ends and the writer's own point begins.",
+  "text": "By the late 1840s, most British railway companies had adopted London time, and many towns along their lines gradually followed. [[s1:{{cite:whitcombe2016|integral}} {{v:argues|argued}} that this shift was driven less by public demand]] [[s2:than by the practical problem of printing timetables that passengers could trust.]] [[s3:This would explain why many towns on a railway line changed their public clocks]] [[s4:before the law required them to.]] [[s5:If Whitcombe is right, standard time was not a national decision imposed from above]] [[s6:but a commercial habit that spread along the tracks.]] [[s7:That interpretation also helps to explain why legal recognition came so late,]] [[s8:in 1880, long after most clocks had already changed.]]",
+  "answer": "s3",
   "feedback": {
     "correct": "Yes. Whitcombe's argument is the sentence that names her. From 'This would explain…' onwards, the writer is applying her idea and drawing their own conclusions from it.",
-    "early": "A reasonable instinct, but you've split Whitcombe's own claim. Everything in the sentence that names her is her argument, reported by the writer.",
+    "early": "A reasonable instinct, but that phrase is still Whitcombe's. Everything in the sentence that names her is her argument, reported by the writer.",
     "late": "You've given Whitcombe more than she said. 'This would explain…' is the writer using her idea to explain something — that's the writer's voice, even though it depends on her argument."
   },
   "followUp": {
@@ -38,7 +40,10 @@
   },
   "notes": [
     {
-      "styles": ["chicago-nb", "oscola"],
+      "styles": [
+        "chicago-nb",
+        "oscola"
+      ],
       "text": "In footnote styles, the note marker comes at the end of the sentence that reports the source — here, just before the seam. Readers rely on your wording, not the footnote, to see where your own point begins."
     }
   ],

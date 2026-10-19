@@ -29,7 +29,7 @@ export function FixTheSauce({ item, style, onAnswered }: ActivityProps<FixSauceI
 
       <section className="panel stack" aria-label="Your answer">
         <h3 id={`${item.id}-q`} style={{ fontSize: 17, fontWeight: 600 }}>
-          {item.question}
+          Choose the main problem:
         </h3>
         <div className="option-list" role="radiogroup" aria-labelledby={`${item.id}-q`}>
           {item.problems.map((p) => (

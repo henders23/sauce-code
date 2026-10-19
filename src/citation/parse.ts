@@ -9,7 +9,6 @@ import type { Locator } from './types';
 //   {{q:quoted words}}                 quotation, in the convention's quotation marks
 //   {{sq:word}}                        scare quotes (not a quotation from a source)
 //   {{v:argues|argued}}                reporting verb: present | past (APA uses past)
-//   {{seam}}                           Find the Seam answer position
 //   {{gap}}                            Pick the Verb gap
 //   [[id:text]]                        a span the activity can refer to by id
 
@@ -18,7 +17,6 @@ export type Token =
   | { t: 'cite'; keys: string[]; integral: boolean; locator?: Locator; span?: string; raw: string }
   | { t: 'q'; text: string; scare: boolean; span?: string }
   | { t: 'v'; present: string; past: string; span?: string }
-  | { t: 'seam'; span?: string }
   | { t: 'gap'; span?: string };
 
 export class ContentError extends Error {}
@@ -89,8 +87,7 @@ export function tokenize(input: string): Token[] {
         const [present, past] = inner.slice(2).split('|').map((s) => s.trim());
         if (!present || !past) throw new ContentError(`A verb needs present and past forms: ${raw}`);
         tokens.push({ t: 'v', present, past, span });
-      } else if (inner === 'seam') tokens.push({ t: 'seam', span });
-      else if (inner === 'gap') tokens.push({ t: 'gap', span });
+      } else if (inner === 'gap') tokens.push({ t: 'gap', span });
       else throw new ContentError(`Unknown token ${raw}`);
       i = end + 2;
       continue;

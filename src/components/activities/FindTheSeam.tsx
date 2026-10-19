@@ -1,85 +1,64 @@
-import { useMemo, useState, type KeyboardEvent } from 'react';
+import { useState } from 'react';
 import type { FindSeamItem } from '../../content/types';
-import { NotesAndReferences } from '../References';
+import { Paragraph, spanOrder, spanText } from '../Paragraph';
 import { Feedback } from '../Feedback';
-import { UnitPieces } from '../UnitView';
-import { toUnits, unitText } from '../words';
+import { InlineToggle } from '../InlineToggle';
 import { useRendered, type ActivityProps } from './useRendered';
 
 export function FindTheSeam({ item, style, onAnswered }: ActivityProps<FindSeamItem>) {
   const rendered = useRendered(item.text, style);
-  const { units, seamIndex } = useMemo(() => toUnits(rendered.segs), [rendered]);
-  const correct = seamIndex ?? 0;
-  const [pos, setPos] = useState<number | null>(null);
+  const order = spanOrder(rendered);
+  const [pick, setPick] = useState<string | null>(null);
   const [checked, setChecked] = useState(false);
-  const idPrefix = item.id;
 
-  const diff = pos === null ? 0 : pos - correct;
-  const verdict = Math.abs(diff) <= item.tolerance ? 'correct' : diff < 0 ? 'early' : 'late';
-
-  const move = (to: number) => {
-    if (checked) return;
-    setPos(Math.max(1, Math.min(units.length - 1, to)));
-  };
-  const onKey = (e: KeyboardEvent) => {
-    if (checked) return;
-    const cur = pos ?? Math.floor(units.length / 2);
-    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') move(cur + 1);
-    else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') move(cur - 1);
-    else if (e.key === 'Home') move(1);
-    else if (e.key === 'End') move(units.length - 1);
-    else return;
-    e.preventDefault();
-  };
+  const diff = pick === null ? 0 : order.indexOf(pick) - order.indexOf(item.answer);
+  const verdict = diff === 0 ? 'correct' : diff < 0 ? 'early' : 'late';
 
   return (
     <div className="stack" style={{ gap: 20 }}>
       <article className="card stack">
-        <p className="faint" id={`${idPrefix}-help`}>
-          Click a word to put the seam just before it. With a keyboard, focus the paragraph and use the arrow keys.
-        </p>
-        <p
-          className="para seam-area"
-          role="slider"
-          tabIndex={0}
-          aria-label="Seam position"
-          aria-describedby={`${idPrefix}-help`}
-          aria-valuemin={1}
-          aria-valuemax={units.length - 1}
-          aria-valuenow={pos ?? undefined}
-          aria-valuetext={pos === null ? 'No seam placed yet' : `Seam before “${unitText(units[pos])}”`}
-          onKeyDown={onKey}
-        >
-          {units.map((u, i) => (
-            <span key={i}>
-              {i > 0 && ' '}
-              {checked && i === correct && <span className="seam-marker correct" aria-hidden="true" />}
-              {pos === i && !(checked && i === correct) && <span className="seam-marker" aria-hidden="true" />}
-              <span className="unit" onClick={() => i > 0 && move(i)}>
-                <UnitPieces unit={u} idPrefix={idPrefix} />
-              </span>
-            </span>
-          ))}
-        </p>
-        <NotesAndReferences rendered={rendered} idPrefix={idPrefix} />
+        <p className="faint">Tap a phrase. The phrases you can choose are underlined.</p>
+        <Paragraph
+          rendered={rendered}
+          idPrefix={item.id}
+          linkFootnotes={false}
+          renderSpan={(id, children) => {
+            const showCorrect = checked && id === item.answer;
+            const showPick = id === pick && !showCorrect;
+            return (
+              <>
+                {showCorrect && <span className="seam-marker correct" aria-hidden="true" />}
+                {showPick && <span className="seam-marker" aria-hidden="true" />}
+                <InlineToggle
+                  className={`phrase-btn${pick === id ? ' phrase-selected' : ''}`}
+                  pressed={pick === id}
+                  disabled={checked}
+                  onToggle={() => setPick(id)}
+                >
+                  {children}
+                </InlineToggle>
+              </>
+            );
+          }}
+        />
       </article>
 
       <section className="panel stack" aria-label="Your answer">
         <div className="spread">
           <span className="muted">
-            {pos === null ? 'No seam placed yet.' : `Your seam: just before “${unitText(units[pos])}”.`}
+            {pick === null ? 'No phrase chosen yet.' : `You chose: “${spanText(rendered, pick)}”`}
           </span>
           {!checked && (
             <button
               type="button"
               className="btn btn-primary"
-              disabled={pos === null}
+              disabled={pick === null}
               onClick={() => {
                 setChecked(true);
                 onAnswered();
               }}
             >
-              Check my seam
+              Check
             </button>
           )}
         </div>
@@ -89,7 +68,7 @@ export function FindTheSeam({ item, style, onAnswered }: ActivityProps<FindSeamI
               {item.feedback[verdict]}
             </Feedback>
             <p className="faint">
-              <span className="seam-marker correct" aria-hidden="true" /> The green line marks the seam, just before “{unitText(units[correct])}”.
+              <span className="seam-marker correct" aria-hidden="true" /> The green line marks the seam, just before “{spanText(rendered, item.answer)}”.
             </p>
           </>
         )}

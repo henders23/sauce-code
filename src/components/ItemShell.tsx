@@ -18,6 +18,20 @@ import { BuildBlend } from './activities/BuildBlend';
 
 const DIFFICULTY = ['', 'Starter', 'Main', 'Chef’s special'];
 
+/** What the reveal button shows, per activity. */
+function revealLabel(item: Item): string {
+  switch (item.activity) {
+    case 'taste-test':
+      return `Show the ${item.versions.length === 2 ? 'two' : item.versions.length} versions`;
+    case 'spot-patchwriting':
+      return 'Show the texts';
+    case 'build-blend':
+      return 'Show the sources';
+    default:
+      return 'Show the paragraph';
+  }
+}
+
 function Activity({ item, onAnswered }: { item: Item; onAnswered: () => void }) {
   const { effectiveStyle: style } = useSettings();
   switch (item.activity) {
@@ -46,11 +60,11 @@ interface Props {
 
 export function ItemShell({ item, onFinished, next }: Props) {
   const { effectiveStyle: style, discipline } = useSettings();
+  const [shown, setShown] = useState(false);
   const [answered, setAnswered] = useState(false);
   const [followUpDone, setFollowUpDone] = useState(false);
   const module = MODULES.find((m) => m.id === item.module)!;
   const activity = ACTIVITY_LABEL[item.activity];
-  const questionInPanel = item.activity === 'taste-test' || item.activity === 'fix-sauce';
   const finished = answered && (!item.followUp || followUpDone);
 
   const flags = useMemo<RenderFlags>(() => {
@@ -88,10 +102,20 @@ export function ItemShell({ item, onFinished, next }: Props) {
           </span>
         </div>
         {item.context && <p style={{ fontSize: 18, color: 'var(--text-2)', maxWidth: 760 }}>{item.context}</p>}
-        {!questionInPanel && <p style={{ fontSize: 18, fontWeight: 600, maxWidth: 760 }}>{item.question}</p>}
+        <p style={{ fontSize: 19, fontWeight: 600, maxWidth: 760 }}>{item.question}</p>
       </header>
 
-      <Activity item={item} onAnswered={() => setAnswered(true)} />
+      {shown ? (
+        <div className="fade-in">
+          <Activity item={item} onAnswered={() => setAnswered(true)} />
+        </div>
+      ) : (
+        <div>
+          <button type="button" className="btn btn-primary btn-large" onClick={() => setShown(true)}>
+            {revealLabel(item)}
+          </button>
+        </div>
+      )}
 
       {answered && item.followUp && <FollowUp data={item.followUp} onAnswered={() => setFollowUpDone(true)} />}
 

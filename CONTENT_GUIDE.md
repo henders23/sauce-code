@@ -62,7 +62,6 @@ optional `edition` (a number; omit for first editions). Chapters add `editors`,
 | `{{q:quoted words}}` | A quotation. The app adds the right quotation marks (single for Harvard, OSCOLA, Vancouver; double for APA, MLA, Chicago, IEEE) and moves full stops inside the closing mark for American conventions. Don't put the sentence's full stop inside the braces. |
 | `{{sq:word}}` | Scare quotes — quotation marks that are not a quotation from a source. |
 | `{{v:argues\|argued}}` | A reporting verb: present \| past. APA recommends the past tense, so APA shows the second form. |
-| `{{seam}}` | *Find the Seam* only: the correct boundary. |
 | `{{gap}}` | *Pick the Verb* only: the blank. |
 | `[[c1:some text]]` | A span the activity refers to by id (annotations, voices, lifted phrases). Spans can contain citations but cannot be nested. |
 
@@ -78,7 +77,9 @@ Page numbers belong to **quotations**. The test suite enforces this:
 
 When you summarise a source's overall argument, give **no** page number — that
 is correct in all eight conventions. Avoid paraphrasing one specific passage of
-a paginated source: the conventions disagree about whether it needs a page.
+a paginated source: most conventions (Harvard included) then expect a page,
+but APA treats it as optional and Vancouver guides vary, so one paragraph
+can't be right in all eight.
 (If you need one, take the passage from an abstract, as `remix-01` does.)
 
 ### Long quotations
@@ -153,8 +154,10 @@ added automatically.
 id), `reasonQuestion`, `reasons` (each `{ id, text, verdict: strong | partial |
 weak, feedback }`), optional `sourcePassage`.
 
-**find-seam** — `text` with one `{{seam}}`, `tolerance` (words either side that
-still count; 0 for a sentence boundary), `feedback: { correct, early, late }`.
+**find-seam** — `text` whose selectable phrases are `[[spans]]` (students tap
+phrases, not single words; text outside spans can't be chosen), `answer` (the
+id of the span where the writer's own point begins), and `feedback: { correct,
+early, late }`.
 
 **highlight-voices** — `text` where every part to classify is a `[[span]]`, and
 `key: { spanId: { voice: source | writer | both, note } }`.
@@ -168,9 +171,10 @@ correct, feedback }`), `repaired` (the app's own repair, with `[[spans]]`) and
 paragraph, never of a student's work.
 
 **spot-patchwriting** — `sourcePassage: { source, where, text }`, `text` (the
-patchwritten paraphrase; each lifted phrase is a `[[span]]` and must appear
-word for word in the source passage), `lifted: { spanId: comment }`,
-`feedback: { all, some, none, falsePositives }`.
+patchwritten paraphrase, divided into selectable `[[spans]]` — students tap
+whole phrases), `lifted: { spanId: comment }` listing the spans that are lifted
+(each must appear word for word in the source passage; at least two other
+spans must not be lifted), and `feedback: { all, some, none, falsePositives }`.
 
 **build-blend** — `claim`, `summaries` (each `{ id, source, text, role:
 supports | complicates | irrelevant, feedback: { supports, complicates,

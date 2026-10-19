@@ -30,8 +30,6 @@ export function SegView({ seg, idPrefix, linkFootnotes = true }: { seg: Seg; idP
           {' '}
         </span>
       );
-    case 'seam':
-      return null;
     default:
       return <>{seg.t}</>;
   }
@@ -74,4 +72,18 @@ export function Paragraph({ rendered, idPrefix, renderSpan, references = true, l
       {references && <NotesAndReferences rendered={rendered} idPrefix={idPrefix} />}
     </div>
   );
+}
+
+/** Ids of the [[spans]] in a rendered paragraph, in reading order. */
+export function spanOrder(rendered: Rendered): string[] {
+  return [...new Set(rendered.segs.map((s) => s.span).filter(Boolean))] as string[];
+}
+
+/** Plain text of one span, for listing phrases back to the student. */
+export function spanText(rendered: Rendered, id: string): string {
+  return rendered.segs
+    .filter((s) => s.span === id && s.k !== 'fn')
+    .map((s) => s.t)
+    .join('')
+    .trim();
 }

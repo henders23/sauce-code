@@ -117,9 +117,12 @@ describe.each(ITEMS.map((i) => [i.id, i] as const))('%s', (_id, item) => {
         for (const v of item.versions) expect(item.picks[v.id], `pick feedback for ${v.id}`).toBeTruthy();
         expect(item.reasons.some((r) => r.verdict === 'strong')).toBe(true);
         break;
-      case 'find-seam':
-        expect(tokenize(item.text).filter((t) => t.t === 'seam')).toHaveLength(1);
+      case 'find-seam': {
+        const ids = spanIds(tokenize(item.text));
+        expect(ids).toContain(item.answer);
+        expect(ids.indexOf(item.answer), 'at least one phrase before the answer').toBeGreaterThan(0);
         break;
+      }
       case 'pick-verb':
         expect(tokenize(item.text).filter((t) => t.t === 'gap')).toHaveLength(1);
         expect(item.options.some((o) => o.verdict === 'good')).toBe(true);
@@ -134,11 +137,13 @@ describe.each(ITEMS.map((i) => [i.id, i] as const))('%s', (_id, item) => {
       case 'spot-patchwriting': {
         expect(lookupSource(item.sourcePassage.source)).toBeTruthy();
         const ids = spanIds(tokenize(item.text));
-        expect(ids.length).toBeGreaterThan(0);
-        for (const id of Object.keys(item.lifted)) expect(ids).toContain(id);
-        // Every lifted span must really appear in the original passage.
+        const lifted = Object.keys(item.lifted);
+        for (const id of lifted) expect(ids).toContain(id);
+        expect(ids.length - lifted.length, 'phrases that are not lifted').toBeGreaterThanOrEqual(2);
+        // Every lifted phrase must really appear in the original passage.
         for (const tok of tokenize(item.text))
-          if (tok.t === 'text' && tok.span) expect(item.sourcePassage.text, tok.span).toContain(tok.text);
+          if (tok.t === 'text' && tok.span && lifted.includes(tok.span))
+            expect(item.sourcePassage.text, tok.span).toContain(tok.text);
         break;
       }
       case 'build-blend':
