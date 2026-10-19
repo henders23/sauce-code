@@ -5,9 +5,9 @@ import type { DisciplineId } from '../content/types';
 import { useSettings } from '../lib/settings';
 import { href } from '../lib/router';
 
-export function Logo() {
+export function Logo({ size = 28 }: { size?: number }) {
   return (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z" />
       <path d="M9.5 14.5a2.5 2.5 0 0 0 2.5 2.5" />
     </svg>
@@ -56,7 +56,7 @@ export function TopBar() {
   return (
     <header className="topbar">
       <div className="wrap spread">
-        <a className="brand" href={href.landing} aria-label="Sauce Code — home">
+        <a className="brand" href={href.intro} aria-label="Sauce Code — home">
           <Logo />
           <span>
             Sauce <em>Code</em>

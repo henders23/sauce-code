@@ -22,6 +22,7 @@ npm run build      # static site in dist/
 
 ## What's here
 
+* **A short start**: a minimal intro, two setup questions (referencing style, then optional discipline), and a first exercise.
 * **Five Mother Sauces** (modules): The Reduction (summarising), The Remix
   (paraphrasing), The Garnish (quoting), The Blend (synthesising), The
   Seasoning (stance and voice).
