@@ -28,7 +28,8 @@ npm run build      # static site in dist/
   Seasoning (stance and voice).
 * **Seven activity types**: Taste Test, Find the Seam, Highlight the Voices,
   Pick the Verb, Fix the Sauce, Spot the Patchwriting, Build the Blend.
-* **11 seed items** across six disciplines, all using **fictional sources**.
+* **21 seed items** (four or five per module) across six disciplines, all using **fictional sources**.
+* **Gradual reveal**: within each module, the next item unlocks when the student finishes the one before.
 * **Convention switcher** always in the top bar; switching re-renders the
   current paragraph straight away, without losing your answers.
 * **Optional discipline**: puts matching items first and adds discipline notes.

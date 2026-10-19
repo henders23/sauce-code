@@ -3,6 +3,7 @@ import type { FixSauceItem } from '../../content/types';
 import { Paragraph } from '../Paragraph';
 import { Feedback } from '../Feedback';
 import { Annotated } from './Annotated';
+import { SourcePassageBox } from './SourcePassageBox';
 import { useRendered, type ActivityProps } from './useRendered';
 
 export function FixTheSauce({ item, style, onAnswered }: ActivityProps<FixSauceItem>) {
@@ -22,6 +23,7 @@ export function FixTheSauce({ item, style, onAnswered }: ActivityProps<FixSauceI
 
   return (
     <div className="stack" style={{ gap: 20 }}>
+      {item.sourcePassage && <SourcePassageBox passage={item.sourcePassage} />}
       <article className="card stack">
         <span className="para-label">The paragraph</span>
         <Paragraph rendered={flawed} idPrefix={`${item.id}-flawed`} />

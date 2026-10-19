@@ -1,0 +1,56 @@
+{
+  "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
+  "id": "reduction-03",
+  "module": "reduction",
+  "activity": "fix-sauce",
+  "title": "Reduced a little too far",
+  "disciplines": ["engineering"],
+  "difficulty": 2,
+  "context": "An engineering student is summarising a study of e-scooter battery fires. Compare their summary with the original.",
+  "question": "What is the main problem with how this paragraph summarises the source?",
+  "sourcePassage": {
+    "source": "haddad2022",
+    "where": "from the abstract",
+    "text": "In laboratory tests of 40 e-scooter battery packs, uncertified packs reached thermal runaway at lower temperatures than certified ones. Because records of real-world fires rarely identify the battery involved, the contribution of uncertified packs to fire risk remains uncertain."
+  },
+  "text": "E-scooters have become a common way to travel short distances in UK cities, but they have also been linked to a number of serious house fires. {{cite:haddad2022|integral}} {{v:proves|proved}} that cheap, uncertified batteries are the main cause of these fires. This means that the problem could be solved quite easily by banning the sale of uncertified batteries. Local councils and the government should therefore act quickly to remove these products from shops and online marketplaces. If they do this, the number of e-scooter fires is likely to fall sharply, and people will be able to charge and use their e-scooters safely at home.",
+  "problems": [
+    {
+      "id": "overclaims",
+      "text": "The summary claims more than the source found.",
+      "correct": true,
+      "feedback": "Yes. Haddad found that uncertified packs failed at lower temperatures in the laboratory, and said their real contribution to fires is uncertain. The summary turns that into 'proves … the main cause' — and the rest of the paragraph is built on that overstatement."
+    },
+    {
+      "id": "too-short",
+      "text": "The summary is too short.",
+      "correct": false,
+      "feedback": "Short is fine — that's what a reduction is. The problem is that the short version no longer says what the source said."
+    },
+    {
+      "id": "quote",
+      "text": "The writer should have quoted the source instead of summarising it.",
+      "correct": false,
+      "feedback": "A summary is the right choice here, and in engineering it is the usual one. It just needs to be an accurate summary."
+    },
+    {
+      "id": "citation",
+      "text": "The citation should come at the end of the sentence.",
+      "correct": false,
+      "feedback": "Naming the author at the start of the sentence is perfectly correct. The problem is in what the sentence says about the source."
+    }
+  ],
+  "repaired": "E-scooters have become a common way to travel short distances in UK cities, but they have also been linked to a number of serious house fires. [[c1:In laboratory tests, {{cite:haddad2022|integral}} found that uncertified battery packs reached thermal runaway at lower temperatures than certified ones.]] [[c2:He also {{v:points|pointed}} out, however, that records of real fires rarely identify the battery involved, so how much these packs contribute to fire risk is still uncertain.]] [[c3:Restricting the sale of uncertified batteries may therefore be a sensible precaution, but fire investigation records would need to improve at the same time if its effect is to be measured.]]",
+  "annotations": {
+    "c1": "The summary keeps the finding and where it came from (laboratory tests), without upgrading it to proof about real fires.",
+    "c2": "The source's own limitation is kept. Leaving it out is what made the original summary misleading.",
+    "c3": "The writer's recommendation now matches the strength of the evidence: a precaution, plus a way to find out whether it works."
+  },
+  "notes": [
+    {
+      "disciplines": ["engineering", "life-sciences", "health"],
+      "text": "In engineering and the sciences, a summary usually reports a finding together with its conditions (here, laboratory tests) and its limits. Dropping either changes what the source says."
+    }
+  ],
+  "chefsNote": "A reduction concentrates the flavour. It doesn't add new ingredients."
+}

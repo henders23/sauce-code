@@ -1,0 +1,66 @@
+{
+  "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
+  "id": "blend-04",
+  "module": "blend",
+  "activity": "build-blend",
+  "title": "Checking out the evidence",
+  "disciplines": ["social-sciences"],
+  "difficulty": 2,
+  "context": "A sociology student wants to argue that public libraries still matter. They have notes on four studies.",
+  "question": "Decide what each source can do for this claim.",
+  "claim": "Public libraries remain important community spaces, even as more reading moves online.",
+  "summaries": [
+    {
+      "id": "obi",
+      "source": "obi2016",
+      "text": "Library visits fell by a third over ten years, while loans of e-books grew.",
+      "role": "complicates",
+      "feedback": {
+        "supports": "It points the other way: fewer visits looks like evidence that libraries matter less. A strong paragraph faces that, rather than counting it as support.",
+        "complicates": "Yes. Falling visits are the obvious objection to the claim. Using this source lets the writer answer the objection instead of ignoring it.",
+        "irrelevant": "It's very relevant — it's the strongest evidence against the claim, which is exactly why the writer should deal with it."
+      }
+    },
+    {
+      "id": "rhodes",
+      "source": "rhodes2021",
+      "text": "Most library visitors in the survey came for something other than borrowing books, such as study space, children's events or help with job searches.",
+      "role": "supports",
+      "feedback": {
+        "supports": "Yes. It shows that libraries do far more than lend books, so a decline in borrowing doesn't mean a decline in value.",
+        "complicates": "It actually helps the claim: it shows what libraries offer beyond books.",
+        "irrelevant": "It's central to the claim: it shows libraries are community spaces, not just book stores."
+      }
+    },
+    {
+      "id": "petrova",
+      "source": "petrova2020",
+      "text": "For people without home internet, the library was the most common place to get online.",
+      "role": "supports",
+      "feedback": {
+        "supports": "Yes — and it turns 'more reading moves online' into a reason libraries matter: going online often depends on them.",
+        "complicates": "It supports the claim. If anything, the move online makes libraries more important for people without home internet.",
+        "irrelevant": "It's directly relevant: it links libraries to the move online that the claim mentions."
+      }
+    },
+    {
+      "id": "tanaka",
+      "source": "tanaka2018",
+      "text": "Public libraries in Japan lend more books per person than those in the UK.",
+      "role": "irrelevant",
+      "feedback": {
+        "supports": "It's about lending rates in two countries, not about libraries as community spaces. It would pull the paragraph off its point.",
+        "complicates": "It doesn't really push against the claim — it answers a different question.",
+        "irrelevant": "Yes. Interesting, but not for this claim. Choosing what to leave out is part of synthesis."
+      }
+    }
+  ],
+  "synthesis": "[[s1:Public libraries remain important community spaces, even as more reading moves online.]] [[s2:It is true that visits have fallen sharply while e-book loans have grown {{cite:obi2016}}.]] [[s3:But judging libraries by how many books they lend misses much of what they now do: most visitors come for study space, children's events or help with job searches {{cite:rhodes2021}}, and for people without home internet the library is often the main way to get online {{cite:petrova2020}}.]] [[s4:Fewer visits, then, need not mean less value. The people who still come may depend on the library more than ever, and the move online is one of the reasons why.]]",
+  "annotations": {
+    "s1": "The paragraph opens with the writer's claim.",
+    "s2": "The objection comes first, so the writer can answer it. 'It is true that…' concedes the point fairly.",
+    "s3": "Two supporting sources answer the objection together, each adding a different kind of value.",
+    "s4": "The writer's own conclusion turns the objection around — something no single source says. The Japanese comparison has been left out."
+  },
+  "chefsNote": "A good blend has a little bitterness in it. Don't leave out the source that disagrees."
+}

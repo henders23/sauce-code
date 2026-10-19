@@ -1,0 +1,66 @@
+{
+  "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
+  "id": "seasoning-04",
+  "module": "seasoning",
+  "activity": "pick-verb",
+  "title": "When strong is right",
+  "disciplines": ["health"],
+  "difficulty": 2,
+  "context": "A public health student reports a large trial. Read the whole paragraph before you choose: this time the evidence is strong, and the writer is confident.",
+  "question": "Which reporting verb fits best? Try more than one and compare what each says about the writer's view.",
+  "text": "Missed vaccination appointments are a persistent problem in primary care. In a randomised controlled trial involving 4,000 patients across 30 GP practices, {{cite:adebayo2023|integral}} {{gap}} that a single text message reminder, sent two days before an appointment, increased attendance by twelve percentage points. Because the trial was large, randomised and carried out in ordinary practices rather than a research clinic, its result is likely to apply widely. A reminder system of this kind is also cheap to run, since each message costs very little to send. For practices looking for a low-cost way to improve uptake, the case for introducing text reminders is therefore strong.",
+  "options": [
+    {
+      "present": "demonstrates",
+      "past": "demonstrated",
+      "verdict": "good",
+      "signal": "Endorsing. The writer accepts the finding as well established.",
+      "feedback": "A strong choice here. The writer goes on to explain why the trial is trustworthy, so an endorsing verb is consistent with the rest of the paragraph."
+    },
+    {
+      "present": "shows",
+      "past": "showed",
+      "verdict": "good",
+      "signal": "Endorsing. Presents the finding as established fact.",
+      "feedback": "This works well. Strong verbs aren't a mistake in themselves: they are right when the evidence, and your own evaluation of it, justify them."
+    },
+    {
+      "present": "suggests",
+      "past": "suggested",
+      "verdict": "possible",
+      "signal": "Tentative. The evidence points one way, but the claim isn't settled.",
+      "feedback": "Not wrong, but more cautious than the writer turns out to be. The paragraph ends by calling the case 'strong', so a tentative verb sits a little oddly with it."
+    },
+    {
+      "present": "argues",
+      "past": "argued",
+      "verdict": "possible",
+      "signal": "Neutral. Reports a position or interpretation.",
+      "feedback": "'Argues' suits an interpretation or a position. For a measured trial result, it makes the finding sound more like an opinion than it is."
+    },
+    {
+      "present": "claims",
+      "past": "claimed",
+      "verdict": "clash",
+      "signal": "Distancing. Often signals that the writer doubts the source.",
+      "feedback": "This clashes with the paragraph. 'Claims' hints that the writer is sceptical — then the next sentence explains why the result can be trusted."
+    },
+    {
+      "present": "admits",
+      "past": "admitted",
+      "verdict": "clash",
+      "signal": "Concession. Implies the source reluctantly accepts something.",
+      "feedback": "'Admits' implies the authors conceded this against their own position. It's their main finding, so the verb gives the wrong impression."
+    }
+  ],
+  "notes": [
+    {
+      "text": "Compare this with 'A pinch of suggests' in the same module. There, the evidence was a survey of impressions and the writer was cautious, so 'suggests' fitted best. Here the evidence is a large trial, so a stronger verb fits. The right verb depends on the evidence and on what you, the writer, think of it."
+    },
+    {
+      "styles": ["apa"],
+      "text": "APA recommends the past tense (demonstrated, showed) for reporting what a source found, so the verbs here appear in the past tense."
+    }
+  ],
+  "chefsNote": "Sometimes the dish needs a lot of seasoning. Taste the evidence first."
+}

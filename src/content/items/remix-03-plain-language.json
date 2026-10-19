@@ -1,0 +1,56 @@
+{
+  "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
+  "id": "remix-03",
+  "module": "remix",
+  "activity": "spot-patchwriting",
+  "title": "Plain English, borrowed",
+  "disciplines": ["law"],
+  "difficulty": 2,
+  "context": "A law student has paraphrased an abstract about consumer contracts. Compare the paraphrase with the original.",
+  "question": "Select every phrase in the student's paragraph that is lifted too closely from the original.",
+  "sourcePassage": {
+    "source": "ferreira2020",
+    "where": "from the abstract",
+    "text": "Consumer contracts written in plain language are more likely to be read, but readability alone does not guarantee understanding. In a study of 300 consumers, clauses that were easy to read were still frequently misunderstood when they relied on unfamiliar legal concepts."
+  },
+  "text": "[[x1:Many businesses now promise to write their terms and conditions in plain English.]] [[x2:This is welcome, because long and technical contracts are rarely read at all,]] but [[p1:readability alone does not guarantee understanding]] {{cite:ferreira2020}}. [[x3:Ferreira's study found that]] [[p2:clauses that were easy to read were still frequently misunderstood]] [[x4:by the consumers who took part]] [[p3:when they relied on unfamiliar legal concepts]]. [[x5:Simplifying the wording of a contract]] [[x6:may therefore do little to protect consumers]] [[x7:unless the legal ideas behind the words are explained as well.]] [[x8:Regulators who judge contracts by how easy they are to read]] [[x9:may need to test whether consumers understand them, too.]]",
+  "lifted": {
+    "p1": "Six words copied exactly, in the same place in the argument.",
+    "p2": "Copied word for word — the longest lifted phrase, and the heart of the source's finding.",
+    "p3": "Copied word for word. The sentence around it keeps the original's structure."
+  },
+  "feedback": {
+    "all": "You found all three. The student's framing and conclusion are their own, but the middle of the paragraph — the part that reports Ferreira — is stitched together from the abstract's own phrases. That is patchwriting, even with a citation.",
+    "some": "You found some of the lifted phrases, but not all of them. Compare the middle of the student's paragraph with the original, phrase by phrase.",
+    "none": "These are easy to miss, because the citation makes the paragraph look properly referenced. Compare the middle of the student's paragraph with the original, phrase by phrase.",
+    "falsePositives": "Some of the phrases you selected are the student's own. The first two sentences and the last two are the writer's framing and argument — the strongest part of the paragraph."
+  },
+  "followUp": {
+    "question": "Which is the best rewrite of 'readability alone does not guarantee understanding'?",
+    "options": [
+      {
+        "id": "synonyms",
+        "text": "\"being readable on its own does not ensure comprehension\"",
+        "feedback": "Each word has been swapped for a synonym, but the structure is identical. It's still patchwriting."
+      },
+      {
+        "id": "rebuilt",
+        "text": "\"a contract can be easy to read and still be misunderstood\"",
+        "good": true,
+        "feedback": "Yes. Same meaning, but built from scratch in the writer's own words."
+      },
+      {
+        "id": "quote",
+        "text": "Keep the words, add quotation marks and a page number.",
+        "feedback": "That would be honest. But nothing about the exact wording matters here, so a real paraphrase is the better choice."
+      }
+    ]
+  },
+  "notes": [
+    {
+      "disciplines": ["law"],
+      "text": "In law you will often quote the exact words of legislation or a judgment, because the wording matters. With academic commentary like this, either paraphrase properly or quote — not something in between."
+    }
+  ],
+  "chefsNote": "Borrowed phrases are still borrowed, even with a thank-you note."
+}

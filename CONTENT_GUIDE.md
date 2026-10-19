@@ -61,6 +61,7 @@ optional `edition` (a number; omit for first editions). Chapters add `editors`,
 | `{{cite:okafor2021 \| page:42}}` | Adds a page. **Only for quotations.** Use `pages:42-43` for a range. |
 | `{{q:quoted words}}` | A quotation. The app adds the right quotation marks (single for Harvard, OSCOLA, Vancouver; double for APA, MLA, Chicago, IEEE) and moves full stops inside the closing mark for American conventions. Don't put the sentence's full stop inside the braces. |
 | `{{sq:word}}` | Scare quotes — quotation marks that are not a quotation from a source. |
+| `{{i:Wuthering Heights}}` | Italics, e.g. the title of a book or novel in the writer's own sentence. |
 | `{{v:argues\|argued}}` | A reporting verb: present \| past. APA recommends the past tense, so APA shows the second form. |
 | `{{gap}}` | *Pick the Verb* only: the blank. |
 | `[[c1:some text]]` | A span the activity refers to by id (annotations, voices, lifted phrases). Spans can contain citations but cannot be nested. |
@@ -94,6 +95,10 @@ That's fine. OSCOLA renders the second footnote as `ibid`; Chicago (18th ed.)
 renders a shortened note.
 
 ## 3. Item files
+
+Items appear in a module in file-name order (`garnish-01…`, `garnish-02…`), with
+items from the student's chosen discipline moved first. Students unlock them one
+at a time, so put easier items first.
 
 Every item has these fields:
 
@@ -167,7 +172,8 @@ verdict: good | possible | clash, signal, feedback }`). Several can be good.
 
 **fix-sauce** — `text` (the flawed paragraph), `problems` (each `{ id, text,
 correct, feedback }`), `repaired` (the app's own repair, with `[[spans]]`) and
-`annotations: { spanId: "what changed" }`. Repairs are always of the sample
+`annotations: { spanId: "what changed" }`. Add an optional `sourcePassage` when
+the problem is how faithfully the paragraph reports its source. Repairs are always of the sample
 paragraph, never of a student's work.
 
 **spot-patchwriting** — `sourcePassage: { source, where, text }`, `text` (the

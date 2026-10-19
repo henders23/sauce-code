@@ -151,6 +151,7 @@ describe.each(ITEMS.map((i) => [i.id, i] as const))('%s', (_id, item) => {
         expect(spanIds(tokenize(item.synthesis)).sort()).toEqual(Object.keys(item.annotations).sort());
         break;
     }
-    if (item.activity === 'taste-test' && item.sourcePassage) expect(lookupSource(item.sourcePassage.source)).toBeTruthy();
+    if ((item.activity === 'taste-test' || item.activity === 'fix-sauce') && item.sourcePassage)
+      expect(lookupSource(item.sourcePassage.source)).toBeTruthy();
   });
 });

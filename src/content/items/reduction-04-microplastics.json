@@ -1,0 +1,46 @@
+{
+  "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
+  "id": "reduction-04",
+  "module": "reduction",
+  "activity": "find-seam",
+  "title": "Where the summary stops",
+  "disciplines": ["life-sciences"],
+  "difficulty": 1,
+  "context": "An environmental science student summarises a study, then uses it. A good summary is short enough to leave room for the writer's own point.",
+  "question": "Click the phrase where the summary of Nakamura's study ends and the writer's own point begins.",
+  "text": "Microplastic pollution is usually studied in rivers that run through towns and cities, where wastewater is an obvious source and samples are easy to collect. [[s1:{{cite:nakamura2021|integral}} sampled twelve upland rivers far from any town]] [[s2:and found microplastic fibres in every one,]] [[s3:at levels that rose after heavy rain.]] [[s4:This matters for how we think about where the problem comes from.]] [[s5:If fibres can reach remote rivers in rainfall,]] [[s6:then cleaning up urban wastewater alone will not keep them out of freshwater systems.]] [[s7:Monitoring programmes that sample only lowland, urban rivers]] [[s8:may therefore be underestimating how widespread the pollution has become, and missing one of the routes by which it spreads.]]",
+  "answer": "s4",
+  "feedback": {
+    "correct": "Yes. Nakamura's study is reduced to one sentence: where she sampled, what she found, and when levels rose. From 'This matters…' the writer is using that finding to make their own argument.",
+    "early": "A reasonable instinct, but that phrase is still part of the summary. Everything in the sentence that names Nakamura reports her study.",
+    "late": "You've given Nakamura more than she found. Her study reported fibres in upland rivers and higher levels after rain; 'This matters…' and what follows are the writer's interpretation."
+  },
+  "followUp": {
+    "question": "Which phrase goes furthest beyond what the study itself found?",
+    "options": [
+      {
+        "id": "rainfall",
+        "text": "\"If fibres can reach remote rivers in rainfall\"",
+        "good": true,
+        "feedback": "Yes. The study found that levels rose after heavy rain; the writer infers that rain carries fibres there. The 'If' signals that this is the writer's reasoning, not a finding."
+      },
+      {
+        "id": "every-one",
+        "text": "\"found microplastic fibres in every one\"",
+        "feedback": "That is the study's finding, reported directly."
+      },
+      {
+        "id": "background",
+        "text": "\"usually studied in rivers that run through towns and cities\"",
+        "feedback": "That's the writer's background framing. It doesn't go beyond the study so much as set it up."
+      }
+    ]
+  },
+  "notes": [
+    {
+      "styles": ["mla"],
+      "text": "Because this summarises the study as a whole, MLA needs no page number here."
+    }
+  ],
+  "chefsNote": "Reduce the source to a spoonful, then serve your own dish."
+}

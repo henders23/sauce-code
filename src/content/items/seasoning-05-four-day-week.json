@@ -1,0 +1,63 @@
+{
+  "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
+  "id": "seasoning-05",
+  "module": "seasoning",
+  "activity": "taste-test",
+  "title": "Overseasoned",
+  "disciplines": ["social-sciences"],
+  "difficulty": 2,
+  "context": "Two business students report the same study of a four-day working week. They summarise it identically, then go in different directions.",
+  "question": "Which version handles the evidence better?",
+  "versions": [
+    {
+      "id": "a",
+      "label": "Version A",
+      "rating": "weak",
+      "text": "Many workers in the UK report feeling burnt out, and interest in shorter working weeks has grown, with several trials reported in the press. {{cite:lowe2021|integral}} found that productivity stayed the same and burnout fell when 18 small firms moved to a four-day week. This proves that a four-day week works. All employers should therefore introduce it as soon as possible, because it will improve staff wellbeing without any cost to productivity. There is no longer any reason for companies to keep the traditional five-day week, and those that refuse to change are likely to lose their best staff to competitors that offer more flexible working."
+    },
+    {
+      "id": "b",
+      "label": "Version B",
+      "rating": "proper",
+      "text": "Many workers in the UK report feeling burnt out, and interest in shorter working weeks has grown, with several trials reported in the press. {{cite:lowe2021|integral}} found that productivity stayed the same and burnout fell when 18 small firms moved to a four-day week. These results are encouraging, but the firms chose to take part, and firms that expect a change to work may be more likely to volunteer for it. It would therefore be premature to recommend a four-day week for every employer. A trial with randomly selected firms, including larger ones, would show whether the benefits hold more widely."
+    }
+  ],
+  "best": "b",
+  "picks": {
+    "a": "A reasonable instinct — Version A is confident and takes a clear position. But its claims go far beyond one study of 18 volunteer firms: 'proves', 'all employers', 'no longer any reason'.",
+    "b": "Yes. Version B takes a clear position too ('premature to recommend…'), but it matches its claims to the evidence and explains exactly why caution is needed."
+  },
+  "reasonQuestion": "What makes the difference?",
+  "reasons": [
+    {
+      "id": "match",
+      "text": "B's claims match the strength of the evidence.",
+      "verdict": "strong",
+      "feedback": "Exactly. Hedging isn't weakness — it is the writer judging how far the evidence goes."
+    },
+    {
+      "id": "why",
+      "text": "B explains why caution is needed.",
+      "verdict": "strong",
+      "feedback": "Yes. The point about volunteer firms is the writer's own evaluation of the study, and it is what makes Version B's voice convincing."
+    },
+    {
+      "id": "confident",
+      "text": "A is more persuasive because it is more confident.",
+      "verdict": "weak",
+      "feedback": "Confidence persuades only until a reader notices the gap between the claim and the evidence. Academic readers notice."
+    },
+    {
+      "id": "no-position",
+      "text": "B doesn't take a position.",
+      "verdict": "weak",
+      "feedback": "Look again: B argues that a universal recommendation would be premature, and says what evidence is needed. That is a position — a careful one."
+    }
+  ],
+  "notes": [
+    {
+      "text": "Words like 'may', 'suggests', 'likely' and 'premature' are called hedges. They don't hide your voice; they show your judgement about how strong the evidence is."
+    }
+  ],
+  "chefsNote": "Too much salt and nobody can taste the dish. The same goes for 'proves'."
+}

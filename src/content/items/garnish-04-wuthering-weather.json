@@ -1,0 +1,45 @@
+{
+  "_note": "Fictional sources for teaching: every source cited here, and every quotation from it, is invented. See sources.json.",
+  "id": "garnish-04",
+  "module": "garnish",
+  "activity": "highlight-voices",
+  "title": "Stormy with a chance of critics",
+  "disciplines": ["humanities"],
+  "difficulty": 3,
+  "context": "An English literature student uses a critic's words in a paragraph about Emily Brontë's only novel.",
+  "question": "Mark each part of the paragraph: is it the source's idea, the writer's own, or both (the writer building on the source)?",
+  "text": "[[s1:Weather in {{i:Wuthering Heights}} is rarely just background: storms gather at moments of crisis, which invites the familiar reading of them as pathetic fallacy.]] [[s2:{{cite:lindgren2015|integral|page:88}} {{v:offers|offered}} a sharper version of this reading, arguing that Brontë uses storms {{q:not to mirror her characters' feelings but to release them}}.]] [[s3:The storm on the night Heathcliff leaves fits this well, since it breaks just as Catherine's distress becomes too great to contain.]] [[s4:Yet the calm weather of the closing pages is harder to explain in Lindgren's terms,]] [[s5:because stillness there seems to signal exhaustion rather than release, as if the story itself has finally run out of feeling.]]",
+  "key": {
+    "s1": {
+      "voice": "writer",
+      "note": "The writer's framing: an observation about the novel and a widely known way of reading it. It names no particular critic."
+    },
+    "s2": {
+      "voice": "source",
+      "note": "Lindgren's argument, partly in her own words. The quotation is fitted into the writer's sentence so that it reads grammatically."
+    },
+    "s3": {
+      "voice": "both",
+      "note": "The writer applies Lindgren's idea to a scene she doesn't mention. The idea is hers; the application is the writer's."
+    },
+    "s4": {
+      "voice": "writer",
+      "note": "The writer tests the source against the text. Mentioning Lindgren doesn't make this her voice: the judgement is the writer's."
+    },
+    "s5": {
+      "voice": "writer",
+      "note": "The writer's own reading, offered as an alternative to the source."
+    }
+  },
+  "notes": [
+    {
+      "disciplines": ["humanities"],
+      "text": "In literary studies, short quotations woven into your own sentence are common — both from the novel and from critics. The skill is to make the quotation part of your argument, as s2 does, and then respond to it."
+    },
+    {
+      "styles": ["apa", "mla"],
+      "text": "When the author is named in your sentence, APA and MLA put the page number straight after the quotation rather than next to the name."
+    }
+  ],
+  "chefsNote": "A critic's words are seasoning. The reading is your dish."
+}

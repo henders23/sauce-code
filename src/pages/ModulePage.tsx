@@ -28,6 +28,11 @@ export function ModulePage({
     );
   }
   const items = moduleItems(module.id as ModuleId, discipline);
+  // Items unlock one at a time: everything done so far, plus the next one.
+  const frontier = items.findIndex((it) => !isDone(it.id));
+  const unlocked = (i: number) => frontier === -1 || i <= frontier || isDone(items[i].id);
+  // A locked item (e.g. typed into the address bar) shows the next unlocked one instead.
+  if (index < items.length ? !unlocked(index) : frontier !== -1) index = frontier;
 
   const nav = (
     <nav className="spread" aria-label={`${module.name} items`}>
@@ -39,17 +44,23 @@ export function ModulePage({
           {index < items.length ? `Item ${index + 1} of ${items.length}` : 'Module complete'}
         </span>
         <div className="progress-dots">
-          {items.map((it, i) => (
-            <a
-              key={it.id}
-              href={href.item(module.id, i)}
-              aria-label={`Item ${i + 1}${isDone(it.id) ? ', done' : ''}${i === index ? ', current' : ''}`}
-              aria-current={i === index ? 'step' : undefined}
-              style={{ display: 'inline-flex', padding: 7, margin: -7 }}
-            >
-              <span className={i === index ? 'current' : isDone(it.id) ? 'done' : ''} />
-            </a>
-          ))}
+          {items.map((it, i) =>
+            unlocked(i) ? (
+              <a
+                key={it.id}
+                href={href.item(module.id, i)}
+                aria-label={`Item ${i + 1}${isDone(it.id) ? ', done' : ''}${i === index ? ', current' : ''}`}
+                aria-current={i === index ? 'step' : undefined}
+                style={{ display: 'inline-flex', padding: 7, margin: -7 }}
+              >
+                <span className={i === index ? 'current' : isDone(it.id) ? 'done' : ''} />
+              </a>
+            ) : (
+              <span key={it.id} role="img" aria-label={`Item ${i + 1}, unlocks when you finish the one before`} style={{ display: 'inline-flex', padding: 7, margin: -7 }}>
+                <span className="locked" />
+              </span>
+            ),
+          )}
         </div>
       </div>
     </nav>

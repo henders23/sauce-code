@@ -9,6 +9,7 @@ import type { Locator } from './types';
 //   {{q:quoted words}}                 quotation, in the convention's quotation marks
 //   {{sq:word}}                        scare quotes (not a quotation from a source)
 //   {{v:argues|argued}}                reporting verb: present | past (APA uses past)
+//   {{i:Wuthering Heights}}            italics, e.g. the title of a book in the writer's text
 //   {{gap}}                            Pick the Verb gap
 //   [[id:text]]                        a span the activity can refer to by id
 
@@ -17,6 +18,7 @@ export type Token =
   | { t: 'cite'; keys: string[]; integral: boolean; locator?: Locator; span?: string; raw: string }
   | { t: 'q'; text: string; scare: boolean; span?: string }
   | { t: 'v'; present: string; past: string; span?: string }
+  | { t: 'i'; text: string; span?: string }
   | { t: 'gap'; span?: string };
 
 export class ContentError extends Error {}
@@ -82,6 +84,7 @@ export function tokenize(input: string): Token[] {
       flush();
       if (inner.startsWith('cite:')) tokens.push(parseCite(inner.slice(5), span, raw));
       else if (inner.startsWith('q:')) tokens.push({ t: 'q', text: inner.slice(2).trim(), scare: false, span });
+      else if (inner.startsWith('i:')) tokens.push({ t: 'i', text: inner.slice(2).trim(), span });
       else if (inner.startsWith('sq:')) tokens.push({ t: 'q', text: inner.slice(3).trim(), scare: true, span });
       else if (inner.startsWith('v:')) {
         const [present, past] = inner.slice(2).split('|').map((s) => s.trim());

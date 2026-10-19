@@ -1,0 +1,84 @@
+{
+  "_note": "Fictional sources for teaching: every source cited here, and every quotation from it, is invented. See sources.json.",
+  "id": "garnish-03",
+  "module": "garnish",
+  "activity": "taste-test",
+  "title": "Quote the phrase, not the figures",
+  "disciplines": ["social-sciences"],
+  "difficulty": 2,
+  "context": "Two sociology students use the same study of food banks. One quotes facts; the other quotes something else.",
+  "question": "Which version makes better use of quotation?",
+  "versions": [
+    {
+      "id": "a",
+      "label": "Version A",
+      "rating": "getting",
+      "text": "Food banks have become a familiar part of life in many UK towns over the last decade. {{cite:mwangi2018|integral|page:53}} {{v:states|stated}} that {{q:the number of food banks in the region doubled between 2012 and 2016}}. She also {{v:says|said}} that {{q:many users were in work but could not afford food after paying rent}} {{cite:mwangi2018|page:58}}. This shows that food banks are now an important part of the welfare system in the UK, and that many people depend on them in order to get enough to eat. It also suggests that having a job is no longer enough to protect people from hunger."
+    },
+    {
+      "id": "b",
+      "label": "Version B",
+      "rating": "proper",
+      "text": "Food banks have become a familiar part of life in many UK towns over the last decade. In one region, their number doubled in four years, and many of the people using them were in work but could not afford food once rent was paid {{cite:mwangi2018}}. {{cite:mwangi2018|integral|page:61}} {{v:describes|described}} the food bank as {{q:a charity of last resort that had quietly become a charity of first resort}}. The phrase captures a change that the figures alone cannot: food banks were designed for emergencies, yet for many households they are now part of the routine of getting through the month."
+    }
+  ],
+  "best": "b",
+  "picks": {
+    "a": "A reasonable instinct — Version A is accurate, correctly cited, and it does comment on its sources. But it spends its quotations on plain facts that would be just as clear in the writer's own words.",
+    "b": "Yes. Version B reports the facts in its own words and saves quotation for the one phrase whose exact wording matters — then explains why it matters."
+  },
+  "reasonQuestion": "What makes the difference?",
+  "reasons": [
+    {
+      "id": "choice",
+      "text": "B quotes only the phrase whose wording matters, and puts the facts in its own words.",
+      "verdict": "strong",
+      "feedback": "Exactly. Figures and plain facts rarely need quoting. A quotation earns its place when the wording itself is distinctive, contested, or the thing you want to analyse."
+    },
+    {
+      "id": "comment",
+      "text": "B explains what the quoted phrase captures.",
+      "verdict": "strong",
+      "feedback": "Yes — 'The phrase captures a change that the figures alone cannot' is the writer telling us why the quotation is there."
+    },
+    {
+      "id": "exact",
+      "text": "A is more accurate because it uses the author's exact words.",
+      "verdict": "weak",
+      "feedback": "Quoting isn't more accurate than a careful summary; both report the source faithfully. Quotation is for when the exact words matter, not for accuracy in general."
+    },
+    {
+      "id": "fewer",
+      "text": "B uses fewer citations.",
+      "verdict": "weak",
+      "feedback": "Both versions cite the source twice. The difference is what each one chooses to quote."
+    }
+  ],
+  "followUp": {
+    "question": "When is a quotation most likely to be worth it?",
+    "options": [
+      {
+        "id": "wording",
+        "text": "When the exact wording is distinctive, contested, or what you want to analyse.",
+        "good": true,
+        "feedback": "Yes. If you could say it just as well in your own words, paraphrase."
+      },
+      {
+        "id": "expert",
+        "text": "Whenever the source is written by an expert.",
+        "feedback": "Most academic sources are written by experts. That alone isn't a reason to quote them."
+      },
+      {
+        "id": "numbers",
+        "text": "Whenever you use a number or statistic from the source.",
+        "feedback": "Numbers are usually reported in your own sentence, with a citation, rather than quoted."
+      }
+    ]
+  },
+  "notes": [
+    {
+      "text": "Version B's first citation reports the study's main findings, which are summarised in its abstract, so it cites the work as a whole without a page number. The quotation needs a page. If you paraphrase a detail from one particular page, most conventions expect the page number too."
+    }
+  ],
+  "chefsNote": "Quote the phrase only the author could have written. Paraphrase the rest."
+}

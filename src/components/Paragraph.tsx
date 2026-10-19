@@ -31,7 +31,7 @@ export function SegView({ seg, idPrefix, linkFootnotes = true }: { seg: Seg; idP
         </span>
       );
     default:
-      return <>{seg.t}</>;
+      return seg.italic ? <i>{seg.t}</i> : <>{seg.t}</>;
   }
 }
 

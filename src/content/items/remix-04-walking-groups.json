@@ -1,0 +1,56 @@
+{
+  "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
+  "id": "remix-04",
+  "module": "remix",
+  "activity": "fix-sauce",
+  "title": "Lost in translation",
+  "disciplines": ["health"],
+  "difficulty": 2,
+  "context": "A nursing student has paraphrased a study about loneliness. The wording is their own — but compare it with the original.",
+  "question": "What is the main problem with this paraphrase?",
+  "sourcePassage": {
+    "source": "byrne2019",
+    "where": "from the abstract",
+    "text": "Older adults who joined a weekly walking group reported less loneliness after six months than those on a waiting list. The effect was found only among participants who attended at least half of the sessions."
+  },
+  "text": "Loneliness is a serious problem for many older people, and it is linked to poorer physical and mental health. Many older adults live alone, especially after the death of a partner. Joining a walking group cures loneliness in older adults, as people who take part feel much less lonely within a few weeks {{cite:byrne2019}}. Walking groups are also cheap to run and easy to organise in most communities. GP surgeries should therefore refer all lonely older patients to a local walking group, as this is a simple solution that would quickly solve the problem for most people who are affected by it.",
+  "problems": [
+    {
+      "id": "meaning",
+      "text": "The paraphrase changes what the study found.",
+      "correct": true,
+      "feedback": "Yes. 'Reported less loneliness' has become 'cures loneliness', 'after six months' has become 'within a few weeks', and the condition about attending half the sessions has disappeared. The words are the student's own, but the meaning is no longer the source's."
+    },
+    {
+      "id": "patchwriting",
+      "text": "It is patchwriting: too close to the original wording.",
+      "correct": false,
+      "feedback": "Look again — the wording is quite different from the original. This paraphrase has the opposite problem: it has moved too far from what the source actually says."
+    },
+    {
+      "id": "page",
+      "text": "It needs a page number.",
+      "correct": false,
+      "feedback": "It reports the study's main finding, from the abstract, so no page number is needed. The problem is what the sentence claims."
+    },
+    {
+      "id": "name",
+      "text": "It should name the author in the sentence.",
+      "correct": false,
+      "feedback": "Naming the author is a choice, not a requirement. The bracketed citation is fine; the problem is the content of the sentence."
+    }
+  ],
+  "repaired": "Loneliness is a serious problem for many older people, and it is linked to poorer physical and mental health. Many older adults live alone, especially after the death of a partner. [[c1:Walking groups may help: older adults who joined a weekly group reported feeling less lonely after six months than people still waiting for a place {{cite:byrne2019}}.]] [[c2:The benefit, however, appeared only among those who went to at least half of the sessions.]] [[c3:Referral alone may therefore not be enough. GP surgeries that refer lonely patients to walking groups might also need to find ways to help them keep attending.]]",
+  "annotations": {
+    "c1": "The finding is reported at its real strength ('reported feeling less lonely', 'after six months') and with its comparison group.",
+    "c2": "The condition the student left out is restored. It turns out to be the most useful part of the finding for practice.",
+    "c3": "The writer's recommendation now follows from what the study found, rather than from an exaggerated version of it."
+  },
+  "notes": [
+    {
+      "disciplines": ["health", "life-sciences"],
+      "text": "In health sciences, readers may act on what you report, so a paraphrase must keep a finding's strength, timescale and conditions. Changing 'reported less loneliness' to 'cures loneliness' is a factual error, not a style choice."
+    }
+  ],
+  "chefsNote": "A remix changes the recipe card, never the taste of the dish."
+}

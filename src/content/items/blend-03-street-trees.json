@@ -1,0 +1,67 @@
+{
+  "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
+  "id": "blend-03",
+  "module": "blend",
+  "activity": "taste-test",
+  "title": "One at a time, or all together?",
+  "disciplines": ["life-sciences", "engineering"],
+  "difficulty": 2,
+  "context": "Two students use the same three studies to write about street trees and urban heat.",
+  "question": "Which version synthesises its sources better?",
+  "versions": [
+    {
+      "id": "a",
+      "label": "Version A",
+      "rating": "weak",
+      "text": "Several studies have looked at whether street trees help to keep cities cool. {{cite:achterberg2017|integral}} measured surface temperatures in twenty streets and found that streets with more trees were up to 8°C cooler on summer afternoons. {{cite:kaur2019|integral}} studied hospital admissions during heatwaves and found fewer heat-related admissions in neighbourhoods with more tree cover. {{cite:silva2022|integral}} found that during droughts many street trees were water-stressed and provided less shade. Trees are therefore an important way of keeping cities cool in summer, and councils should plant more of them in streets that are currently bare, especially in the parts of cities that get hottest."
+    },
+    {
+      "id": "b",
+      "label": "Version B",
+      "rating": "proper",
+      "text": "Street trees can make a measurable difference to urban heat, but their benefits depend on the trees themselves staying healthy. Streets with more trees can be up to 8°C cooler on summer afternoons {{cite:achterberg2017}}, and neighbourhoods with more tree cover see fewer heat-related hospital admissions during heatwaves {{cite:kaur2019}}. Taken together, these findings suggest that trees protect health as well as comfort. Yet the hottest summers are often also the driest, and trees under drought stress provide less shade {{cite:silva2022}}. Planting more trees may therefore not be enough on its own: councils will also need to plan for watering them when cooling matters most."
+    }
+  ],
+  "best": "b",
+  "picks": {
+    "a": "A reasonable instinct — Version A reports all three studies clearly. But each source gets its own sentence, and the writer never says how they relate. Silva's finding actually complicates the other two, and Version A doesn't notice.",
+    "b": "Yes. Version B starts with its own claim, combines the first two studies into one point, and uses the third to qualify it. The sources are organised around an argument instead of one after another."
+  },
+  "reasonQuestion": "What makes the difference?",
+  "reasons": [
+    {
+      "id": "organised",
+      "text": "B organises the sources around a point, not one source per sentence.",
+      "verdict": "strong",
+      "feedback": "Exactly. Synthesis means grouping sources by what they show, not by who wrote them."
+    },
+    {
+      "id": "tension",
+      "text": "B shows how one finding complicates the others.",
+      "verdict": "strong",
+      "feedback": "Yes — 'Yet the hottest summers are often also the driest' is where the writer connects Silva to the first two studies, and that connection is the paragraph's most original idea."
+    },
+    {
+      "id": "clearer",
+      "text": "A is clearer, because each source has its own sentence.",
+      "verdict": "weak",
+      "feedback": "A is easy to follow, but it leaves the reader to work out how the studies fit together. That thinking is the writer's job."
+    },
+    {
+      "id": "fewer",
+      "text": "B uses fewer sources.",
+      "verdict": "weak",
+      "feedback": "Both use the same three studies. The difference is how they are put together."
+    }
+  ],
+  "notes": [
+    {
+      "styles": ["ieee", "vancouver"],
+      "text": "In numeric styles, Version A has to name each author because the numbers alone wouldn't say who did what. Version B combines findings, so the numbers are enough — names matter less when sources are blended than when they are compared."
+    },
+    {
+      "text": "Notice the hedges in Version B: 'can make', 'suggest', 'may'. A study that finds fewer admissions where there are more trees shows an association, not proof that trees caused the difference."
+    }
+  ],
+  "chefsNote": "Don't serve the ingredients one by one. Stir."
+}

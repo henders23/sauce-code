@@ -4,7 +4,16 @@
     {
       "id": "mensah2020",
       "type": "article",
-      "authors": [{ "given": "Kofi", "family": "Mensah" }, { "given": "Ruth", "family": "Whitfield" }],
+      "authors": [
+        {
+          "given": "Kofi",
+          "family": "Mensah"
+        },
+        {
+          "given": "Ruth",
+          "family": "Whitfield"
+        }
+      ],
       "year": 2020,
       "title": "Hand hygiene on night shifts in three regional hospitals",
       "titleTC": "Hand Hygiene on Night Shifts in Three Regional Hospitals",
@@ -12,12 +21,20 @@
       "journal": "Northgate Journal of Clinical Practice",
       "volume": 8,
       "issue": 2,
-      "pages": [61, 74]
+      "pages": [
+        61,
+        74
+      ]
     },
     {
       "id": "brennan2022",
       "type": "book",
-      "authors": [{ "given": "Siobhan", "family": "Brennan" }],
+      "authors": [
+        {
+          "given": "Siobhan",
+          "family": "Brennan"
+        }
+      ],
       "year": 2022,
       "title": "Remote work and the lonely office",
       "titleTC": "Remote Work and the Lonely Office",
@@ -29,7 +46,12 @@
     {
       "id": "aziz2019",
       "type": "article",
-      "authors": [{ "given": "Samira", "family": "Aziz" }],
+      "authors": [
+        {
+          "given": "Samira",
+          "family": "Aziz"
+        }
+      ],
       "year": 2019,
       "title": "Urban gardens and the survival of wild bees",
       "titleTC": "Urban Gardens and the Survival of Wild Bees",
@@ -37,12 +59,20 @@
       "journal": "Thornbury Journal of Urban Ecology",
       "volume": 14,
       "issue": 1,
-      "pages": [22, 38]
+      "pages": [
+        22,
+        38
+      ]
     },
     {
       "id": "kowalczyk2020",
       "type": "article",
-      "authors": [{ "given": "Marta", "family": "Kowalczyk" }],
+      "authors": [
+        {
+          "given": "Marta",
+          "family": "Kowalczyk"
+        }
+      ],
       "year": 2020,
       "title": "Flexibility and risk in platform work",
       "titleTC": "Flexibility and Risk in Platform Work",
@@ -50,12 +80,20 @@
       "journal": "Harrowgate Review of Work and Society",
       "volume": 6,
       "issue": 4,
-      "pages": [70, 86]
+      "pages": [
+        70,
+        86
+      ]
     },
     {
       "id": "fairbairn2018",
       "type": "book",
-      "authors": [{ "given": "Eleanor", "family": "Fairbairn" }],
+      "authors": [
+        {
+          "given": "Eleanor",
+          "family": "Fairbairn"
+        }
+      ],
       "year": 2018,
       "title": "Letters and the Victorian family",
       "titleTC": "Letters and the Victorian Family",
@@ -67,7 +105,12 @@
     {
       "id": "whitcombe2016",
       "type": "article",
-      "authors": [{ "given": "Harriet", "family": "Whitcombe" }],
+      "authors": [
+        {
+          "given": "Harriet",
+          "family": "Whitcombe"
+        }
+      ],
       "year": 2016,
       "title": "Railway time and the Victorian clock",
       "titleTC": "Railway Time and the Victorian Clock",
@@ -75,12 +118,20 @@
       "journal": "Calderwood Review of Nineteenth-Century History",
       "volume": 22,
       "issue": 1,
-      "pages": [30, 48]
+      "pages": [
+        30,
+        48
+      ]
     },
     {
       "id": "adeyemi2017",
       "type": "book",
-      "authors": [{ "given": "Tunde", "family": "Adeyemi" }],
+      "authors": [
+        {
+          "given": "Tunde",
+          "family": "Adeyemi"
+        }
+      ],
       "year": 2017,
       "edition": 2,
       "title": "Good faith in English contract law",
@@ -93,7 +144,12 @@
     {
       "id": "holloway2019",
       "type": "article",
-      "authors": [{ "given": "Grace", "family": "Holloway" }],
+      "authors": [
+        {
+          "given": "Grace",
+          "family": "Holloway"
+        }
+      ],
       "year": 2019,
       "title": "Fairness and the commercial bargain",
       "titleTC": "Fairness and the Commercial Bargain",
@@ -101,28 +157,49 @@
       "journal": "Kingsmere Law Review",
       "volume": 31,
       "issue": 2,
-      "pages": [50, 69]
+      "pages": [
+        50,
+        69
+      ]
     },
     {
       "id": "lin2018",
       "type": "chapter",
-      "authors": [{ "given": "Wei", "family": "Lin" }],
+      "authors": [
+        {
+          "given": "Wei",
+          "family": "Lin"
+        }
+      ],
       "year": 2018,
       "title": "Shift patterns and student sleep",
       "titleTC": "Shift Patterns and Student Sleep",
       "shortTitleTC": "Shift Patterns",
-      "editors": [{ "given": "Maria", "family": "Varga" }],
+      "editors": [
+        {
+          "given": "Maria",
+          "family": "Varga"
+        }
+      ],
       "bookTitle": "Wellbeing in clinical education",
       "bookTitleTC": "Wellbeing in Clinical Education",
       "publisher": "Fernhill Academic",
       "place": "Leeds",
       "country": "U.K.",
-      "pages": [12, 30]
+      "pages": [
+        12,
+        30
+      ]
     },
     {
       "id": "okafor2021",
       "type": "article",
-      "authors": [{ "given": "Ada", "family": "Okafor" }],
+      "authors": [
+        {
+          "given": "Ada",
+          "family": "Okafor"
+        }
+      ],
       "year": 2021,
       "title": "Sleep and stress in nursing students on placement",
       "titleTC": "Sleep and Stress in Nursing Students on Placement",
@@ -130,12 +207,24 @@
       "journal": "Fernhill Journal of Nursing Education",
       "volume": 12,
       "issue": 3,
-      "pages": [40, 55]
+      "pages": [
+        40,
+        55
+      ]
     },
     {
       "id": "varga2023",
       "type": "article",
-      "authors": [{ "given": "Maria", "family": "Varga" }, { "given": "Tomas", "family": "Reyes" }],
+      "authors": [
+        {
+          "given": "Maria",
+          "family": "Varga"
+        },
+        {
+          "given": "Tomas",
+          "family": "Reyes"
+        }
+      ],
       "year": 2023,
       "title": "Rest breaks on clinical placement",
       "titleTC": "Rest Breaks on Clinical Placement",
@@ -143,12 +232,20 @@
       "journal": "Northgate Journal of Clinical Practice",
       "volume": 11,
       "issue": 1,
-      "pages": [15, 29]
+      "pages": [
+        15,
+        29
+      ]
     },
     {
       "id": "price2019",
       "type": "article",
-      "authors": [{ "given": "Daniel", "family": "Price" }],
+      "authors": [
+        {
+          "given": "Daniel",
+          "family": "Price"
+        }
+      ],
       "year": 2019,
       "title": "Where nursing students want to train",
       "titleTC": "Where Nursing Students Want to Train",
@@ -156,12 +253,20 @@
       "journal": "Fernhill Journal of Nursing Education",
       "volume": 10,
       "issue": 2,
-      "pages": [15, 27]
+      "pages": [
+        15,
+        27
+      ]
     },
     {
       "id": "abara2017",
       "type": "article",
-      "authors": [{ "given": "Chidi", "family": "Abara" }],
+      "authors": [
+        {
+          "given": "Chidi",
+          "family": "Abara"
+        }
+      ],
       "year": 2017,
       "title": "Social media and political interest in young adults",
       "titleTC": "Social Media and Political Interest in Young Adults",
@@ -169,12 +274,20 @@
       "journal": "Ravensworth Journal of Civic Life",
       "volume": 3,
       "issue": 2,
-      "pages": [10, 24]
+      "pages": [
+        10,
+        24
+      ]
     },
     {
       "id": "delacourt2019",
       "type": "article",
-      "authors": [{ "given": "Rhian", "family": "Delacourt" }],
+      "authors": [
+        {
+          "given": "Rhian",
+          "family": "Delacourt"
+        }
+      ],
       "year": 2019,
       "title": "Political sharing and shallow engagement",
       "titleTC": "Political Sharing and Shallow Engagement",
@@ -182,12 +295,20 @@
       "journal": "Ravensworth Journal of Civic Life",
       "volume": 5,
       "issue": 1,
-      "pages": [33, 47]
+      "pages": [
+        33,
+        47
+      ]
     },
     {
       "id": "quigley2022",
       "type": "article",
-      "authors": [{ "given": "Fergus", "family": "Quigley" }],
+      "authors": [
+        {
+          "given": "Fergus",
+          "family": "Quigley"
+        }
+      ],
       "year": 2022,
       "title": "From likes to votes",
       "titleTC": "From Likes to Votes",
@@ -195,12 +316,20 @@
       "journal": "Ravensworth Journal of Civic Life",
       "volume": 8,
       "issue": 3,
-      "pages": [88, 99]
+      "pages": [
+        88,
+        99
+      ]
     },
     {
       "id": "raman2021",
       "type": "article",
-      "authors": [{ "given": "Priya", "family": "Raman" }],
+      "authors": [
+        {
+          "given": "Priya",
+          "family": "Raman"
+        }
+      ],
       "year": 2021,
       "title": "Smartphone bans and classroom attention in secondary schools",
       "titleTC": "Smartphone Bans and Classroom Attention in Secondary Schools",
@@ -208,12 +337,20 @@
       "journal": "Ravensworth Journal of Education",
       "volume": 9,
       "issue": 2,
-      "pages": [60, 77]
+      "pages": [
+        60,
+        77
+      ]
     },
     {
       "id": "osei2020",
       "type": "article",
-      "authors": [{ "given": "Kwame", "family": "Osei" }],
+      "authors": [
+        {
+          "given": "Kwame",
+          "family": "Osei"
+        }
+      ],
       "year": 2020,
       "title": "Layer adhesion in 3D-printed concrete",
       "titleTC": "Layer Adhesion in 3D-Printed Concrete",
@@ -221,12 +358,20 @@
       "journal": "Thornbury Journal of Construction Materials",
       "volume": 17,
       "issue": 4,
-      "pages": [41, 58]
+      "pages": [
+        41,
+        58
+      ]
     },
     {
       "id": "lindqvist2021",
       "type": "article",
-      "authors": [{ "given": "Elin", "family": "Lindqvist" }],
+      "authors": [
+        {
+          "given": "Elin",
+          "family": "Lindqvist"
+        }
+      ],
       "year": 2021,
       "title": "Curing temperature and the strength of printed walls",
       "titleTC": "Curing Temperature and the Strength of Printed Walls",
@@ -234,7 +379,321 @@
       "journal": "Thornbury Journal of Construction Materials",
       "volume": 18,
       "issue": 2,
-      "pages": [20, 35]
+      "pages": [
+        20,
+        35
+      ]
+    },
+    {
+      "id": "haddad2022",
+      "type": "article",
+      "authors": [
+        {
+          "given": "Rami",
+          "family": "Haddad"
+        }
+      ],
+      "year": 2022,
+      "title": "Thermal runaway in e-scooter batteries",
+      "titleTC": "Thermal Runaway in E-Scooter Batteries",
+      "shortTitleTC": "Thermal Runaway",
+      "journal": "Kestrel Journal of Energy Systems",
+      "volume": 7,
+      "issue": 2,
+      "pages": [
+        33,
+        49
+      ]
+    },
+    {
+      "id": "nakamura2021",
+      "type": "article",
+      "authors": [
+        {
+          "given": "Yui",
+          "family": "Nakamura"
+        }
+      ],
+      "year": 2021,
+      "title": "Microplastics in upland rivers",
+      "titleTC": "Microplastics in Upland Rivers",
+      "shortTitleTC": "Microplastics",
+      "journal": "Wexcombe Journal of Freshwater Science",
+      "volume": 15,
+      "issue": 3,
+      "pages": [
+        50,
+        66
+      ]
+    },
+    {
+      "id": "ferreira2020",
+      "type": "article",
+      "authors": [
+        {
+          "given": "Lucia",
+          "family": "Ferreira"
+        }
+      ],
+      "year": 2020,
+      "title": "Plain language in consumer contracts",
+      "titleTC": "Plain Language in Consumer Contracts",
+      "shortTitleTC": "Plain Language",
+      "journal": "Kingsmere Law Review",
+      "volume": 32,
+      "issue": 1,
+      "pages": [
+        20,
+        38
+      ]
+    },
+    {
+      "id": "byrne2019",
+      "type": "article",
+      "authors": [
+        {
+          "given": "Ciara",
+          "family": "Byrne"
+        }
+      ],
+      "year": 2019,
+      "title": "Walking groups and loneliness in older adults",
+      "titleTC": "Walking Groups and Loneliness in Older Adults",
+      "shortTitleTC": "Walking Groups",
+      "journal": "Northgate Journal of Clinical Practice",
+      "volume": 7,
+      "issue": 3,
+      "pages": [
+        40,
+        52
+      ]
+    },
+    {
+      "id": "mwangi2018",
+      "type": "article",
+      "authors": [
+        {
+          "given": "Achieng",
+          "family": "Mwangi"
+        }
+      ],
+      "year": 2018,
+      "title": "Food banks and the language of need",
+      "titleTC": "Food Banks and the Language of Need",
+      "shortTitleTC": "Food Banks",
+      "journal": "Harrowgate Review of Work and Society",
+      "volume": 4,
+      "issue": 2,
+      "pages": [
+        50,
+        67
+      ]
+    },
+    {
+      "id": "lindgren2015",
+      "type": "book",
+      "authors": [
+        {
+          "given": "Sofia",
+          "family": "Lindgren"
+        }
+      ],
+      "year": 2015,
+      "title": "Weather and feeling in the Victorian novel",
+      "titleTC": "Weather and Feeling in the Victorian Novel",
+      "shortTitleTC": "Weather and Feeling",
+      "publisher": "Marrow Lane Press",
+      "place": "Edinburgh",
+      "country": "U.K."
+    },
+    {
+      "id": "achterberg2017",
+      "type": "article",
+      "authors": [
+        {
+          "given": "Pieter",
+          "family": "Achterberg"
+        }
+      ],
+      "year": 2017,
+      "title": "Street trees and summer surface temperatures",
+      "titleTC": "Street Trees and Summer Surface Temperatures",
+      "shortTitleTC": "Street Trees",
+      "journal": "Thornbury Journal of Urban Ecology",
+      "volume": 12,
+      "issue": 2,
+      "pages": [
+        15,
+        28
+      ]
+    },
+    {
+      "id": "kaur2019",
+      "type": "article",
+      "authors": [
+        {
+          "given": "Harpreet",
+          "family": "Kaur"
+        }
+      ],
+      "year": 2019,
+      "title": "Tree cover and heat-related hospital admissions",
+      "titleTC": "Tree Cover and Heat-Related Hospital Admissions",
+      "shortTitleTC": "Tree Cover",
+      "journal": "Northgate Journal of Clinical Practice",
+      "volume": 7,
+      "issue": 1,
+      "pages": [
+        20,
+        33
+      ]
+    },
+    {
+      "id": "silva2022",
+      "type": "article",
+      "authors": [
+        {
+          "given": "Ana",
+          "family": "Silva"
+        }
+      ],
+      "year": 2022,
+      "title": "Water stress in urban street trees",
+      "titleTC": "Water Stress in Urban Street Trees",
+      "shortTitleTC": "Water Stress",
+      "journal": "Thornbury Journal of Urban Ecology",
+      "volume": 17,
+      "issue": 2,
+      "pages": [
+        60,
+        74
+      ]
+    },
+    {
+      "id": "obi2016",
+      "type": "article",
+      "authors": [
+        {
+          "given": "Nkem",
+          "family": "Obi"
+        }
+      ],
+      "year": 2016,
+      "title": "Public library use in the digital decade",
+      "titleTC": "Public Library Use in the Digital Decade",
+      "shortTitleTC": "Public Library Use",
+      "journal": "Ravensworth Journal of Civic Life",
+      "volume": 2,
+      "issue": 1,
+      "pages": [
+        30,
+        45
+      ]
+    },
+    {
+      "id": "petrova2020",
+      "type": "article",
+      "authors": [
+        {
+          "given": "Irina",
+          "family": "Petrova"
+        }
+      ],
+      "year": 2020,
+      "title": "Libraries and the digital divide",
+      "titleTC": "Libraries and the Digital Divide",
+      "shortTitleTC": "Digital Divide",
+      "journal": "Ravensworth Journal of Civic Life",
+      "volume": 6,
+      "issue": 2,
+      "pages": [
+        12,
+        26
+      ]
+    },
+    {
+      "id": "rhodes2021",
+      "type": "article",
+      "authors": [
+        {
+          "given": "Martin",
+          "family": "Rhodes"
+        }
+      ],
+      "year": 2021,
+      "title": "Why people still visit libraries",
+      "titleTC": "Why People Still Visit Libraries",
+      "shortTitleTC": "Why People Still Visit",
+      "journal": "Ravensworth Journal of Civic Life",
+      "volume": 7,
+      "issue": 3,
+      "pages": [
+        40,
+        58
+      ]
+    },
+    {
+      "id": "tanaka2018",
+      "type": "article",
+      "authors": [
+        {
+          "given": "Kenji",
+          "family": "Tanaka"
+        }
+      ],
+      "year": 2018,
+      "title": "Library lending in Japan and the United Kingdom",
+      "titleTC": "Library Lending in Japan and the United Kingdom",
+      "shortTitleTC": "Library Lending",
+      "journal": "Ravensworth Journal of Civic Life",
+      "volume": 4,
+      "issue": 1,
+      "pages": [
+        60,
+        73
+      ]
+    },
+    {
+      "id": "adebayo2023",
+      "type": "article",
+      "authors": [
+        {
+          "given": "Folake",
+          "family": "Adebayo"
+        }
+      ],
+      "year": 2023,
+      "title": "Text message reminders and vaccination uptake",
+      "titleTC": "Text Message Reminders and Vaccination Uptake",
+      "shortTitleTC": "Text Message Reminders",
+      "journal": "Northgate Journal of Clinical Practice",
+      "volume": 11,
+      "issue": 2,
+      "pages": [
+        33,
+        47
+      ]
+    },
+    {
+      "id": "lowe2021",
+      "type": "article",
+      "authors": [
+        {
+          "given": "Hannah",
+          "family": "Lowe"
+        }
+      ],
+      "year": 2021,
+      "title": "Four-day weeks in small firms",
+      "titleTC": "Four-Day Weeks in Small Firms",
+      "shortTitleTC": "Four-Day Weeks",
+      "journal": "Harrowgate Review of Work and Society",
+      "volume": 7,
+      "issue": 3,
+      "pages": [
+        20,
+        36
+      ]
     }
   ]
 }

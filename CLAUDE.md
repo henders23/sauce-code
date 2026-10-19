@@ -9,6 +9,8 @@
   never open on a task with no explanation.
 - **Activities: instruction first.** Show the instruction, then reveal the text
   with a button — don't open on a wall of text.
+- **Reveal gradually.** Unlock content step by step rather than showing it all
+  at once (items unlock one at a time within a module).
 - **Select phrases, not words.** Never make students select text word by word.
 - Dark mode. Tone: light and tongue-in-cheek in labels, plain in instructions.
 

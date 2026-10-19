@@ -107,6 +107,8 @@ export interface PickVerbItem extends ItemBase {
 
 export interface FixSauceItem extends ItemBase {
   activity: 'fix-sauce';
+  /** Optional original passage, when the problem is how faithfully the source is reported. */
+  sourcePassage?: SourcePassage;
   /** The flawed paragraph. */
   text: string;
   problems: { id: string; text: string; correct: boolean; feedback: string }[];

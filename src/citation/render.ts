@@ -11,6 +11,8 @@ export interface Seg {
   span?: string;
   /** Footnote number, for k === 'fn'. */
   n?: number;
+  /** Italic text, e.g. a book title in the writer's sentence. */
+  italic?: boolean;
 }
 
 export interface RenderedNote {
@@ -91,6 +93,9 @@ export function renderText(
     switch (tok.t) {
       case 'text':
         segs.push({ k: 'text', t: tok.text, span: tok.span });
+        break;
+      case 'i':
+        segs.push({ k: 'text', t: tok.text, span: tok.span, italic: true });
         break;
       case 'v':
         segs.push({ k: 'text', t: style.pastTenseVerbs ? tok.past : tok.present, span: tok.span });
