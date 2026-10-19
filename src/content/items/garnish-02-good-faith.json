@@ -1,0 +1,64 @@
+{
+  "_note": "Fictional sources for teaching: every source cited here, and every quotation from it, is invented. See sources.json.",
+  "id": "garnish-02",
+  "module": "garnish",
+  "activity": "fix-sauce",
+  "title": "All garnish, no dish",
+  "disciplines": ["law"],
+  "difficulty": 2,
+  "context": "A law student is writing about whether English contract law needs a general duty of good faith.",
+  "question": "What is the main problem with this paragraph?",
+  "text": "English contract law has traditionally been reluctant to recognise a general duty of good faith, unlike many other legal systems. {{cite:adeyemi2017|integral|page:15}} {{v:states|stated}} that {{q:English law has never accepted a general principle that contracting parties must act in good faith towards one another}}. He also {{v:says|said}} that {{q:the courts have preferred to develop piecemeal solutions in response to particular problems of unfairness}} {{cite:adeyemi2017|page:16}}. {{cite:holloway2019|integral|page:57}} {{v:argues|argued}} that {{q:the absence of a general duty has not prevented the courts from reaching fair outcomes}}. Therefore, a general duty of good faith is not needed in English law.",
+  "problems": [
+    {
+      "id": "over-quoting",
+      "text": "The paragraph strings quotations together, so the writer's own argument shrinks to one unexplained sentence at the end.",
+      "correct": true,
+      "feedback": "Yes. Three quotations in a row, each introduced with a neutral verb, and then a conclusion that the writer hasn't argued for. The sources are doing all the talking."
+    },
+    {
+      "id": "no-quotes-in-law",
+      "text": "Legal writing shouldn't use quotations at all.",
+      "correct": false,
+      "feedback": "Not so — quotation is common in law, especially of judgments and legislation, where the exact words matter. The problem here is how many quotations there are, and what the writer does (or doesn't do) with them."
+    },
+    {
+      "id": "longer",
+      "text": "The quotations should be longer, to give more context.",
+      "correct": false,
+      "feedback": "Longer quotations would make the problem worse. The paragraph needs less of the sources' words and more of the writer's."
+    },
+    {
+      "id": "citation",
+      "text": "The second quotation is missing its citation.",
+      "correct": false,
+      "feedback": "Look again: each quotation has its citation and page number. The problem is less about formatting and more about how the sources are used."
+    }
+  ],
+  "repaired": "English contract law has traditionally been reluctant to recognise a general duty of good faith. [[c1:{{cite:adeyemi2017|integral}} {{v:traces|traced}} this reluctance to the courts' preference for dealing with particular kinds of unfairness one at a time, rather than through a single overarching principle.]] [[c2:{{cite:holloway2019|integral|page:57}} {{v:goes|went}} further, arguing that {{q:the absence of a general duty has not prevented the courts from reaching fair outcomes}}.]] [[c3:But this defence of the piecemeal approach depends on what counts as {{sq:fair}}.]] [[c4:If fairness is judged case by case, the absence of a general duty may matter little; if it is judged by how predictable the law is for the businesses that rely on it, a patchwork of specific rules is harder to defend.]]",
+  "annotations": {
+    "c1": "Adeyemi's two quotations become one sentence of summary. Because this sums up his overall position rather than quoting his words, no page number is needed.",
+    "c2": "One quotation is kept, because Holloway's exact claim is what the writer goes on to test.",
+    "c3": "The writer's voice arrives: a question about the key term in Holloway's claim.",
+    "c4": "The writer's own argument, built from both sources — and now it is argued, not just asserted."
+  },
+  "notes": [
+    {
+      "disciplines": ["law"],
+      "text": "In law, you will quote judgments and legislation often, because the exact wording can decide a case. With academic commentary, it's usually better to summarise the argument and quote only the phrase you want to examine."
+    },
+    {
+      "styles": ["oscola"],
+      "text": "In OSCOLA, 'ibid' (in the same place) refers to the immediately preceding footnote — see the flawed version's second note. A later citation of a source that isn't in the previous footnote uses a short form with a cross-reference instead, e.g. Adeyemi (n 1)."
+    },
+    {
+      "styles": ["chicago-nb", "oscola"],
+      "text": "In footnote styles, the citation is at the bottom of the page, so the sentence itself must make it clear whose idea is whose. That's why the repaired version names Adeyemi and Holloway in the text."
+    },
+    {
+      "styles": ["chicago-nb"],
+      "text": "Chicago's 18th edition discourages 'ibid.' and uses a shortened note instead — the author's surname, a short title and the page — as in the flawed version's second note."
+    }
+  ],
+  "chefsNote": "Three garnishes don't make a meal. Somebody still has to cook."
+}

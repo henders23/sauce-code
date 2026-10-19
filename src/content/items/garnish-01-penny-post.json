@@ -1,0 +1,97 @@
+{
+  "_note": "Fictional sources for teaching: every source cited here, and every quotation from it, is invented. See sources.json.",
+  "id": "garnish-01",
+  "module": "garnish",
+  "activity": "taste-test",
+  "title": "The dropped quote",
+  "disciplines": ["humanities"],
+  "difficulty": 1,
+  "context": "Two history students are writing about the penny post, introduced in Britain in 1840. Both quote the same sentence from the same book.",
+  "question": "Which version uses the quotation better?",
+  "versions": [
+    {
+      "id": "a",
+      "label": "Version A",
+      "rating": "weak",
+      "text": "The introduction of the penny post in 1840 is often described as a turning point in British communication. Before this, sending a letter was expensive, and the cost was usually paid by the person who received it. {{q:For the first time, a servant in Manchester could write to her mother in Cornwall as often as a merchant could write to his agent}} {{cite:fairbairn2018|page:42}}. The number of letters sent increased greatly in the years that followed. Many families used letters to keep in touch over long distances. The penny post was therefore a very important reform in Victorian Britain."
+    },
+    {
+      "id": "b",
+      "label": "Version B",
+      "rating": "proper",
+      "text": "The introduction of the penny post in 1840 is often described as a turning point in British communication, but historians disagree about whose lives it changed. {{cite:fairbairn2018|integral|page:42}} {{v:locates|located}} its significance in how far down the social scale it reached: {{q:For the first time, a servant in Manchester could write to her mother in Cornwall as often as a merchant could write to his agent}}. The comparison is telling, because it measures the reform against business correspondence, which had always been able to absorb high postage. Yet it may overstate the case: a penny was still a meaningful sum for a servant, and many could not write at all. The reform widened access to letter-writing, then, but it did not make it equal."
+    }
+  ],
+  "best": "b",
+  "picks": {
+    "a": "A reasonable instinct — Version A's quotation is vivid, and it's correctly cited. But it's 'dropped' into the paragraph: nothing introduces it, and nothing afterwards says what it shows. The reader is left to work out why it's there.",
+    "b": "Yes. Version B builds a quote sandwich: it introduces the quotation (who is speaking, and what point they're making), quotes, and then comments on it — and even questions it."
+  },
+  "reasonQuestion": "What makes the difference?",
+  "reasons": [
+    {
+      "id": "sandwich",
+      "text": "B introduces the quotation and then explains what it shows.",
+      "verdict": "strong",
+      "feedback": "Exactly — introduce, quote, comment. The comment is where the writer's own thinking appears."
+    },
+    {
+      "id": "questions",
+      "text": "B questions the source as well as using it.",
+      "verdict": "strong",
+      "feedback": "Yes. 'Yet it may overstate the case' shows the writer engaging with Fairbairn rather than simply agreeing. That is often what separates a strong history essay from a competent one."
+    },
+    {
+      "id": "speaks",
+      "text": "A's quotation speaks for itself, so it doesn't need a comment.",
+      "verdict": "weak",
+      "feedback": "A good quotation can feel as though it speaks for itself, but readers can draw different conclusions from it. The comment tells them which conclusion you are drawing, and why."
+    },
+    {
+      "id": "longer",
+      "text": "B's quotation is longer.",
+      "verdict": "weak",
+      "feedback": "The quotations are identical. The difference is in what surrounds them."
+    }
+  ],
+  "followUp": {
+    "question": "In Version B, which sentence is the 'comment' slice of the quote sandwich?",
+    "options": [
+      {
+        "id": "comment",
+        "text": "\"The comparison is telling, because it measures the reform against business correspondence…\"",
+        "good": true,
+        "feedback": "Yes. It explains what the quotation shows and why it matters. The sentence after it goes further, by testing the quotation's claim."
+      },
+      {
+        "id": "intro",
+        "text": "\"Fairbairn locates its significance in how far down the social scale it reached\"",
+        "feedback": "That's the introduction: it tells the reader who is speaking and what point the quotation will make, before the quotation arrives."
+      },
+      {
+        "id": "conclusion",
+        "text": "\"The reform widened access to letter-writing, then, but it did not make it equal.\"",
+        "feedback": "That's the writer's conclusion. It builds on the comment, but it's about the reform rather than about the quotation."
+      }
+    ]
+  },
+  "notes": [
+    {
+      "disciplines": ["humanities", "law"],
+      "text": "In history, quoting is normal when the exact wording matters — a vivid comparison like Fairbairn's, or the words of a primary source. But every quotation still needs a job, and the writer has to say what that job is."
+    },
+    {
+      "styles": ["apa", "mla"],
+      "text": "When the author is named in your sentence, APA and MLA put the page number straight after the quotation rather than next to the name."
+    },
+    {
+      "styles": ["chicago-ad", "chicago-nb", "apa", "mla", "ieee"],
+      "text": "This convention follows American punctuation: a full stop or comma that ends the sentence goes inside the closing quotation mark — unless a bracketed citation comes between them."
+    },
+    {
+      "styles": ["harvard", "oscola", "vancouver"],
+      "text": "This convention is shown with British punctuation: single quotation marks, and the sentence's full stop outside them."
+    }
+  ],
+  "chefsNote": "A quote without a comment is a garnish on an empty plate."
+}

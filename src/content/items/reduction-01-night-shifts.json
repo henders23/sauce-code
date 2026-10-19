@@ -1,0 +1,89 @@
+{
+  "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
+  "id": "reduction-01",
+  "module": "reduction",
+  "activity": "taste-test",
+  "title": "Too much in the pan",
+  "disciplines": ["health"],
+  "difficulty": 1,
+  "context": "A student is arguing that hospitals should target hand-hygiene training at night shifts. Both versions use the same study.",
+  "question": "Which version uses the study better to support the writer's argument?",
+  "versions": [
+    {
+      "id": "a",
+      "label": "Version A",
+      "rating": "weak",
+      "text": "Hand hygiene matters for patient safety. {{cite:mensah2020|integral}} observed 412 staff across three regional hospitals over six months. They used trained observers who stood at ward entrances and recorded whether staff cleaned their hands before touching a patient. Observers worked in pairs and swapped wards every week to reduce bias. Day shifts were observed on weekdays and night shifts at weekends. Compliance was 78 per cent on day shifts and 61 per cent on night shifts. The researchers also interviewed 24 nurses, who mentioned tiredness and having fewer senior staff on duty at night. The study was funded by a regional health board. Night shifts are therefore important."
+    },
+    {
+      "id": "b",
+      "label": "Version B",
+      "rating": "proper",
+      "text": "Hand-hygiene training is usually timed for day shifts, but the evidence suggests that night shifts need it most. In a six-month observational study across three regional hospitals, {{cite:mensah2020|integral}} found that compliance fell from 78 per cent during the day to 61 per cent at night, and linked the drop to fatigue and thinner senior cover. For a hospital planning its training budget, this is the detail that matters: the problem is not that staff do not know the rules, but that the conditions of night work make the rules harder to follow. Training that ignores those conditions is likely to have limited effect."
+    }
+  ],
+  "best": "b",
+  "picks": {
+    "a": "A reasonable instinct — Version A is thorough, and everything in it is accurate. But look at how much of it the reader actually needs for the argument about night shifts. The writer retells the study step by step, and their own point only arrives in the last sentence, without explanation.",
+    "b": "Yes. Version B is a reduction: it keeps the two findings that matter for the argument (the drop at night, and the likely causes) and leaves out the method details. That frees up space for the writer to say what the finding means."
+  },
+  "reasonQuestion": "What makes the difference?",
+  "reasons": [
+    {
+      "id": "selection",
+      "text": "B keeps only the findings that support the writer's point.",
+      "verdict": "strong",
+      "feedback": "Exactly. Summarising is choosing. A good summary is shaped by the job the source has to do in your paragraph."
+    },
+    {
+      "id": "voice",
+      "text": "B starts and ends with the writer's own point, not with the study.",
+      "verdict": "strong",
+      "feedback": "Yes — and this is only possible because the summary is short. The study sits inside the writer's argument instead of replacing it."
+    },
+    {
+      "id": "detail",
+      "text": "A gives more detail, which shows the writer has read the study carefully.",
+      "verdict": "weak",
+      "feedback": "A common belief, and a fair one: detail can show careful reading. But markers usually reward judgement about which details matter. Version A reads more like a description of the study than an argument that uses it."
+    },
+    {
+      "id": "names",
+      "text": "B names the authors in the sentence.",
+      "verdict": "weak",
+      "feedback": "Both versions do that, so it isn't the difference here. Look at what happens after the authors are named."
+    }
+  ],
+  "followUp": {
+    "question": "If Version A could keep only one detail from the study, which should it be?",
+    "options": [
+      {
+        "id": "figures",
+        "text": "Compliance was 78 per cent on day shifts and 61 per cent on night shifts.",
+        "good": true,
+        "feedback": "Yes. This is the finding the argument depends on. Everything else is supporting detail."
+      },
+      {
+        "id": "observers",
+        "text": "Observers worked in pairs and swapped wards every week.",
+        "feedback": "This only matters if the writer is discussing how reliable the study is. For an argument about where to target training, it can go."
+      },
+      {
+        "id": "funding",
+        "text": "The study was funded by a regional health board.",
+        "feedback": "Funding can matter if there's a possible conflict of interest, but nothing in this paragraph uses it. As it stands, it's a detail with no job."
+      }
+    ]
+  },
+  "notes": [
+    {
+      "disciplines": ["health", "life-sciences"],
+      "text": "In health and life sciences, writers almost always summarise findings in their own words rather than quoting them. Precise numbers are reported, but the method is usually described only when it affects how far you can trust the result."
+    },
+    {
+      "styles": ["mla"],
+      "text": "Because this paragraph summarises the study as a whole, MLA needs no page number here — just the authors' names. A page number is needed when you quote, or paraphrase a specific passage."
+    }
+  ],
+  "chefsNote": "Reduce until only the flavour your argument needs is left."
+}

@@ -1,0 +1,49 @@
+{
+  "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
+  "id": "seasoning-02",
+  "module": "seasoning",
+  "activity": "highlight-voices",
+  "title": "Who's speaking?",
+  "disciplines": ["engineering"],
+  "difficulty": 2,
+  "context": "An engineering student is evaluating 3D-printed concrete for housing.",
+  "question": "Mark each part of the paragraph: is it the source's idea, the writer's own, or both (the writer building on a source)?",
+  "text": "[[s1:3D-printed concrete is often promoted as a fast, low-waste way to build affordable housing.]] [[s2:Its main structural weakness lies at the joins between printed layers, where the bond is weaker than within each layer {{cite:osei2020}}.]] [[s3:Laboratory tests have also found that this bond weakens further when walls cure at low temperatures {{cite:lindqvist2021}}.]] [[s4:Lindqvist's samples were small, however, and were cured in controlled conditions rather than on site.]] [[s5:Taken together, these findings suggest that printed housing may be less suited to cold climates than its promoters imply,]] [[s6:at least until methods that strengthen the joins between layers have been tested outside the laboratory.]]",
+  "key": {
+    "s1": {
+      "voice": "writer",
+      "note": "The writer's framing. It describes how the technology is promoted, as general background. (If this were a specific, contestable claim, it would need a citation.)"
+    },
+    "s2": {
+      "voice": "source",
+      "note": "Osei's finding, reported in the writer's words and cited."
+    },
+    "s3": {
+      "voice": "source",
+      "note": "Lindqvist's finding. 'Also' is the writer's link, but the content is the source's."
+    },
+    "s4": {
+      "voice": "both",
+      "note": "The facts about the samples come from the source, but 'however' turns them into the writer's evaluation of it."
+    },
+    "s5": {
+      "voice": "both",
+      "note": "The writer's inference, built on both sources: 'Taken together' signals synthesis. No source says this on its own."
+    },
+    "s6": {
+      "voice": "writer",
+      "note": "The writer's own qualification, pointing to what is still unknown."
+    }
+  },
+  "notes": [
+    {
+      "disciplines": ["engineering", "life-sciences", "health"],
+      "text": "In engineering, you'd almost never quote a source like this. You paraphrase the finding and cite it, as every sentence here does — so the writer's voice has to come through in how the findings are framed, linked and evaluated."
+    },
+    {
+      "styles": ["ieee", "vancouver"],
+      "text": "In numeric styles, a bare number tells the reader nothing about who is speaking. Naming the author when it matters — 'Lindqvist's samples were small' — makes it clear whose work is being evaluated."
+    }
+  ],
+  "chefsNote": "If the reader can't tell the sauce from the dish, you've served soup."
+}

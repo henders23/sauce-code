@@ -1,0 +1,77 @@
+{
+  "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
+  "id": "reduction-02",
+  "module": "reduction",
+  "activity": "fix-sauce",
+  "title": "A quotation doing a summary's job",
+  "disciplines": [
+    "social-sciences"
+  ],
+  "difficulty": 2,
+  "context": "A student is writing about hybrid working policies.",
+  "question": "Something isn't working in this paragraph. What is the main problem?",
+  "text": "Remote work has become common since 2020, and many employers now offer hybrid contracts that let staff work from home for part of the week. However, there may be hidden costs for staff. {{cite:brennan2022|integral|page:87}} {{v:writes|wrote}} that {{q:workers who spend most of the week at home report fewer casual conversations, fewer chances to ask quick questions, and a weaker sense that colleagues know what they are working on}}. This shows that remote work can be lonely for some people, and that its effects are not always obvious. Employers should therefore think about this carefully when they design new hybrid policies for their staff.",
+  "problems": [
+    {
+      "id": "quote-not-summary",
+      "text": "A long quotation is doing a job that a short summary could do better.",
+      "correct": true,
+      "feedback": "Yes. Nothing about Brennan's exact wording matters here — it's her idea that matters. A 30-word quotation takes up a large part of the paragraph, and what follows simply repeats it ('remote work can be lonely') instead of developing it."
+    },
+    {
+      "id": "page",
+      "text": "The quotation is missing a page number.",
+      "correct": false,
+      "feedback": "Look again — the citation does include a page number, as it should for a quotation. The problem is less about formatting and more about how the source is used."
+    },
+    {
+      "id": "naming",
+      "text": "The writer shouldn't name the author in the sentence.",
+      "correct": false,
+      "feedback": "Naming the author is fine, and often helpful: it tells the reader exactly whose idea this is. The problem lies elsewhere."
+    },
+    {
+      "id": "conclusion",
+      "text": "The final sentence is too informal.",
+      "correct": false,
+      "feedback": "The final sentence is plain, but plain isn't a problem. The bigger issue is that the comment only repeats the quotation instead of developing it."
+    }
+  ],
+  "repaired": "Remote work has become common since 2020, and many employers now offer hybrid contracts that let staff work from home for part of the week. However, there may be hidden costs. [[c1:{{cite:brennan2022|integral}} {{v:argues|argued}} that working mostly from home gradually wears away the small, informal contacts through which colleagues stay aware of each other's work.]] [[c2:If this is right, the loneliness of remote work is not something a survey in the first month would detect; it builds slowly.]] [[c3:Employers designing hybrid policies may therefore need to track how connected staff feel over a longer period, not only at the point of change.]]",
+  "annotations": {
+    "c1": "Brennan's 30-word quotation becomes a one-sentence summary in the writer's own words. Because this sums up the main argument of her book rather than one passage, no page number is needed.",
+    "c2": "The writer now has room to do something with the idea: 'If this is right' tests it, and draws out what it means.",
+    "c3": "The writer's own conclusion follows from that reasoning, instead of arriving from nowhere."
+  },
+  "notes": [
+    {
+      "text": "When you summarise a source's overall argument, none of the eight conventions needs a page number. When you paraphrase one specific passage, they differ: MLA, Chicago and OSCOLA expect the page; APA makes it optional but encourages it; Harvard guidance varies between institutions; IEEE lets you add it inside the bracket. For a quotation, give the page: APA, Harvard, MLA, Chicago and OSCOLA all require it."
+    },
+    {
+      "styles": [
+        "apa"
+      ],
+      "text": "APA sets any quotation of 40 words or more as an indented block quotation, without quotation marks."
+    },
+    {
+      "styles": [
+        "mla"
+      ],
+      "text": "MLA sets a prose quotation that runs to more than four lines as an indented block quotation, without quotation marks."
+    },
+    {
+      "styles": [
+        "oscola"
+      ],
+      "text": "OSCOLA sets a quotation of more than three lines as an indented block, without quotation marks."
+    },
+    {
+      "styles": [
+        "chicago-ad",
+        "chicago-nb"
+      ],
+      "text": "Chicago sets a long quotation (about 100 words or more) as an indented block quotation, without quotation marks."
+    }
+  ],
+  "chefsNote": "If the quotation is longer than your comment on it, reduce it."
+}

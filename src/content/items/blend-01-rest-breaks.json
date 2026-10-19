@@ -1,0 +1,72 @@
+{
+  "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
+  "id": "blend-01",
+  "module": "blend",
+  "activity": "build-blend",
+  "title": "Making the sources talk to each other",
+  "disciplines": ["health"],
+  "difficulty": 2,
+  "context": "A nursing student wants to argue for a change to how clinical placements are organised. They have notes on four sources.",
+  "question": "Decide what each source can do for this claim.",
+  "claim": "Clinical placements should build protected rest into nursing students' shifts.",
+  "summaries": [
+    {
+      "id": "lin",
+      "source": "lin2018",
+      "text": "Students on rotating shift patterns slept on average 1.4 hours less per night than students on fixed day shifts.",
+      "role": "supports",
+      "feedback": {
+        "supports": "Yes. This establishes the problem the claim responds to: shift patterns cost students sleep.",
+        "complicates": "It doesn't push against the claim — it's the starting point for it. Shift patterns cost students sleep, which is the problem protected rest would address.",
+        "irrelevant": "It's very relevant: it establishes the problem the claim responds to."
+      }
+    },
+    {
+      "id": "okafor",
+      "source": "okafor2021",
+      "text": "Poor sleep was associated with higher stress and lower placement assessment scores. The study could not show that poor sleep caused the lower scores.",
+      "role": "supports",
+      "feedback": {
+        "supports": "Yes — it explains why lost sleep matters. But keep its limit in mind: it shows an association, not a cause. A careful writer says so.",
+        "complicates": "You've spotted something important: the study can't show cause. That's a limit to acknowledge, but overall the source still supports the claim by linking sleep to stress and performance.",
+        "irrelevant": "It's relevant: it explains why lost sleep matters for students' learning."
+      }
+    },
+    {
+      "id": "varga",
+      "source": "varga2023",
+      "text": "On wards that introduced a scheduled 20-minute rest break, students reported less fatigue. However, the breaks were often skipped when wards were short-staffed.",
+      "role": "complicates",
+      "feedback": {
+        "supports": "Partly — breaks did reduce fatigue. But the second finding complicates things: breaks only work if they actually happen. That is the most useful part of this source.",
+        "complicates": "Yes. It supports breaks in principle, but shows they get skipped under pressure — which lets the writer sharpen the claim: rest has to be protected, not just offered.",
+        "irrelevant": "It's directly relevant: it's the only source that tests rest breaks themselves."
+      }
+    },
+    {
+      "id": "price",
+      "source": "price2019",
+      "text": "Most nursing students said they would prefer placements in community settings rather than on hospital wards.",
+      "role": "irrelevant",
+      "feedback": {
+        "supports": "It's about where students want to train, not about rest or sleep. Using it here would pull the paragraph off its point.",
+        "complicates": "It doesn't really push against the claim — it's about a different question (where students want to train).",
+        "irrelevant": "Yes. It's an interesting finding, but not for this claim. Leaving a source out is part of synthesis too."
+      }
+    }
+  ],
+  "synthesis": "[[s1:Clinical placements should build protected rest into nursing students' shifts.]] [[s2:Students on rotating shifts sleep considerably less than those on fixed day patterns {{cite:lin2018}}, and poor sleep has been linked to higher stress and weaker placement performance {{cite:okafor2021}}.]] [[s3:The second finding is an association rather than proof of cause, but taken together the two studies suggest a plausible chain from shift pattern to sleep to performance.]] [[s4:Scheduled breaks appear to help: on wards where they were introduced, students reported feeling less tired {{cite:varga2023}}. The same study, however, found that breaks were often skipped when wards were short-staffed, which suggests that rest must be protected in the rota itself rather than left to the goodwill of busy teams.]]",
+  "annotations": {
+    "s1": "The paragraph opens with the writer's claim, not with a source.",
+    "s2": "Two sources are linked in one sentence, each doing a different job: one shows the problem, the other shows why it matters.",
+    "s3": "The writer evaluates the evidence (association, not cause) and says what the sources show together. This is the synthesis.",
+    "s4": "The complicating source is used to sharpen the claim — 'protected' rest — rather than ignored. The fourth source has been left out."
+  },
+  "notes": [
+    {
+      "styles": ["ieee", "vancouver"],
+      "text": "In numeric styles, the reader can't see who wrote what from the numbers alone. In a synthesis that doesn't matter much when you are combining findings — but when you weigh one source against another, consider naming the authors."
+    }
+  ],
+  "chefsNote": "A blend isn't a list of ingredients. It's what happens when they meet."
+}

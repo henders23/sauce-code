@@ -1,0 +1,90 @@
+{
+  "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
+  "id": "remix-02",
+  "module": "remix",
+  "activity": "taste-test",
+  "title": "Same idea, different structure",
+  "disciplines": ["social-sciences"],
+  "difficulty": 2,
+  "context": "Two students have used the same source in a paragraph about delivery-app workers. Here is the original.",
+  "question": "Which version paraphrases the source properly?",
+  "sourcePassage": {
+    "source": "kowalczyk2020",
+    "where": "from the abstract",
+    "text": "Platform work is often marketed as offering flexibility, but for many workers this flexibility is largely one-sided: the platform can change pay rates, working conditions and access to tasks at short notice, while the worker absorbs the financial risk of quiet periods."
+  },
+  "versions": [
+    {
+      "id": "a",
+      "label": "Version A",
+      "rating": "weak",
+      "text": "Delivery apps have grown quickly in UK cities over the last decade. Platform work is often advertised as giving flexibility, but for lots of workers this flexibility is mostly one-sided, because the platform can alter pay rates, working conditions and access to jobs at short notice, while the worker takes on the financial risk of quiet times {{cite:kowalczyk2020}}. This is a problem for workers. The government should consider regulating these apps so that riders are better protected from sudden changes to their income, and so that the risks of the job are shared more fairly between the platform and the people who work for it."
+    },
+    {
+      "id": "b",
+      "label": "Version B",
+      "rating": "proper",
+      "text": "Delivery apps have grown quickly in UK cities over the last decade, usually on the promise that riders can work whenever they choose. {{cite:kowalczyk2020|integral}} {{v:turns|turned}} this promise around: in her account, the freedom belongs mainly to the platform, which can cut pay or withdraw work with little notice, while riders carry the cost when orders dry up. If that is the case, {{sq:flexibility}} describes the business model more than the job. Regulation that focuses only on hourly pay may therefore miss the deeper imbalance, which lies in who bears the risk when demand falls. That is a question about risk, not just about rates of pay."
+    }
+  ],
+  "best": "b",
+  "picks": {
+    "a": "A reasonable instinct — Version A is accurate and it cites the source. But read its second sentence next to the original: it follows the same structure, swapping in a few synonyms ('advertised' for 'marketed', 'lots of' for 'many'). That's patchwriting.",
+    "b": "Yes. Version B keeps Kowalczyk's meaning but rebuilds it: different sentence structure, different words, and a clear sign of where her account ends ('If that is the case…') and the writer's argument begins."
+  },
+  "reasonQuestion": "What makes the difference?",
+  "reasons": [
+    {
+      "id": "structure",
+      "text": "B changes the sentence structure, not just individual words.",
+      "verdict": "strong",
+      "feedback": "Exactly. A real paraphrase rebuilds the idea. Swapping words inside the original structure (Version A) is patchwriting, even with a citation."
+    },
+    {
+      "id": "interpretation",
+      "text": "B adds the writer's own interpretation of the source.",
+      "verdict": "strong",
+      "feedback": "Yes — and notice that this is only possible because B has digested the idea. Patchwriting tends to leave no room for the writer's voice."
+    },
+    {
+      "id": "enough-words",
+      "text": "A changes enough words to count as a paraphrase.",
+      "verdict": "weak",
+      "feedback": "This is a very common belief, but there's no 'number of changed words' that makes a paraphrase. If the structure and most of the wording come from the source, it is patchwriting."
+    },
+    {
+      "id": "informal",
+      "text": "B is written more informally.",
+      "verdict": "weak",
+      "feedback": "B uses an image ('when orders dry up'), but its register is still academic. The real difference is how each version handles the source's wording."
+    }
+  ],
+  "followUp": {
+    "question": "Version A cites its source. Why might a marker still treat it as poor academic practice?",
+    "options": [
+      {
+        "id": "wording",
+        "text": "Because most of the wording is the source's, but it isn't marked as a quotation.",
+        "good": true,
+        "feedback": "Yes. A citation tells the reader whose idea it is. Quotation marks tell them whose words they are. Version A gives credit for the idea but presents someone else's words as the writer's own."
+      },
+      {
+        "id": "too-short",
+        "text": "Because the citation should be longer.",
+        "feedback": "The citation itself is fine. The issue is the sentence in front of it."
+      },
+      {
+        "id": "abstract",
+        "text": "Because you shouldn't use abstracts as sources.",
+        "feedback": "You'd normally read the full article, not just the abstract. But the problem here would be the same wherever the passage came from."
+      }
+    ]
+  },
+  "notes": [
+    {
+      "styles": ["chicago-nb", "oscola"],
+      "text": "In footnote styles, a reader of Version A sees only a small note number. Version B names Kowalczyk in the sentence, so it is clear whose argument this is without looking down at the footnote."
+    }
+  ],
+  "chefsNote": "A remix uses the same ingredients. It doesn't use the same recipe card."
+}

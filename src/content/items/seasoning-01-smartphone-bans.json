@@ -1,0 +1,92 @@
+{
+  "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
+  "id": "seasoning-01",
+  "module": "seasoning",
+  "activity": "pick-verb",
+  "title": "A pinch of 'suggests'",
+  "disciplines": ["social-sciences"],
+  "difficulty": 1,
+  "context": "An education student is writing about smartphone bans in schools. Read the whole paragraph before you choose.",
+  "question": "Which reporting verb fits best? Try more than one: several can work, but each says something different about the writer's view.",
+  "text": "Many schools in England have introduced bans on smartphones during the school day. {{cite:raman2021|integral}} {{gap}} that such bans improve pupils' concentration in lessons, based on a survey of teachers in six secondary schools. Because the evidence comes from teachers' impressions rather than from measures of pupils' attention, it is difficult to know how much of the reported improvement reflects a real change. A ban may also make teachers more alert to distraction, which could affect how they answer. Research that measures attention directly, for example through classroom observation, would help to show whether the benefits are as large as the survey implies.",
+  "options": [
+    {
+      "present": "suggests",
+      "past": "suggested",
+      "verdict": "good",
+      "signal": "Tentative. The source offers evidence, but the claim isn't settled.",
+      "feedback": "A strong choice. It matches the evidence (a survey of impressions) and the writer's caution in the sentences that follow."
+    },
+    {
+      "present": "argues",
+      "past": "argued",
+      "verdict": "good",
+      "signal": "Neutral. The source puts forward a position, which may be contested.",
+      "feedback": "This works. It reports Raman's position without endorsing it, leaving the writer free to question it in the next sentence."
+    },
+    {
+      "present": "claims",
+      "past": "claimed",
+      "verdict": "possible",
+      "signal": "Distancing. Often signals that the writer doubts the source.",
+      "feedback": "Possible, because the writer is sceptical. But 'claims' can sound dismissive before the writer has given any reasons. Here, 'suggests' or 'argues' lets the reasons do the work."
+    },
+    {
+      "present": "shows",
+      "past": "showed",
+      "verdict": "clash",
+      "signal": "Endorsing. Presents the finding as established fact.",
+      "feedback": "This clashes with the rest of the paragraph. 'Shows' tells the reader the writer accepts the finding as fact — then the next sentence says it's difficult to know whether it's real."
+    },
+    {
+      "present": "notes",
+      "past": "noted",
+      "verdict": "clash",
+      "signal": "Accepting. Treats the point as an uncontroversial observation.",
+      "feedback": "'Notes' suits a factual observation the writer accepts. It undersells how contestable this finding is — which the writer goes on to point out."
+    },
+    {
+      "present": "admits",
+      "past": "admitted",
+      "verdict": "clash",
+      "signal": "Concession. Implies the source is reluctantly accepting something against its own position.",
+      "feedback": "'Admits' implies Raman conceded this, perhaps against her own argument. Nothing suggests that here — it's her main finding."
+    }
+  ],
+  "followUp": {
+    "question": "Which part of the paragraph most clearly shows that the writer is cautious about Raman's finding?",
+    "options": [
+      {
+        "id": "because",
+        "text": "\"Because the evidence comes from teachers' impressions rather than from measures of pupils' attention…\"",
+        "good": true,
+        "feedback": "Yes. The writer gives a reason for caution, based on how the evidence was gathered. Your reporting verb should be consistent with this."
+      },
+      {
+        "id": "many",
+        "text": "\"Many schools in England have introduced bans…\"",
+        "feedback": "That's background, stated as fact. The writer's stance on Raman appears later."
+      },
+      {
+        "id": "survey",
+        "text": "\"…based on a survey of teachers in six secondary schools.\"",
+        "feedback": "This describes the study neutrally. It's the next sentence that turns this detail into a reason for caution."
+      }
+    ]
+  },
+  "notes": [
+    {
+      "styles": ["apa"],
+      "text": "APA recommends the past tense (suggested, argued) or present perfect (has suggested) for reporting what a source said, so the verbs here appear in the past tense."
+    },
+    {
+      "styles": ["mla"],
+      "text": "MLA prefers the present tense for discussing sources (Raman suggests), even when the work was published in the past."
+    },
+    {
+      "styles": ["harvard", "chicago-ad", "chicago-nb", "ieee", "vancouver", "oscola"],
+      "text": "This convention doesn't fix a tense for reporting verbs. The present tense (suggests) is common, but follow your department's practice and be consistent."
+    }
+  ],
+  "chefsNote": "'Suggests' and 'proves' are very different seasonings. Taste before you add."
+}
