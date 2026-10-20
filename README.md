@@ -1,7 +1,7 @@
 # Sauce Code
 
-Learning to use sources well in academic writing — by tasting weak sauce and
-proper sauce side by side.
+Learning to use sources well in academic writing — by comparing weaker and
+stronger paragraphs side by side.
 
 Students look at short academic paragraphs, make a judgement, and get feedback
 that responds to what they chose. Every paragraph re-renders in the student's
@@ -23,16 +23,19 @@ npm run build      # static site in dist/
 ## What's here
 
 * **A short start**: a minimal intro, two setup questions (referencing style, then optional discipline), and a first exercise.
-* **Five Mother Sauces** (modules): The Reduction (summarising), The Remix
-  (paraphrasing), The Garnish (quoting), The Blend (synthesising), The
-  Seasoning (stance and voice).
-* **Seven activity types**: Taste Test, Find the Seam, Highlight the Voices,
-  Pick the Verb, Fix the Sauce, Spot the Patchwriting, Build the Blend.
+* **Five modules**: Summarising, Paraphrasing, Quoting, Synthesising, and
+  Stance and voice.
+* **Seven activity types**: Compare versions, Find where the source ends, Who
+  is speaking?, Choose a reporting verb, Find the main problem, Spot copied
+  phrases, Combine sources.
+* **Purpose first**: the task stays on screen above every text, and versions are
+  shown one at a time, then side by side for the decision.
 * **21 seed items** (four or five per module) across six disciplines, all using **fictional sources**.
 * **Gradual reveal**: within each module, the next item unlocks when the student finishes the one before.
-* **Convention switcher** always in the top bar; switching re-renders the
+* **Style switcher** always in the top bar; switching re-renders the
   current paragraph straight away, without losing your answers.
 * **Optional discipline**: puts matching items first and adds discipline notes.
+  Change it from the modules page.
 * **Progress** saved in `localStorage` only; the app works if storage is blocked.
 * Keyboard-operable activities; source and writer voices are never marked by
   colour alone.

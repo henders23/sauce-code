@@ -25,7 +25,7 @@
       "id": "too-short",
       "text": "The summary is too short.",
       "correct": false,
-      "feedback": "Short is fine — that's what a reduction is. The problem is that the short version no longer says what the source said."
+      "feedback": "Short is fine — that's what a summary is. The problem is that the short version no longer says what the source said."
     },
     {
       "id": "quote",
@@ -52,5 +52,5 @@
       "text": "In engineering and the sciences, a summary usually reports a finding together with its conditions (here, laboratory tests) and its limits. Dropping either changes what the source says."
     }
   ],
-  "chefsNote": "A reduction concentrates the flavour. It doesn't add new ingredients."
+  "chefsNote": "A summary shortens the source. It doesn't add claims the source didn't make."
 }
