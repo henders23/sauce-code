@@ -2,11 +2,12 @@ import { useState } from 'react';
 import type { FollowUp as FollowUpData } from '../content/types';
 import { Feedback } from './Feedback';
 
-export function FollowUp({ data, onAnswered }: { data: FollowUpData; onAnswered: () => void }) {
+/** `inline` drops the card frame, for a follow-up shown inside an activity's answer panel. */
+export function FollowUp({ data, onAnswered, inline = false }: { data: FollowUpData; onAnswered: () => void; inline?: boolean }) {
   const [picked, setPicked] = useState<string | null>(null);
   const choice = data.options.find((o) => o.id === picked);
   return (
-    <section className="card stack fade-in" aria-labelledby="followup-q">
+    <section className={inline ? 'stack fade-in' : 'card stack fade-in'} aria-labelledby="followup-q">
       <p className="eyebrow">One more question</p>
       <h3 id="followup-q" style={{ fontSize: 19, fontWeight: 600 }}>
         {data.question}

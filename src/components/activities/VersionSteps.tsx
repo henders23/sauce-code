@@ -34,6 +34,7 @@ export function VersionSteps({
   idPrefix,
   rated,
   selected,
+  source,
   children,
 }: {
   versions: Version[];
@@ -42,6 +43,8 @@ export function VersionSteps({
   /** Show each version's rating — once the student has answered. */
   rated: boolean;
   selected?: string | null;
+  /** An original passage the versions are judged against: kept on screen with them. */
+  source?: ReactNode;
   children: ReactNode;
 }) {
   const [step, setStep] = useState(0);
@@ -80,6 +83,7 @@ export function VersionSteps({
             )}
           </div>
         </div>
+        {source}
         <VersionCard v={v} style={style} idPrefix={`${idPrefix}-${v.id}`} rated={false} />
         <div className="row" style={{ justifyContent: 'flex-end' }}>
           <button type="button" className="btn btn-primary" onClick={() => setStep(step + 1)}>
@@ -91,13 +95,17 @@ export function VersionSteps({
   }
 
   return (
-    <div ref={compare} className="stack fade-in compare" style={{ gap: 16 }}>
-      <div className="grid-2">
-        {versions.map((v) => (
-          <VersionCard key={v.id} v={v} style={style} idPrefix={`${idPrefix}-${v.id}`} rated={rated} selected={selected === v.id} />
-        ))}
+    <div ref={compare} className="compare fade-in">
+      <div className="stack" style={{ gap: 16 }}>
+        {source}
+        <div className="compare-grid">
+          {versions.map((v) => (
+            <VersionCard key={v.id} v={v} style={style} idPrefix={`${idPrefix}-${v.id}`} rated={rated} selected={selected === v.id} />
+          ))}
+        </div>
       </div>
-      {children}
+      {/* Beside the texts on wide screens, so every question is answered with them in view. */}
+      <div className="compare-panel">{children}</div>
     </div>
   );
 }

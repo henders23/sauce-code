@@ -68,7 +68,9 @@ export function ItemShell({ item, onFinished, next }: Props) {
   const [followUpDone, setFollowUpDone] = useState(false);
   const module = MODULES.find((m) => m.id === item.module)!;
   const activity = ACTIVITY_LABEL[item.activity];
-  const finished = answered && (!item.followUp || followUpDone);
+  // Compare-versions asks its follow-up inside its own answer panel, beside the texts.
+  const ownFollowUp = item.activity === 'taste-test';
+  const finished = answered && (ownFollowUp || !item.followUp || followUpDone);
 
   const flags = useMemo<RenderFlags>(() => {
     const all = itemTexts(item).map((t) => renderText(t.text, style, lookupSource, { gap: { present: 'x', past: 'x' } }).flags);
@@ -113,7 +115,7 @@ export function ItemShell({ item, onFinished, next }: Props) {
         </div>
       )}
 
-      {answered && item.followUp && <FollowUp data={item.followUp} onAnswered={() => setFollowUpDone(true)} />}
+      {answered && item.followUp && !ownFollowUp && <FollowUp data={item.followUp} onAnswered={() => setFollowUpDone(true)} />}
 
       {finished && (
         <FinishedSection
@@ -150,7 +152,7 @@ function FinishedSection({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <>
+    <div id={`${item.id}-end`} className="stack" style={{ gap: 24, scrollMarginTop: 84 }}>
       <ConventionNotes style={style} discipline={discipline} itemDisciplines={item.disciplines} notes={item.notes} flags={flags} />
       <div className="key-point stack fade-in" style={{ gap: 4 }}>
         <span className="eyebrow">Key point</span>
@@ -164,6 +166,6 @@ function FinishedSection({
           </svg>
         </a>
       </div>
-    </>
+    </div>
   );
 }

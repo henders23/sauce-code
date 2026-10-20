@@ -258,9 +258,26 @@ details.refs .num { color: var(--cite-fg); min-width: 2em; flex: none; }
 .version-tab[aria-current='step'] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 .version-tab.locked { border-style: dashed; border-color: var(--faint); color: var(--faint); cursor: default; }
 .card-selected { border-color: var(--accent); }
-.compare { scroll-margin-top: 84px; }
-.compare .card { padding: 20px 24px; }
-.compare .para { font-size: 17px; line-height: 1.6; }
+.compare { display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 84px; }
+.compare .card { padding: 16px 22px; }
+.compare .source-box { padding: 14px 20px; gap: 6px; }
+.compare .para { font-size: 16px; line-height: 1.55; }
+.compare .notes-list li { font-size: 14px; }
+.compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+/* Wide screens: texts side by side, answer panel beside them and pinned in view. */
+@media (min-width: 1100px) {
+  /* Wider than the page column, and tall enough to scroll to the top of the screen. */
+  .compare {
+    display: grid; grid-template-columns: minmax(0, 1fr) 360px; align-items: start; min-height: calc(100vh - 100px);
+    width: min(1440px, calc(100vw - 48px)); margin-left: calc(50% - min(720px, 50vw - 24px));
+  }
+  .compare-panel { font-size: 15px; }
+  .compare-panel .feedback { font-size: 15px; padding: 12px 14px; }
+  .compare-panel .option { font-size: 15px; min-height: 44px; padding: 10px 14px; }
+  .compare-grid { grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); grid-template-columns: none; }
+  /* No scroll anchoring: swapping the panel's question must not shift the texts. */
+  .compare-panel { position: sticky; top: 84px; max-height: calc(100vh - 100px); overflow-y: auto; overflow-anchor: none; }
+}
 
 /* ------------------------------------------------------------- modules */
 .module-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }

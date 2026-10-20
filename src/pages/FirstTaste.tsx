@@ -7,6 +7,7 @@ import { Feedback } from '../components/Feedback';
 import { VersionSteps } from '../components/activities/VersionSteps';
 
 const DEMO = itemById('garnish-01') as TasteTestItem;
+const BEST = DEMO.versions.find((v) => v.id === DEMO.best)!.label;
 
 const HOW = [
   ['Read', 'Short paragraphs, one at a time. The task is always on screen.'],
@@ -32,6 +33,7 @@ export function FirstTaste() {
   const [started, setStarted] = useState(false);
   const [pick, setPick] = useState<string | null>(null);
   const [checked, setChecked] = useState(false);
+  const [onPattern, setOnPattern] = useState(false);
 
   if (!started) {
     return (
@@ -83,60 +85,67 @@ export function FirstTaste() {
       </header>
 
       <VersionSteps versions={DEMO.versions} style={effectiveStyle} idPrefix="demo" rated={checked} selected={pick}>
-        <section className="panel stack" aria-label="Your answer">
-          <span id="demo-pick" style={{ fontWeight: 600, fontSize: 17 }}>
-            {DEMO.question}
-          </span>
-          <div className="spread">
-            <div className="row" role="radiogroup" aria-labelledby="demo-pick">
-              {DEMO.versions.map((v) => (
-                <button
-                  key={v.id}
-                  type="button"
-                  role="radio"
-                  aria-checked={pick === v.id}
-                  className="chip"
-                  style={{ minWidth: 160 }}
-                  disabled={checked}
-                  onClick={() => setPick(v.id)}
-                >
-                  {v.label} works better
+        {/* One step at a time in the panel beside the texts: choose, feedback, then the pattern. */}
+        <section className="panel stack" aria-label="Your answer" aria-live="polite">
+          {!checked || !pick ? (
+            <>
+              <span id="demo-pick" style={{ fontWeight: 600, fontSize: 17 }}>
+                {DEMO.question}
+              </span>
+              <div className="row" role="radiogroup" aria-labelledby="demo-pick">
+                {DEMO.versions.map((v) => (
+                  <button
+                    key={v.id}
+                    type="button"
+                    role="radio"
+                    aria-checked={pick === v.id}
+                    className="chip"
+                    style={{ minWidth: 160 }}
+                    onClick={() => setPick(v.id)}
+                  >
+                    {v.label} works better
+                  </button>
+                ))}
+              </div>
+              <div className="row" style={{ justifyContent: 'flex-end' }}>
+                <button type="button" className="btn btn-primary" disabled={pick === null} onClick={() => setChecked(true)}>
+                  Check my answer
                 </button>
-              ))}
-            </div>
-            {!checked && (
-              <button type="button" className="btn btn-primary" disabled={pick === null} onClick={() => setChecked(true)}>
-                Check my answer
-              </button>
-            )}
-          </div>
-
-          {checked && pick && (
-            <div className="stack" style={{ gap: 16 }}>
+              </div>
+            </>
+          ) : !onPattern ? (
+            <>
               <Feedback tone={right ? 'good' : 'partial'} tag={right ? 'Correct' : 'Not quite'}>
                 {DEMO.picks[pick]}
               </Feedback>
-              <div className="stack" style={{ gap: 8 }}>
-                <p style={{ fontWeight: 600 }}>The pattern Version B follows is often called a quote sandwich:</p>
-                <ol className="anno-list">
-                  {SANDWICH.map(([step, text], i) => (
-                    <li key={step}>
-                      <span className="anno-num">{i + 1}</span>
-                      <span>
-                        <strong style={{ fontWeight: 600 }}>{step}</strong> — {text}
-                      </span>
-                    </li>
-                  ))}
-                </ol>
+              <div className="row" style={{ justifyContent: 'flex-end' }}>
+                <button type="button" className="btn btn-primary" onClick={() => setOnPattern(true)}>
+                  Why {BEST} works
+                  <Arrow />
+                </button>
               </div>
-              <div className="spread divided">
+            </>
+          ) : (
+            <>
+              <p style={{ fontWeight: 600 }}>{BEST} follows a pattern often called a quote sandwich:</p>
+              <ol className="anno-list">
+                {SANDWICH.map(([step, text], i) => (
+                  <li key={step}>
+                    <span className="anno-num">{i + 1}</span>
+                    <span>
+                      <strong style={{ fontWeight: 600 }}>{step}</strong> — {text}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+              <div className="stack divided" style={{ gap: 14 }}>
                 <span className="muted">Every exercise works this way: you decide first, then see why.</span>
                 <a className="btn btn-primary" href={href.menu}>
                   Choose a module
                   <Arrow />
                 </a>
               </div>
-            </div>
+            </>
           )}
         </section>
       </VersionSteps>
