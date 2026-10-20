@@ -53,11 +53,11 @@ export function ModulePage({
                 aria-current={i === index ? 'step' : undefined}
                 style={{ display: 'inline-flex', padding: 7, margin: -7 }}
               >
-                <span className={i === index ? 'current' : isDone(it.id) ? 'done' : ''} />
+                <span className={`dot${i === index ? ' current' : isDone(it.id) ? ' done' : ''}`} />
               </a>
             ) : (
               <span key={it.id} role="img" aria-label={`Item ${i + 1}, unlocks when you finish the one before`} style={{ display: 'inline-flex', padding: 7, margin: -7 }}>
-                <span className="locked" />
+                <span className="dot locked" />
               </span>
             ),
           )}

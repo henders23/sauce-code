@@ -157,7 +157,7 @@ function FinishedSection({
     <>
       <ConventionNotes style={style} discipline={discipline} itemDisciplines={item.disciplines} notes={item.notes} flags={flags} />
       <div className="chef fade-in">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flex: 'none', marginTop: 2 }}>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flex: 'none', marginTop: 2 }}>
           <path d="M6 13.9V20h12v-6.1A4 4 0 0 0 17 6a5 5 0 0 0-10 0 4 4 0 0 0-1 7.9z" />
           <path d="M6 17h12" />
         </svg>

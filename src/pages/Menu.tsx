@@ -38,14 +38,15 @@ export function Menu({ isDone, onReset }: { isDone: (id: string) => boolean; onR
                   {done} of {items.length} done
                 </span>
               </div>
-              <h2 className="serif" style={{ fontSize: 30, fontWeight: 400 }}>
-                {m.name} <span className="muted" style={{ fontFamily: 'var(--sans)', fontSize: 17 }}>— {m.plain}</span>
+              <h2 className="stack" style={{ gap: 4 }}>
+                <span className="serif" style={{ fontSize: 30, fontWeight: 400 }}>{m.name}</span>
+                <span className="muted" style={{ fontSize: 16, fontWeight: 500 }}>{m.plain}</span>
               </h2>
               <p className="muted">{m.blurb}</p>
               <div className="bar" role="progressbar" aria-label={`${m.name} progress`} aria-valuemin={0} aria-valuemax={items.length} aria-valuenow={done}>
                 <div style={{ width: `${(done / items.length) * 100}%` }} />
               </div>
-              <div>
+              <div style={{ marginTop: 'auto' }}>
                 <a className={done === items.length ? 'btn' : 'btn btn-primary'} href={href.item(m.id, next < 0 ? 0 : next)}>
                   {label}
                   <span className="visually-hidden"> {m.name}</span>
@@ -55,20 +56,21 @@ export function Menu({ isDone, onReset }: { isDone: (id: string) => boolean; onR
           );
         })}
 
-        <aside className="card stack" style={{ gap: 12, background: 'var(--surface-2)' }} aria-labelledby="hazards">
-          <h2 id="hazards" className="serif" style={{ fontSize: 26, fontWeight: 400 }}>
-            Kitchen hazards
-          </h2>
-          <p className="muted">Problems that turn up across all five sauces. Watch for them as you go.</p>
-          <ul style={{ margin: 0, paddingLeft: 18, display: 'flex', flexDirection: 'column', gap: 6 }}>
-            {HAZARDS.map(([name, plain]) => (
-              <li key={name}>
-                <strong style={{ fontWeight: 600 }}>{name}</strong> <span className="muted">— {plain}</span>
-              </li>
-            ))}
-          </ul>
-        </aside>
       </div>
+
+      <aside className="card stack" style={{ gap: 12 }} aria-labelledby="hazards">
+        <h2 id="hazards" className="serif" style={{ fontSize: 26, fontWeight: 400 }}>
+          Kitchen hazards
+        </h2>
+        <p className="muted">Problems that turn up across all five sauces. Watch for them as you go.</p>
+        <ul className="hazards">
+          {HAZARDS.map(([name, plain]) => (
+            <li key={name}>
+              <strong style={{ fontWeight: 600 }}>{name}</strong> <span className="muted">— {plain}</span>
+            </li>
+          ))}
+        </ul>
+      </aside>
 
       <div className="spread">
         <p className="faint">Progress is saved in this browser only. Nothing is sent anywhere.</p>
