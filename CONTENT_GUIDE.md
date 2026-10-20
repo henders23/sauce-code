@@ -108,19 +108,27 @@ Every item has these fields:
   "id": "garnish-01",                  // unique
   "module": "garnish",                 // reduction | remix | garnish | blend | seasoning
   "activity": "taste-test",            // see below
-  "title": "The dropped quote",        // humour is fine here
+  "title": "The dropped quote",        // a short label for authors; not shown to students
   "disciplines": ["humanities"],       // humanities | social-sciences | life-sciences | engineering | law | health
-  "difficulty": 1,                     // 1 Starter, 2 Main, 3 Chef's special
+  "difficulty": 1,                     // 1 easier, 2 medium, 3 harder
   "context": "Two history students are writing about…",   // optional, plain English
   "question": "Which version uses the quotation better?",
   "followUp": { … },                   // optional — see below
   "notes": [ … ],                      // optional — see below
-  "chefsNote": "A quote without a comment is a garnish on an empty plate."
+  "chefsNote": "Every quotation needs an introduction and a comment."
 }
 ```
 
+Module ids are internal. Students see plain names: `reduction` is Summarising,
+`remix` Paraphrasing, `garnish` Quoting, `blend` Synthesising and `seasoning`
+Stance and voice.
+
+`chefsNote` is shown at the end of the item as the **Key point**: one plain
+sentence the student should remember.
+
 Keep instructions and feedback **plain and clear**; many students write in
-English as an additional language. Humour belongs in titles and chef's notes.
+English as an additional language. The app's name is its only pun: keep
+questions, feedback and key points free of cooking jokes.
 Laugh at paragraphs, never at the student: a wrong answer is "a reasonable
 instinct", not "wrong".
 
@@ -193,7 +201,7 @@ irrelevant } }`), `synthesis` (a paragraph with `[[spans]]`) and `annotations`.
 ```jsonc
 {
   "id": "garnish-01",
-  "module": "garnish",                   // The Garnish — quoting
+  "module": "garnish",                   // Quoting
   "activity": "taste-test",
   "title": "The dropped quote",
   "disciplines": ["humanities"],
@@ -228,7 +236,7 @@ irrelevant } }`), `synthesis` (a paragraph with `[[spans]]`) and `annotations`.
   "notes": [
     { "styles": ["apa", "mla"], "text": "When the author is named in your sentence, APA and MLA put the page number straight after the quotation…" }
   ],
-  "chefsNote": "A quote without a comment is a garnish on an empty plate."
+  "chefsNote": "Every quotation needs an introduction and a comment."
 }
 ```
 

@@ -7,7 +7,7 @@ export function FollowUp({ data, onAnswered }: { data: FollowUpData; onAnswered:
   const choice = data.options.find((o) => o.id === picked);
   return (
     <section className="card stack fade-in" aria-labelledby="followup-q">
-      <p className="eyebrow">One more taste</p>
+      <p className="eyebrow">One more question</p>
       <h3 id="followup-q" style={{ fontSize: 19, fontWeight: 600 }}>
         {data.question}
       </h3>
@@ -31,7 +31,7 @@ export function FollowUp({ data, onAnswered }: { data: FollowUpData; onAnswered:
         ))}
       </div>
       {choice && (
-        <Feedback key={choice.id} tone={choice.good ? 'good' : 'info'} tag={choice.good ? 'Spot on' : 'Think again'}>
+        <Feedback key={choice.id} tone={choice.good ? 'good' : 'info'} tag={choice.good ? 'Correct' : 'Think again'}>
           {choice.feedback}
           {!choice.good && <span className="muted"> Try another option if you like.</span>}
         </Feedback>

@@ -3,27 +3,25 @@ import type { ActivityType, DisciplineId, Item, ModuleId } from './types';
 export interface ModuleMeta {
   id: ModuleId;
   name: string;
-  /** Plain-English subtitle — every pun label gets one. */
-  plain: string;
   blurb: string;
 }
 
 export const MODULES: ModuleMeta[] = [
-  { id: 'reduction', name: 'The Reduction', plain: 'summarising', blurb: 'Boil a source down to what your argument needs — and know when a summary beats a quotation.' },
-  { id: 'remix', name: 'The Remix', plain: 'paraphrasing', blurb: 'Real paraphrase versus patchwriting: keep the meaning, change the structure.' },
-  { id: 'garnish', name: 'The Garnish', plain: 'quoting', blurb: 'When a quotation earns its place, and how to introduce it and comment on it.' },
-  { id: 'blend', name: 'The Blend', plain: 'synthesising', blurb: 'Combine sources around your point instead of listing them one per sentence.' },
-  { id: 'seasoning', name: 'The Seasoning', plain: 'stance and voice', blurb: 'Reporting verbs, and where your own voice comes through.' },
+  { id: 'reduction', name: 'Summarising', blurb: 'Keep only what your argument needs from a source — and know when a summary beats a quotation.' },
+  { id: 'remix', name: 'Paraphrasing', blurb: 'Real paraphrase versus patchwriting: keep the meaning, change the structure.' },
+  { id: 'garnish', name: 'Quoting', blurb: 'When a quotation earns its place, and how to introduce it and comment on it.' },
+  { id: 'blend', name: 'Synthesising', blurb: 'Combine sources around your point instead of listing them one per sentence.' },
+  { id: 'seasoning', name: 'Stance and voice', blurb: 'Reporting verbs, and where your own voice comes through.' },
 ];
 
-export const ACTIVITY_LABEL: Record<ActivityType, { name: string; plain: string }> = {
-  'taste-test': { name: 'Taste Test', plain: 'compare versions' },
-  'find-seam': { name: 'Find the Seam', plain: 'where the source ends' },
-  'highlight-voices': { name: 'Highlight the Voices', plain: 'who is speaking?' },
-  'pick-verb': { name: 'Pick the Verb', plain: 'reporting verbs' },
-  'fix-sauce': { name: 'Fix the Sauce', plain: 'diagnose the problem' },
-  'spot-patchwriting': { name: 'Spot the Patchwriting', plain: 'copied phrases' },
-  'build-blend': { name: 'Build the Blend', plain: 'combining sources' },
+export const ACTIVITY_LABEL: Record<ActivityType, string> = {
+  'taste-test': 'Compare versions',
+  'find-seam': 'Find where the source ends',
+  'highlight-voices': 'Who is speaking?',
+  'pick-verb': 'Choose a reporting verb',
+  'fix-sauce': 'Find the main problem',
+  'spot-patchwriting': 'Spot copied phrases',
+  'build-blend': 'Combine sources',
 };
 
 export const DISCIPLINES: { id: DisciplineId; label: string }[] = [

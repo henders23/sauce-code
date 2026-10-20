@@ -64,7 +64,7 @@ export function FindTheSeam({ item, style, onAnswered }: ActivityProps<FindSeamI
         </div>
         {checked && (
           <>
-            <Feedback tone={verdict === 'correct' ? 'good' : 'partial'} tag={verdict === 'correct' ? 'Spot on' : 'Fair instinct'}>
+            <Feedback tone={verdict === 'correct' ? 'good' : 'partial'} tag={verdict === 'correct' ? 'Correct' : 'Not quite'}>
               {item.feedback[verdict]}
             </Feedback>
             <p className="faint">

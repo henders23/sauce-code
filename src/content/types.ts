@@ -13,7 +13,7 @@ export type ActivityType =
   | 'spot-patchwriting'
   | 'build-blend';
 
-/** The sauce scale rates paragraphs, never students. */
+/** Ratings describe paragraphs, never students. */
 export type Rating = 'weak' | 'getting' | 'proper' | 'michelin';
 
 export interface FollowUpOption {

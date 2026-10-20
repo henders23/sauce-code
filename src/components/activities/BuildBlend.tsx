@@ -62,7 +62,7 @@ export function BuildBlend({ item, style, onAnswered }: ActivityProps<BuildBlend
                 ))}
               </div>
               {checked && mine && (
-                <Feedback tone={mine === s.role ? 'good' : 'partial'} tag={mine === s.role ? 'Spot on' : 'Look again'}>
+                <Feedback tone={mine === s.role ? 'good' : 'partial'} tag={mine === s.role ? 'Correct' : 'Look again'}>
                   {s.feedback[mine]}
                 </Feedback>
               )}

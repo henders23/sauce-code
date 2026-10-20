@@ -18,7 +18,7 @@ export function ConventionSelect({ id }: { id: string }) {
   const { style, effectiveStyle, setStyle } = useSettings();
   return (
     <label className="field" htmlFor={id}>
-      Convention
+      Style
       <select id={id} className="select" value={style ?? effectiveStyle} onChange={(e) => setStyle(e.target.value as StyleId)}>
         {STYLE_ORDER.map((s) => (
           <option key={s} value={s}>
@@ -34,14 +34,14 @@ export function DisciplineSelect({ id }: { id: string }) {
   const { discipline, setDiscipline } = useSettings();
   return (
     <label className="field" htmlFor={id}>
-      Discipline
+      Examples from
       <select
         id={id}
         className="select"
         value={discipline ?? ''}
         onChange={(e) => setDiscipline((e.target.value || null) as DisciplineId | null)}
       >
-        <option value="">Any / not sure</option>
+        <option value="">Any subject</option>
         {DISCIPLINES.map((d) => (
           <option key={d.id} value={d.id}>
             {d.label}
@@ -64,9 +64,8 @@ export function TopBar() {
         </a>
         <nav className="row" aria-label="Settings and navigation">
           <ConventionSelect id="topbar-convention" />
-          <DisciplineSelect id="topbar-discipline" />
           <a className="btn btn-small btn-ghost" href={href.menu}>
-            Menu
+            Modules
           </a>
         </nav>
       </div>
