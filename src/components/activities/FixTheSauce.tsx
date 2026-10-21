@@ -53,7 +53,7 @@ export function FixTheSauce({ item, style, onAnswered }: ActivityProps<FixSauceI
           ))}
         </div>
         {choice && (
-          <Feedback key={choice.id} tone={choice.correct ? 'good' : 'partial'} tag={choice.correct ? 'Spot on' : 'Not the main problem'}>
+          <Feedback key={choice.id} tone={choice.correct ? 'good' : 'partial'} tag={choice.correct ? 'Correct' : 'Not the main problem'}>
             {choice.feedback}
           </Feedback>
         )}
@@ -70,7 +70,7 @@ export function FixTheSauce({ item, style, onAnswered }: ActivityProps<FixSauceI
       {revealed && (
         <article className="card stack fade-in">
           <div className="spread">
-            <span className="para-label">The chef’s repair</span>
+            <span className="para-label">A repaired version</span>
             <span className="faint">A repair of the sample paragraph — never of your own work.</span>
           </div>
           <Annotated rendered={repaired} annotations={item.annotations} idPrefix={`${item.id}-repaired`} />

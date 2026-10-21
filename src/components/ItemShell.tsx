@@ -4,7 +4,6 @@ import { ACTIVITY_LABEL, MODULES, disciplineLabel } from '../content';
 import { itemTexts } from '../content/texts';
 import { lookupSource } from '../content/sources';
 import { renderText, type RenderFlags } from '../citation/render';
-import { STYLES } from '../citation/styles';
 import { useSettings } from '../lib/settings';
 import { ConventionNotes } from './ConventionNotes';
 import { FollowUp } from './FollowUp';
@@ -16,13 +15,11 @@ import { FixTheSauce } from './activities/FixTheSauce';
 import { SpotPatchwriting } from './activities/SpotPatchwriting';
 import { BuildBlend } from './activities/BuildBlend';
 
-const DIFFICULTY = ['', 'Starter', 'Main', 'Chef’s special'];
-
 /** What the reveal button shows, per activity. */
 function revealLabel(item: Item): string {
   switch (item.activity) {
     case 'taste-test':
-      return `Show the ${item.versions.length === 2 ? 'two' : item.versions.length} versions`;
+      return `Show ${item.versions[0].label}`;
     case 'spot-patchwriting':
       return 'Show the texts';
     case 'build-blend':
@@ -30,6 +27,11 @@ function revealLabel(item: Item): string {
     default:
       return 'Show the paragraph';
   }
+}
+
+/** What happens after the reveal, when it isn't obvious. */
+function revealHint(item: Item): string | null {
+  return item.activity === 'taste-test' ? 'You’ll read each version in turn, then compare them.' : null;
 }
 
 function Activity({ item, onAnswered }: { item: Item; onAnswered: () => void }) {
@@ -60,12 +62,15 @@ interface Props {
 
 export function ItemShell({ item, onFinished, next }: Props) {
   const { effectiveStyle: style, discipline } = useSettings();
+  const hint = revealHint(item);
   const [shown, setShown] = useState(false);
   const [answered, setAnswered] = useState(false);
   const [followUpDone, setFollowUpDone] = useState(false);
   const module = MODULES.find((m) => m.id === item.module)!;
   const activity = ACTIVITY_LABEL[item.activity];
-  const finished = answered && (!item.followUp || followUpDone);
+  // Compare-versions asks its follow-up inside its own answer panel, beside the texts.
+  const ownFollowUp = item.activity === 'taste-test';
+  const finished = answered && (ownFollowUp || !item.followUp || followUpDone);
 
   const flags = useMemo<RenderFlags>(() => {
     const all = itemTexts(item).map((t) => renderText(t.text, style, lookupSource, { gap: { present: 'x', past: 'x' } }).flags);
@@ -80,44 +85,37 @@ export function ItemShell({ item, onFinished, next }: Props) {
 
   return (
     <div className="stack" style={{ gap: 24 }}>
-      <header className="stack" style={{ gap: 10 }}>
-        <p className="eyebrow">
-          {module.name} · <span style={{ textTransform: 'none', letterSpacing: 0 }}>{module.plain}</span>
-        </p>
-        <h1 className="serif" style={{ fontSize: 'clamp(32px, 5vw, 46px)', fontWeight: 400 }}>
-          {item.title}
-        </h1>
-        <div className="row">
-          <span className="pill">
-            {activity.name} <span className="muted">— {activity.plain}</span>
-          </span>
-          {item.disciplines.map((d) => (
-            <span key={d} className="pill">
-              {disciplineLabel(d)}
-            </span>
-          ))}
-          <span className="pill">{DIFFICULTY[item.difficulty]}</span>
-          <span className="pill">
-            Shown in {STYLES[style].label}
-          </span>
+      <header className="stack" style={{ gap: 20, maxWidth: 820 }}>
+        <div className="stack" style={{ gap: 6 }}>
+          <p className="eyebrow">{module.name}</p>
+          <p className="faint" style={{ fontSize: 14 }}>
+            {[activity, ...item.disciplines.map(disciplineLabel)].join(' · ')}
+          </p>
         </div>
-        {item.context && <p style={{ fontSize: 18, color: 'var(--text-2)', maxWidth: 760 }}>{item.context}</p>}
-        <p style={{ fontSize: 19, fontWeight: 600, maxWidth: 760 }}>{item.question}</p>
+        {item.context && <p style={{ fontSize: 18, color: 'var(--text-2)' }}>{item.context}</p>}
+        <section className="task" aria-labelledby={`${item.id}-task`}>
+          <span className="eyebrow">Your task</span>
+          <h1 id={`${item.id}-task`} className="serif task-title">
+            {item.question}
+          </h1>
+          {!shown && (
+            <div className="spread">
+              {hint ? <span className="faint" style={{ fontSize: 14 }}>{hint}</span> : <span />}
+              <button type="button" className="btn btn-primary btn-large" onClick={() => setShown(true)}>
+                {revealLabel(item)}
+              </button>
+            </div>
+          )}
+        </section>
       </header>
 
-      {shown ? (
+      {shown && (
         <div className="fade-in">
           <Activity item={item} onAnswered={() => setAnswered(true)} />
         </div>
-      ) : (
-        <div>
-          <button type="button" className="btn btn-primary btn-large" onClick={() => setShown(true)}>
-            {revealLabel(item)}
-          </button>
-        </div>
       )}
 
-      {answered && item.followUp && <FollowUp data={item.followUp} onAnswered={() => setFollowUpDone(true)} />}
+      {answered && item.followUp && !ownFollowUp && <FollowUp data={item.followUp} onAnswered={() => setFollowUpDone(true)} />}
 
       {finished && (
         <FinishedSection
@@ -154,17 +152,11 @@ function FinishedSection({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <>
+    <div id={`${item.id}-end`} className="stack" style={{ gap: 24, scrollMarginTop: 84 }}>
       <ConventionNotes style={style} discipline={discipline} itemDisciplines={item.disciplines} notes={item.notes} flags={flags} />
-      <div className="chef fade-in">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flex: 'none', marginTop: 2 }}>
-          <path d="M6 13.9V20h12v-6.1A4 4 0 0 0 17 6a5 5 0 0 0-10 0 4 4 0 0 0-1 7.9z" />
-          <path d="M6 17h12" />
-        </svg>
-        <div className="stack" style={{ gap: 4 }}>
-          <span className="eyebrow">Chef’s note</span>
-          <p>{item.chefsNote}</p>
-        </div>
+      <div className="key-point stack fade-in" style={{ gap: 4 }}>
+        <span className="eyebrow">Key point</span>
+        <p>{item.chefsNote}</p>
       </div>
       <div className="row" style={{ justifyContent: 'flex-end' }}>
         <a className="btn btn-primary" href={next.href}>
@@ -174,6 +166,6 @@ function FinishedSection({
           </svg>
         </a>
       </div>
-    </>
+    </div>
   );
 }

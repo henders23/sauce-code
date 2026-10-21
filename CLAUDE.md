@@ -9,10 +9,16 @@
   never open on a task with no explanation.
 - **Activities: instruction first.** Show the instruction, then reveal the text
   with a button — don't open on a wall of text.
+- **Purpose before text.** A student never reads a text without knowing why.
+  Keep the task or question on screen whenever a text is shown.
+- **Texts in view when deciding.** When a student judges texts (which is better,
+  what's wrong, where the source ends), every text being judged is on screen.
+  Reveal texts one at a time first, then show them together for the decision.
 - **Reveal gradually.** Unlock content step by step rather than showing it all
   at once (items unlock one at a time within a module).
 - **Select phrases, not words.** Never make students select text word by word.
-- Dark mode. Tone: light and tongue-in-cheek in labels, plain in instructions.
+- Dark mode. Tone: plain throughout. The app's name is the only pun — no
+  cooking puns in buttons, headings, module names or ratings.
 
 ## Accuracy
 

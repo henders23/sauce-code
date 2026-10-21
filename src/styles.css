@@ -157,8 +157,8 @@ details.refs .num { color: var(--cite-fg); min-width: 2em; flex: none; }
 .option .mark { flex: none; width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--muted); margin-top: 2px; }
 .option[aria-pressed='true'] .mark, .option[aria-checked='true'] .mark { border-color: var(--accent); background: radial-gradient(circle, var(--accent) 45%, transparent 50%); }
 
-.chef { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; display: flex; gap: 14px; align-items: flex-start; }
-.chef p { font-family: var(--serif); font-size: 20px; font-style: italic; line-height: 1.4; }
+.key-point { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; }
+.key-point p { font-family: var(--serif); font-size: 20px; line-height: 1.4; }
 .convention-note { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px 16px; font-size: 15px; line-height: 1.55; }
 .convention-note strong { color: var(--accent); font-weight: 600; }
 
@@ -202,9 +202,6 @@ details.refs .num { color: var(--cite-fg); min-width: 2em; flex: none; }
 .progress-dots .dot.current { border-color: var(--accent); background: var(--accent); }
 .progress-dots .dot.locked { border-style: dashed; opacity: 0.45; }
 
-.bar { height: 6px; border-radius: 999px; background: var(--surface-3); border: 1px solid var(--border); overflow: hidden; }
-.bar > div { height: 100%; background: var(--good); }
-
 .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
 
 @media (max-width: 600px) {
@@ -223,13 +220,68 @@ details.refs .num { color: var(--cite-fg); min-width: 2em; flex: none; }
 .screen-inner { width: 100%; max-width: 720px; }
 .screen-title { font-size: clamp(30px, 5vw, 44px); font-weight: 400; letter-spacing: -0.01em; }
 .intro-mark { width: 84px; height: 84px; border-radius: 50%; border: 1px solid var(--border); display: grid; place-items: center; background: var(--surface); }
-.intro-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 24px; color: var(--text-2); font-size: 16px; }
-.intro-steps li { display: flex; align-items: center; gap: 8px; }
 .btn-large { min-height: 56px; padding: 0 40px; font-size: 17px; }
-.chip-grid-wide { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
-.chip-grid-wide .chip { min-height: 60px; font-size: 16px; }
-@media (max-width: 600px) {
-  .intro-steps { flex-direction: column; align-items: flex-start; }
-}
 
 .hazards { margin: 0; padding-left: 18px; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 8px 32px; }
+
+/* ------------------------------------------------------- setup choices */
+.steps-bar { display: flex; gap: 6px; width: 120px; }
+.steps-bar span { flex: 1; height: 4px; border-radius: 999px; background: var(--surface-3); border: 1px solid var(--border); }
+.steps-bar span.done { background: var(--accent); border-color: var(--accent); }
+.choice-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 8px; }
+.choice-grid-3 { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.choice {
+  min-height: 60px; padding: 0 18px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--surface);
+  color: var(--text); cursor: pointer; display: flex; align-items: center; gap: 12px; text-align: left; font-size: 16px; font-weight: 500;
+}
+.choice:hover { border-color: var(--border-strong); }
+.choice .choice-label { flex: 1; }
+.choice small { font-size: 13px; color: var(--muted); }
+.choice .mark { flex: none; width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--muted); }
+.choice[aria-checked='true'] { border-color: var(--accent); background: var(--accent-tint); }
+.choice[aria-checked='true'] small { color: var(--cite-fg); }
+.choice[aria-checked='true'] .mark { border-color: var(--accent); background: radial-gradient(circle, var(--accent) 45%, transparent 50%); }
+
+/* ----------------------------------------------------- tasks and steps */
+.task { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+.task-title { font-size: clamp(24px, 3.2vw, 32px); font-weight: 400; line-height: 1.25; }
+.divided { border-top: 1px solid var(--border); padding-top: 20px; }
+.step-num { flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-size: 14px; font-weight: 700; background: var(--accent); color: var(--on-accent); }
+.how-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.how-steps li { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.5; }
+.how-steps strong { font-size: 17px; font-weight: 600; }
+
+.version-tab {
+  min-width: 36px; height: 32px; padding: 0 10px; border-radius: 999px; border: 1px solid var(--border-strong); background: transparent;
+  color: var(--text); font-size: 14px; font-weight: 700; display: inline-grid; place-items: center; cursor: pointer;
+}
+.version-tab[aria-current='step'] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.version-tab.locked { border-style: dashed; border-color: var(--faint); color: var(--faint); cursor: default; }
+.card-selected { border-color: var(--accent); }
+.compare { display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 84px; }
+.compare .card { padding: 16px 22px; }
+.compare .source-box { padding: 14px 20px; gap: 6px; }
+.compare .para { font-size: 16px; line-height: 1.55; }
+.compare .notes-list li { font-size: 14px; }
+.compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+/* Wide screens: texts side by side, answer panel beside them and pinned in view. */
+@media (min-width: 1100px) {
+  /* Wider than the page column, and tall enough to scroll to the top of the screen. */
+  .compare {
+    display: grid; grid-template-columns: minmax(0, 1fr) 360px; align-items: start; min-height: calc(100vh - 100px);
+    width: min(1440px, calc(100vw - 48px)); margin-left: calc(50% - min(720px, 50vw - 24px));
+  }
+  .compare-panel { font-size: 15px; }
+  .compare-panel .feedback { font-size: 15px; padding: 12px 14px; }
+  .compare-panel .option { font-size: 15px; min-height: 44px; padding: 10px 14px; }
+  .compare-grid { grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); grid-template-columns: none; }
+  /* No scroll anchoring: swapping the panel's question must not shift the texts. */
+  .compare-panel { position: sticky; top: 84px; max-height: calc(100vh - 100px); overflow-y: auto; overflow-anchor: none; }
+}
+
+/* ------------------------------------------------------------- modules */
+.module-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.module-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; padding: 14px 20px; min-height: 76px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+.module-row .step-num { background: transparent; border: 1px solid var(--border-strong); color: var(--text-2); }
+.module-row.current { border-color: var(--accent); background: var(--accent-tint); }
+.module-row.current .step-num { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }

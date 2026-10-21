@@ -25,7 +25,7 @@
   "best": "b",
   "picks": {
     "a": "A reasonable instinct — Version A is thorough, and everything in it is accurate. But look at how much of it the reader actually needs for the argument about night shifts. The writer retells the study step by step, and their own point only arrives in the last sentence, without explanation.",
-    "b": "Yes. Version B is a reduction: it keeps the two findings that matter for the argument (the drop at night, and the likely causes) and leaves out the method details. That frees up space for the writer to say what the finding means."
+    "b": "Yes. Version B is a good summary: it keeps the two findings that matter for the argument (the drop at night, and the likely causes) and leaves out the method details. That frees up space for the writer to say what the finding means."
   },
   "reasonQuestion": "What makes the difference?",
   "reasons": [
@@ -85,5 +85,5 @@
       "text": "Because this paragraph summarises the study as a whole, MLA needs no page number here — just the authors' names. A page number is needed when you quote, or paraphrase a specific passage."
     }
   ],
-  "chefsNote": "Reduce until only the flavour your argument needs is left."
+  "chefsNote": "Summarise only the findings your argument needs."
 }

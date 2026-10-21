@@ -4,6 +4,15 @@ import { useSettings } from '../lib/settings';
 import { href } from '../lib/router';
 import { ItemShell } from '../components/ItemShell';
 
+/** Problems that turn up in every module — shown when a module is finished. */
+const HAZARDS = [
+  ['Source boundary blur', 'the reader can’t tell whose idea is whose'],
+  ['Citation stacking', 'a pile of references with no comment'],
+  ['One-source paragraphs', 'a single source doing all the work'],
+  ['The writer disappears', 'the paragraph is all source, with no point of the writer’s own'],
+  ['Citing the wrong things', 'citing common knowledge, but not the claims that need support'],
+];
+
 export function ModulePage({
   moduleId,
   index,
@@ -20,9 +29,9 @@ export function ModulePage({
   if (!module) {
     return (
       <main id="main" className="wrap stack" style={{ padding: '40px 16px' }}>
-        <h1 className="serif">That dish isn’t on the menu.</h1>
+        <h1 className="serif">There’s no module here.</h1>
         <a className="btn" href={href.menu}>
-          Back to the menu
+          Back to the modules
         </a>
       </main>
     );
@@ -37,7 +46,7 @@ export function ModulePage({
   const nav = (
     <nav className="spread" aria-label={`${module.name} items`}>
       <a href={href.menu} className="faint">
-        ← All Mother Sauces
+        ← All modules
       </a>
       <div className="row" style={{ gap: 10 }}>
         <span className="faint">
@@ -74,20 +83,33 @@ export function ModulePage({
         <section className="card stack" style={{ gap: 14 }}>
           <p className="eyebrow">Module complete</p>
           <h1 className="serif" style={{ fontSize: 40, fontWeight: 400 }}>
-            {module.name} is done.
+            You’ve finished {module.name}.
           </h1>
           <p style={{ fontSize: 18, color: 'var(--text-2)' }}>{module.blurb}</p>
           <div className="row">
             {nextModule && (
               <a className="btn btn-primary" href={href.item(nextModule.id, 0)}>
-                On to {nextModule.name}
+                Next: {nextModule.name}
               </a>
             )}
             <a className="btn" href={href.menu}>
-              Back to the menu
+              Back to the modules
             </a>
           </div>
         </section>
+        <aside className="card stack" style={{ gap: 12 }} aria-labelledby="hazards">
+          <h2 id="hazards" className="serif" style={{ fontSize: 26, fontWeight: 400 }}>
+            Common problems to watch for
+          </h2>
+          <p className="muted">These turn up in every module.</p>
+          <ul className="hazards">
+            {HAZARDS.map(([name, plain]) => (
+              <li key={name}>
+                <strong style={{ fontWeight: 600 }}>{name}</strong> <span className="muted">— {plain}</span>
+              </li>
+            ))}
+          </ul>
+        </aside>
       </main>
     );
   }
