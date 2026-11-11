@@ -1,8 +1,8 @@
 {
   "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
-  "id": "blend-02",
-  "module": "blend",
-  "activity": "fix-sauce",
+  "id": "synthesising-02",
+  "module": "synthesising",
+  "activity": "find-problem",
   "title": "The shopping list",
   "disciplines": ["social-sciences"],
   "difficulty": 2,
@@ -52,5 +52,5 @@
       "text": "In the flawed version, each author is named in the writer's sentence, so MLA gives the full name at first mention. The repaired version cites in brackets, which in MLA use the surname only."
     }
   ],
-  "chefsNote": "Three sources in three sentences is a list, not a synthesis. Group them around your point."
+  "keyPoint": "Three sources in three sentences is a list, not a synthesis. Group them around your point."
 }

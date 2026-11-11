@@ -1,8 +1,8 @@
 {
   "_note": "Fictional sources for teaching: every source cited here, and every quotation from it, is invented. See sources.json.",
-  "id": "garnish-03",
-  "module": "garnish",
-  "activity": "taste-test",
+  "id": "quoting-03",
+  "module": "quoting",
+  "activity": "compare-versions",
   "title": "Quote the phrase, not the figures",
   "disciplines": ["social-sciences"],
   "difficulty": 2,
@@ -12,13 +12,13 @@
     {
       "id": "a",
       "label": "Version A",
-      "rating": "getting",
+      "rating": "developing",
       "text": "Food banks have become a familiar part of life in many UK towns over the last decade. {{cite:mwangi2018|integral|page:53}} {{v:states|stated}} that {{q:the number of food banks in the region doubled between 2012 and 2016}}. She also {{v:says|said}} that {{q:many users were in work but could not afford food after paying rent}} {{cite:mwangi2018|page:58}}. This shows that food banks are now an important part of the welfare system in the UK, and that many people depend on them in order to get enough to eat. It also suggests that having a job is no longer enough to protect people from hunger."
     },
     {
       "id": "b",
       "label": "Version B",
-      "rating": "proper",
+      "rating": "strong",
       "text": "Food banks have become a familiar part of life in many UK towns over the last decade. In one region, their number doubled in four years, and many of the people using them were in work but could not afford food once rent was paid {{cite:mwangi2018}}. {{cite:mwangi2018|integral|page:61}} {{v:describes|described}} the food bank as {{q:a charity of last resort that had quietly become a charity of first resort}}. The phrase captures a change that the figures alone cannot: food banks were designed for emergencies, yet for many households they are now part of the routine of getting through the month."
     }
   ],
@@ -80,5 +80,5 @@
       "text": "Version B's first citation reports the study's main findings, which are summarised in its abstract, so it cites the work as a whole without a page number. The quotation needs a page. If you paraphrase a detail from one particular page, most conventions expect the page number too."
     }
   ],
-  "chefsNote": "Quote the phrase only the author could have written. Paraphrase the rest."
+  "keyPoint": "Quote the phrase only the author could have written. Paraphrase the rest."
 }

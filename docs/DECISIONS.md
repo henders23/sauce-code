@@ -82,13 +82,33 @@ These are easy to change. They're listed here so the owner can confirm them.
 * **Hosting:** none yet. The build is a plain static site (`npm run build` →
   `dist/`), so Vercel or Netlify both work with zero configuration. The
   phase 2 proxy will decide between them.
-* **Title:** "Sauce Code" (working title).
+* **Title:** "Source Code". Earlier builds were called "Sauce Code" and used
+  cooking-themed ids; progress saved under the old ids is migrated on load
+  (`src/lib/progress.ts`, `src/lib/storage.ts`).
 * **Before a convention is chosen**, paragraphs render in Harvard.
+
+## Interface
+
+Every exercise uses one layout (`src/components/Stage.tsx`) so the student
+always knows where to look:
+
+* **Task** on one line above the texts, for the whole exercise.
+* **Texts** on the left. The card to work in has an accent border and a short
+  instruction in its corner ("Read this", "Select an underlined phrase").
+* **One panel** on the right (below the texts on a phone). It shows one step at
+  a time and replaces its content rather than adding to the page: read, answer,
+  feedback, follow-up question, notes, key point. Every button is in the panel.
+* **The accent colour means "here, now"** and nothing else. Labels are grey;
+  green, amber and red are only for feedback.
+
+"Who is speaking?" asks about one outlined part at a time instead of cycling
+labels by clicking, and "Combine sources" shows one source at a time against
+the claim with feedback after each, so no screen holds more than one decision.
 
 ## Not yet built
 
-* **Phase 2 (AI layer):** Ask the Chef, free-text reason evaluation, the
+* **Phase 2 (AI layer):** ask-a-question help, free-text reason evaluation, the
   serverless proxy. The item format already carries what that layer needs
   (teaching point via notes and annotations, the student's response, the
   convention).
-* **Phase 3:** Bring Your Own Sauce.
+* **Phase 3:** students bring their own paragraphs.

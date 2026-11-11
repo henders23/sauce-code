@@ -1,10 +1,11 @@
 import type { RenderFlags } from '../citation/render';
 import { STYLES } from '../citation/styles';
 import type { StyleId } from '../citation/types';
-import type { DisciplineId, ItemNote } from '../content/types';
+import type { DisciplineId, Item } from '../content/types';
 import { disciplineLabel } from '../content';
+import { Arrow, Continue, Step } from './Stage';
 
-/** One line on what is distinctive about each convention, shown after every item. */
+/** One line on what is distinctive about each convention. */
 export const STYLE_BASICS: Record<StyleId, string> = {
   harvard:
     'Harvard gives author and year in the text — (Okafor, 2021). Add a page number for a quotation or a paraphrase of a specific passage — (Okafor, 2021, p. 42) — but not when you summarise a work’s overall argument. Harvard varies between institutions: this app follows Cite Them Right, so check your own guide for small differences.',
@@ -37,40 +38,65 @@ function noteDiscipline(noteDisc: DisciplineId[], chosen: DisciplineId | null, i
   return noteDisc.find((d) => itemDisc.includes(d)) ?? noteDisc[0];
 }
 
-interface Props {
-  style: StyleId;
-  discipline: DisciplineId | null;
-  itemDisciplines: DisciplineId[];
-  notes?: ItemNote[];
-  flags: RenderFlags;
+export interface Note {
+  heading: string;
+  text: string;
 }
 
-export function ConventionNotes({ style, discipline, itemDisciplines, notes = [], flags }: Props) {
+/** The notes that apply to this item for this student: general, discipline, then convention. */
+export function itemNotes(item: Item, style: StyleId, discipline: DisciplineId | null, flags: RenderFlags): Note[] {
+  const notes = item.notes ?? [];
   const label = STYLES[style].label;
-  const styleNotes = notes.filter((n) => n.styles?.includes(style) && !n.disciplines);
   const general = notes.filter((n) => !n.styles && !n.disciplines);
-  const disc = notes.filter((n) => n.disciplines && (!n.styles || n.styles.includes(style)));
-  const shownDisc = disc.filter((n) => !discipline || n.disciplines!.includes(discipline));
+  const disc = notes.filter((n) => n.disciplines && (!n.styles || n.styles.includes(style)) && (!discipline || n.disciplines.includes(discipline)));
+  const styleNotes = notes.filter((n) => n.styles?.includes(style) && !n.disciplines);
+  return [
+    ...general.map((n) => ({ heading: 'Good to know', text: n.text })),
+    ...disc.map((n) => ({ heading: `In ${disciplineLabel(noteDiscipline(n.disciplines!, discipline, item.disciplines))}`, text: n.text })),
+    ...[...styleNotes.map((n) => n.text), ...contextual(style, flags)].map((text) => ({ heading: `In ${label}`, text })),
+  ];
+}
+
+function Basics({ style }: { style: StyleId }) {
   return (
-    <section className="stack fade-in" style={{ gap: 10 }} aria-label="Notes">
-      {general.map((n, i) => (
-        <p key={`g${i}`} className="convention-note">
-          <strong>Good to know: </strong>
-          {n.text}
-        </p>
-      ))}
-      {shownDisc.map((n, i) => (
-        <p key={`d${i}`} className="convention-note">
-          <strong>In {disciplineLabel(noteDiscipline(n.disciplines!, discipline, itemDisciplines))}: </strong>
-          {n.text}
-        </p>
-      ))}
-      {[...styleNotes.map((n) => n.text), ...contextual(style, flags), STYLE_BASICS[style]].map((t, i) => (
-        <p key={`s${i}`} className="convention-note">
-          <strong>In {label}: </strong>
-          {t}
-        </p>
-      ))}
-    </section>
+    <details className="more">
+      <summary>How {STYLES[style].label} cites</summary>
+      <p>{STYLE_BASICS[style]}</p>
+    </details>
+  );
+}
+
+/** Notes on the item, on their own step so they are read before the key point. */
+export function NotesStep({ notes, style, onContinue }: { notes: Note[]; style: StyleId; onContinue: () => void }) {
+  return (
+    <Step label="Notes" actions={<Continue onClick={onContinue} />}>
+      <ul className="note-list">
+        {notes.map((n, i) => (
+          <li key={i}>
+            <strong>{n.heading}</strong>
+            {n.text}
+          </li>
+        ))}
+      </ul>
+      <Basics style={style} />
+    </Step>
+  );
+}
+
+/** The last step of every item: one sentence to remember, and the way on. */
+export function KeyPointStep({ text, next, style, showBasics }: { text: string; next: { href: string; label: string }; style: StyleId; showBasics: boolean }) {
+  return (
+    <Step
+      label="Key point"
+      actions={
+        <a className="btn btn-primary" href={next.href}>
+          {next.label}
+          <Arrow />
+        </a>
+      }
+    >
+      <p className="key-point">{text}</p>
+      {showBasics && <Basics style={style} />}
+    </Step>
   );
 }

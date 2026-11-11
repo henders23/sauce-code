@@ -1,8 +1,8 @@
 {
   "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
-  "id": "blend-01",
-  "module": "blend",
-  "activity": "build-blend",
+  "id": "synthesising-01",
+  "module": "synthesising",
+  "activity": "combine-sources",
   "title": "Making the sources talk to each other",
   "disciplines": ["health"],
   "difficulty": 2,
@@ -68,5 +68,5 @@
       "text": "In numeric styles, the reader can't see who wrote what from the numbers alone. In a synthesis that doesn't matter much when you are combining findings — but when you weigh one source against another, consider naming the authors."
     }
   ],
-  "chefsNote": "Synthesis shows how sources relate to each other, not just what each one says."
+  "keyPoint": "Synthesis shows how sources relate to each other, not just what each one says."
 }

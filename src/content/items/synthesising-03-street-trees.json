@@ -1,8 +1,8 @@
 {
   "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
-  "id": "blend-03",
-  "module": "blend",
-  "activity": "taste-test",
+  "id": "synthesising-03",
+  "module": "synthesising",
+  "activity": "compare-versions",
   "title": "One at a time, or all together?",
   "disciplines": ["life-sciences", "engineering"],
   "difficulty": 2,
@@ -18,7 +18,7 @@
     {
       "id": "b",
       "label": "Version B",
-      "rating": "proper",
+      "rating": "strong",
       "text": "Street trees can make a measurable difference to urban heat, but their benefits depend on the trees themselves staying healthy. Streets with more trees can be up to 8°C cooler on summer afternoons {{cite:achterberg2017}}, and neighbourhoods with more tree cover see fewer heat-related hospital admissions during heatwaves {{cite:kaur2019}}. Taken together, these findings suggest that trees protect health as well as comfort. Yet the hottest summers are often also the driest, and trees under drought stress provide less shade {{cite:silva2022}}. Planting more trees may therefore not be enough on its own: councils will also need to plan for watering them when cooling matters most."
     }
   ],
@@ -63,5 +63,5 @@
       "text": "Notice the hedges in Version B: 'can make', 'suggest', 'may'. A study that finds fewer admissions where there are more trees shows an association, not proof that trees caused the difference."
     }
   ],
-  "chefsNote": "Don't present sources one at a time. Bring them together around each point."
+  "keyPoint": "Don't present sources one at a time. Bring them together around each point."
 }

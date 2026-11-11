@@ -2,11 +2,13 @@
 // throw on access. Every read and write goes through these helpers, and the app
 // works without them — it just forgets between visits.
 
-const PREFIX = 'sauce-code:';
+const PREFIX = 'source-code:';
+/** The prefix used before the app was renamed. Read once, so nobody loses progress. */
+const OLD_PREFIX = 'sauce-code:';
 
 export function load<T>(key: string, fallback: T): T {
   try {
-    const raw = window.localStorage.getItem(PREFIX + key);
+    const raw = window.localStorage.getItem(PREFIX + key) ?? window.localStorage.getItem(OLD_PREFIX + key);
     return raw === null ? fallback : (JSON.parse(raw) as T);
   } catch {
     return fallback;

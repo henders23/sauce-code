@@ -1,42 +1,30 @@
 import { useSettings } from '../lib/settings';
 import { href } from '../lib/router';
 import { Logo } from '../components/TopBar';
+import { Arrow } from '../components/Stage';
 
 export function Intro() {
   const { style } = useSettings();
   const returning = style !== null;
   return (
     <main id="main" className="wrap screen">
-      <div className="screen-inner stack" style={{ gap: 36, alignItems: 'center', textAlign: 'center' }}>
-        <div className="intro-mark" aria-hidden="true">
-          <Logo size={44} />
-        </div>
-        <div className="stack" style={{ gap: 16, alignItems: 'center' }}>
-          <h1 className="serif" style={{ fontSize: 'clamp(48px, 9vw, 84px)', fontWeight: 400, letterSpacing: '-0.02em', lineHeight: 1 }}>
-            Sauce <em style={{ color: 'var(--accent)' }}>Code</em>
-          </h1>
-          <p style={{ fontSize: 21, color: 'var(--text-2)', maxWidth: 520 }}>
-            Practise using sources in your academic writing.
+      <div className="screen-inner stack">
+        <Logo size={40} />
+        <div className="stack" style={{ gap: 14 }}>
+          <h1 className="wordmark">Source Code</h1>
+          <p className="lede" style={{ fontSize: 21 }}>
+            Practise using sources in academic writing.
           </p>
+          <p className="muted">Read a short paragraph, answer one question about it, and see why.</p>
         </div>
-
-        <div className="stack" style={{ gap: 12, alignItems: 'center' }}>
-          {returning ? (
-            <>
-              <a className="btn btn-primary btn-large" href={href.menu}>
-                Continue
-              </a>
-              <a className="faint" href={href.setup}>
-                Change your referencing style
-              </a>
-            </>
-          ) : (
-            <a className="btn btn-primary btn-large" href={href.setup}>
-              Start
-            </a>
-          )}
-          <p className="faint">No sign-up. A few minutes per exercise.</p>
+        <div className="row" style={{ gap: 16 }}>
+          <a className="btn btn-primary btn-large" href={returning ? href.modules : href.setup}>
+            {returning ? 'Continue' : 'Start'}
+            <Arrow />
+          </a>
+          {returning && <a href={href.setup}>Change referencing style</a>}
         </div>
+        <p className="faint">No sign-up. About three minutes per exercise.</p>
       </div>
     </main>
   );

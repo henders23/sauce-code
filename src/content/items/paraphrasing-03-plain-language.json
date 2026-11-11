@@ -1,7 +1,7 @@
 {
   "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
-  "id": "remix-03",
-  "module": "remix",
+  "id": "paraphrasing-03",
+  "module": "paraphrasing",
   "activity": "spot-patchwriting",
   "title": "Plain English, borrowed",
   "disciplines": ["law"],
@@ -52,5 +52,5 @@
       "text": "In law you will often quote the exact words of legislation or a judgment, because the wording matters. With academic commentary like this, either paraphrase properly or quote — not something in between."
     }
   ],
-  "chefsNote": "Borrowed phrases are still borrowed, even with a citation."
+  "keyPoint": "Borrowed phrases are still borrowed, even with a citation."
 }

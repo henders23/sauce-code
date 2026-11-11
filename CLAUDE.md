@@ -1,4 +1,4 @@
-# Working on Sauce Code
+# Working on Source Code
 
 ## Owner's design preferences
 
@@ -17,8 +17,14 @@
 - **Reveal gradually.** Unlock content step by step rather than showing it all
   at once (items unlock one at a time within a module).
 - **Select phrases, not words.** Never make students select text word by word.
-- Dark mode. Tone: plain throughout. The app's name is the only pun — no
-  cooking puns in buttons, headings, module names or ratings.
+- **One place to look.** Every exercise uses the `Stage` layout: task on top,
+  texts on the left, one panel on the right showing one step at a time. Buttons
+  go in the panel only. The accent colour marks where to look or act now and is
+  used for nothing else.
+- **Concise copy.** Instructions are one short sentence. Cut anything the
+  student doesn't need in order to act.
+- Dark mode. Tone: plain throughout. The app is called Source Code — no puns
+  anywhere, including ids, file names and item titles.
 
 ## Accuracy
 

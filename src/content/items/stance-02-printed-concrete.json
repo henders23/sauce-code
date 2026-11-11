@@ -1,7 +1,7 @@
 {
   "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
-  "id": "seasoning-02",
-  "module": "seasoning",
+  "id": "stance-02",
+  "module": "stance",
   "activity": "highlight-voices",
   "title": "Who's speaking?",
   "disciplines": ["engineering"],
@@ -45,5 +45,5 @@
       "text": "In numeric styles, a bare number tells the reader nothing about who is speaking. Naming the author when it matters — 'Lindqvist's samples were small' — makes it clear whose work is being evaluated."
     }
   ],
-  "chefsNote": "If the reader can't tell the source's ideas from yours, your own argument disappears."
+  "keyPoint": "If the reader can't tell the source's ideas from yours, your own argument disappears."
 }

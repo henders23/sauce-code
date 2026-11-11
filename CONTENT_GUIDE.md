@@ -1,4 +1,4 @@
-# Writing content for Sauce Code
+# Writing content for Source Code
 
 Every activity in the app is one JSON file in `src/content/items/`. You can add,
 edit or remove items without touching any code. This guide explains the format.
@@ -63,7 +63,7 @@ optional `edition` (a number; omit for first editions). Chapters add `editors`,
 | `{{sq:word}}` | Scare quotes — quotation marks that are not a quotation from a source. |
 | `{{i:Wuthering Heights}}` | Italics, e.g. the title of a book or novel in the writer's own sentence. |
 | `{{v:argues\|argued}}` | A reporting verb: present \| past. APA recommends the past tense, so APA shows the second form. |
-| `{{gap}}` | *Pick the Verb* only: the blank. |
+| `{{gap}}` | `pick-verb` only: the blank. |
 | `[[c1:some text]]` | A span the activity refers to by id (annotations, voices, lifted phrases). Spans can contain citations but cannot be nested. |
 
 ### The page-number rule
@@ -81,7 +81,7 @@ is correct in all eight conventions. Avoid paraphrasing one specific passage of
 a paginated source: most conventions (Harvard included) then expect a page,
 but APA treats it as optional and Vancouver guides vary, so one paragraph
 can't be right in all eight.
-(If you need one, take the passage from an abstract, as `remix-01` does.)
+(If you need one, take the passage from an abstract, as `paraphrasing-01` does.)
 
 ### Long quotations
 
@@ -96,7 +96,7 @@ renders a shortened note.
 
 ## 3. Item files
 
-Items appear in a module in file-name order (`garnish-01…`, `garnish-02…`), with
+Items appear in a module in file-name order (`quoting-01…`, `quoting-02…`), with
 items from the student's chosen discipline moved first. Students unlock them one
 at a time, so put easier items first.
 
@@ -105,9 +105,9 @@ Every item has these fields:
 ```json
 {
   "_note": "Fictional sources for teaching: every source cited here is invented.",
-  "id": "garnish-01",                  // unique
-  "module": "garnish",                 // reduction | remix | garnish | blend | seasoning
-  "activity": "taste-test",            // see below
+  "id": "quoting-01",                  // unique
+  "module": "quoting",                 // summarising | paraphrasing | quoting | synthesising | stance
+  "activity": "compare-versions",      // see below
   "title": "The dropped quote",        // a short label for authors; not shown to students
   "disciplines": ["humanities"],       // humanities | social-sciences | life-sciences | engineering | law | health
   "difficulty": 1,                     // 1 easier, 2 medium, 3 harder
@@ -115,26 +115,26 @@ Every item has these fields:
   "question": "Which version uses the quotation better?",
   "followUp": { … },                   // optional — see below
   "notes": [ … ],                      // optional — see below
-  "chefsNote": "Every quotation needs an introduction and a comment."
+  "keyPoint": "Every quotation needs an introduction and a comment."
 }
 ```
 
-Module ids are internal. Students see plain names: `reduction` is Summarising,
-`remix` Paraphrasing, `garnish` Quoting, `blend` Synthesising and `seasoning`
-Stance and voice.
+Students see the module names Summarising, Paraphrasing, Quoting, Synthesising
+and Stance and voice (`stance`).
 
-`chefsNote` is shown at the end of the item as the **Key point**: one plain
-sentence the student should remember.
+`keyPoint` is shown as the last step of the item: one plain sentence the
+student should remember.
 
 Keep instructions and feedback **plain and clear**; many students write in
-English as an additional language. The app's name is its only pun: keep
-questions, feedback and key points free of cooking jokes.
-Laugh at paragraphs, never at the student: a wrong answer is "a reasonable
+English as an additional language. No puns or jokes in questions, feedback,
+key points or titles. Keep `context` to one or two sentences and `question` to
+one: the question stays on screen above the text for the whole item.
+Criticise paragraphs, never the student: a wrong answer is "a reasonable
 instinct", not "wrong".
 
 ### Notes
 
-Shown after the student has answered.
+Shown on their own step after the student has answered, before the key point.
 
 ```json
 "notes": [
@@ -146,13 +146,13 @@ Shown after the student has answered.
 
 Convention ids: `harvard`, `apa`, `mla`, `chicago-ad`, `chicago-nb`, `ieee`,
 `vancouver`, `oscola`. A one-line summary of the chosen convention is always
-added automatically.
+available under "How … cites".
 
 ### Follow-up question
 
 ```json
 "followUp": {
-  "question": "Which sentence is the 'comment' slice of the quote sandwich?",
+  "question": "In Version B, which sentence is the comment on the quotation?",
   "options": [
     { "id": "comment", "text": "…", "good": true, "feedback": "Yes. …" },
     { "id": "intro",   "text": "…", "feedback": "That's the introduction: …" }
@@ -162,8 +162,8 @@ added automatically.
 
 ## 4. Activity types — the extra fields
 
-**taste-test** — `versions` (each `{ id, label, rating, text }`, rating is
-`weak | getting | proper | michelin`), `best`, `picks` (feedback per version
+**compare-versions** — `versions` (each `{ id, label, rating, text }`, rating is
+`weak | developing | strong | excellent`), `best`, `picks` (feedback per version
 id), `reasonQuestion`, `reasons` (each `{ id, text, verdict: strong | partial |
 weak, feedback }`), optional `sourcePassage`.
 
@@ -172,13 +172,14 @@ phrases, not single words; text outside spans can't be chosen), `answer` (the
 id of the span where the writer's own point begins), and `feedback: { correct,
 early, late }`.
 
-**highlight-voices** — `text` where every part to classify is a `[[span]]`, and
+**highlight-voices** — `text` where every part to classify is a `[[span]]`
+(students answer for one part at a time), and
 `key: { spanId: { voice: source | writer | both, note } }`.
 
 **pick-verb** — `text` with one `{{gap}}`, `options` (each `{ present, past,
 verdict: good | possible | clash, signal, feedback }`). Several can be good.
 
-**fix-sauce** — `text` (the flawed paragraph), `problems` (each `{ id, text,
+**find-problem** — `text` (the flawed paragraph), `problems` (each `{ id, text,
 correct, feedback }`), `repaired` (the app's own repair, with `[[spans]]`) and
 `annotations: { spanId: "what changed" }`. Add an optional `sourcePassage` when
 the problem is how faithfully the paragraph reports its source. Repairs are always of the sample
@@ -190,19 +191,19 @@ whole phrases), `lifted: { spanId: comment }` listing the spans that are lifted
 (each must appear word for word in the source passage; at least two other
 spans must not be lifted), and `feedback: { all, some, none, falsePositives }`.
 
-**build-blend** — `claim`, `summaries` (each `{ id, source, text, role:
+**combine-sources** — `claim`, `summaries` (each `{ id, source, text, role:
 supports | complicates | irrelevant, feedback: { supports, complicates,
 irrelevant } }`), `synthesis` (a paragraph with `[[spans]]`) and `annotations`.
 
 ## 5. A complete annotated example
 
-`src/content/items/garnish-01-penny-post.json`, shortened:
+`src/content/items/quoting-01-penny-post.json`, shortened:
 
 ```jsonc
 {
-  "id": "garnish-01",
-  "module": "garnish",                   // Quoting
-  "activity": "taste-test",
+  "id": "quoting-01",
+  "module": "quoting",
+  "activity": "compare-versions",
   "title": "The dropped quote",
   "disciplines": ["humanities"],
   "difficulty": 1,
@@ -216,8 +217,8 @@ irrelevant } }`), `synthesis` (a paragraph with `[[spans]]`) and `annotations`.
       "text": "… {{q:For the first time, a servant in Manchester could write to her mother in Cornwall as often as a merchant could write to his agent}} {{cite:fairbairn2018|page:42}}. The number of letters sent increased greatly…"
     },
     {
-      "id": "b", "label": "Version B", "rating": "proper",
-      // A quote sandwich. The author is named in the sentence (integral), so the
+      "id": "b", "label": "Version B", "rating": "strong",
+      // Introduce, quote, comment. The author is named in the sentence (integral), so the
       // page goes on the integral citation; APA and MLA will move it to after
       // the quotation automatically.
       "text": "… {{cite:fairbairn2018|integral|page:42}} {{v:locates|located}} its significance in how far down the social scale it reached: {{q:For the first time, …his agent}}. The comparison is telling, because …"
@@ -226,17 +227,17 @@ irrelevant } }`), `synthesis` (a paragraph with `[[spans]]`) and `annotations`.
   "best": "b",
   "picks": {
     "a": "A reasonable instinct — Version A's quotation is vivid… But it's 'dropped' into the paragraph…",
-    "b": "Yes. Version B builds a quote sandwich…"
+    "b": "Yes. Version B follows a three-part pattern…"
   },
   "reasonQuestion": "What makes the difference?",
   "reasons": [
-    { "id": "sandwich", "text": "B introduces the quotation and then explains what it shows.", "verdict": "strong", "feedback": "Exactly — introduce, quote, comment…" },
+    { "id": "pattern", "text": "B introduces the quotation and then explains what it shows.", "verdict": "strong", "feedback": "Exactly — introduce, quote, comment…" },
     { "id": "speaks", "text": "A's quotation speaks for itself…", "verdict": "weak", "feedback": "A good quotation can feel as though it speaks for itself, but…" }
   ],
   "notes": [
     { "styles": ["apa", "mla"], "text": "When the author is named in your sentence, APA and MLA put the page number straight after the quotation…" }
   ],
-  "chefsNote": "Every quotation needs an introduction and a comment."
+  "keyPoint": "Every quotation needs an introduction and a comment."
 }
 ```
 

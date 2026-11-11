@@ -1,7 +1,7 @@
 {
   "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
-  "id": "seasoning-04",
-  "module": "seasoning",
+  "id": "stance-04",
+  "module": "stance",
   "activity": "pick-verb",
   "title": "When strong is right",
   "disciplines": ["health"],
@@ -62,5 +62,5 @@
       "text": "APA recommends the past tense (demonstrated, showed) for reporting what a source found, so the verbs here appear in the past tense."
     }
   ],
-  "chefsNote": "Sometimes a strong reporting verb is right. Check the evidence first."
+  "keyPoint": "Sometimes a strong reporting verb is right. Check the evidence first."
 }

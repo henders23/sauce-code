@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, type ReactNode } from 'react';
 import { renderText, type RenderOptions } from '../../citation/render';
 import type { StyleId } from '../../citation/types';
 import { lookupSource } from '../../content/sources';
@@ -11,7 +11,13 @@ export function useRendered(text: string, style: StyleId, opts?: RenderOptions) 
 
 export interface ActivityProps<T> {
   item: T;
-  style: import('../../citation/types').StyleId;
-  /** Called once, when the student has responded and seen the main feedback. */
-  onAnswered: () => void;
+  style: StyleId;
+  /**
+   * Null while the activity is running. Once the student continues past it, the
+   * steps that follow (follow-up, notes, key point): the activity shows them in
+   * its panel, so its texts stay in view.
+   */
+  outro: ReactNode | null;
+  /** Called when the student has seen the feedback and presses Continue. */
+  onContinue: () => void;
 }

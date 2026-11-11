@@ -1,7 +1,7 @@
 {
   "_note": "Fictional sources for teaching: every source cited here, and every quotation from it, is invented. See sources.json.",
-  "id": "garnish-04",
-  "module": "garnish",
+  "id": "quoting-04",
+  "module": "quoting",
   "activity": "highlight-voices",
   "title": "Stormy with a chance of critics",
   "disciplines": ["humanities"],
@@ -41,5 +41,5 @@
       "text": "When the author is named in your sentence, APA and MLA put the page number straight after the quotation rather than next to the name."
     }
   ],
-  "chefsNote": "A critic's words can support your reading. They can't replace it."
+  "keyPoint": "A critic's words can support your reading. They can't replace it."
 }

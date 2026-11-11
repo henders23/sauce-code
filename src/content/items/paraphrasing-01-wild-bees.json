@@ -1,7 +1,7 @@
 {
   "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
-  "id": "remix-01",
-  "module": "remix",
+  "id": "paraphrasing-01",
+  "module": "paraphrasing",
   "activity": "spot-patchwriting",
   "title": "New words, old sentence",
   "disciplines": [
@@ -64,5 +64,5 @@
       "text": "In the sciences, quotation is rare. You are expected to report findings in your own words, so the skill of paraphrasing without patchwriting matters even more."
     }
   ],
-  "chefsNote": "Changing a few words doesn't make a paraphrase. Change the structure too."
+  "keyPoint": "Changing a few words doesn't make a paraphrase. Change the structure too."
 }

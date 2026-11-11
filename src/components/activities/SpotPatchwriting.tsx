@@ -3,10 +3,11 @@ import type { SpotPatchwritingItem } from '../../content/types';
 import { Paragraph, spanOrder, spanText } from '../Paragraph';
 import { Feedback } from '../Feedback';
 import { InlineToggle } from '../InlineToggle';
+import { Continue, Stage, Step, TextCard } from '../Stage';
 import { SourcePassageBox } from './SourcePassageBox';
 import { useRendered, type ActivityProps } from './useRendered';
 
-export function SpotPatchwriting({ item, style, onAnswered }: ActivityProps<SpotPatchwritingItem>) {
+export function SpotPatchwriting({ item, style, outro, onContinue }: ActivityProps<SpotPatchwritingItem>) {
   const rendered = useRendered(item.text, style);
   const lifted = spanOrder(rendered).filter((id) => id in item.lifted);
   const [selected, setSelected] = useState<Set<string>>(new Set());
@@ -25,75 +26,64 @@ export function SpotPatchwriting({ item, style, onAnswered }: ActivityProps<Spot
     });
 
   return (
-    <div className="stack" style={{ gap: 20 }}>
-      <SourcePassageBox passage={item.sourcePassage} />
-      <article className="card stack">
-        <div className="spread">
-          <span className="para-label">The student’s paraphrase</span>
-          <span className="faint">Tap a phrase to select it. Tap again to deselect.</span>
-        </div>
-        <Paragraph
-          rendered={rendered}
-          idPrefix={item.id}
-          linkFootnotes={false}
-          renderSpan={(id, children) => {
-            const isSel = selected.has(id);
-            const isLifted = checked && id in item.lifted;
-            const cls = ['phrase-btn', isSel ? 'phrase-selected' : '', isLifted ? 'lifted' : ''].filter(Boolean).join(' ');
-            return (
-              <InlineToggle className={cls} pressed={isSel} disabled={checked} onToggle={() => toggle(id)}>
-                {isSel && (
-                  <span className="phrase-tick" aria-hidden="true">
-                    ✓
-                  </span>
-                )}
-                {children}
-              </InlineToggle>
-            );
-          }}
-        />
-      </article>
-
-      <section className="panel stack" aria-label="Your answer">
-        <div className="spread">
-          <span className="muted">
-            {selected.size === 0 ? 'Nothing selected yet.' : `${selected.size} phrase${selected.size === 1 ? '' : 's'} selected.`}
-          </span>
-          {!checked && (
-            <button
-              type="button"
-              className="btn btn-primary"
-              disabled={selected.size === 0}
-              onClick={() => {
-                setChecked(true);
-                onAnswered();
+    <Stage
+      wide
+      texts={
+        <div className="text-grid">
+          <SourcePassageBox passage={item.sourcePassage} />
+          <TextCard label="Student’s paraphrase" hint={checked ? undefined : 'Select underlined phrases'}>
+            <Paragraph
+              rendered={rendered}
+              idPrefix={item.id}
+              linkFootnotes={false}
+              renderSpan={(id, children) => {
+                const isSel = selected.has(id);
+                const isLifted = checked && id in item.lifted;
+                const cls = ['phrase-btn', isSel ? 'phrase-selected' : '', isLifted ? 'lifted' : ''].filter(Boolean).join(' ');
+                return (
+                  <InlineToggle className={cls} pressed={isSel} disabled={checked} onToggle={() => toggle(id)}>
+                    {isSel && (
+                      <span className="phrase-tick" aria-hidden="true">
+                        ✓
+                      </span>
+                    )}
+                    {children}
+                  </InlineToggle>
+                );
               }}
-            >
-              Check
-            </button>
-          )}
+            />
+          </TextCard>
         </div>
-        {checked && (
-          <div className="stack" style={{ gap: 12 }}>
+      }
+    >
+      {outro ??
+        (!checked ? (
+          <Step label="Your answer" actions={<Continue label="Check" disabled={selected.size === 0} onClick={() => setChecked(true)} />}>
+            <p className="muted">
+              {selected.size === 0 ? 'Select phrases in the student’s paraphrase. Select again to undo.' : `${selected.size} phrase${selected.size === 1 ? '' : 's'} selected.`}
+            </p>
+          </Step>
+        ) : (
+          <Step label="Feedback" actions={<Continue onClick={onContinue} />}>
             <Feedback tone={verdict === 'all' ? 'good' : 'partial'} tag={`${found.length} of ${lifted.length} found`}>
               {item.feedback[verdict]}
             </Feedback>
             {falsePositives > 0 && <Feedback tone="info">{item.feedback.falsePositives}</Feedback>}
-            <p className="faint">The lifted phrases now have a wavy underline:</p>
+            <p className="muted">Copied phrases now have a wavy underline.</p>
             <ol className="anno-list">
               {lifted.map((id, i) => (
                 <li key={id}>
                   <span className="anno-num">{i + 1}</span>
                   <span>
-                    <span className="serif">“{spanText(rendered, id)}”</span> — {found.includes(id) ? 'you found this. ' : 'missed. '}
-                    <span className="muted">{item.lifted[id]}</span>
+                    <strong>“{spanText(rendered, id)}”</strong> <span className="muted">({found.includes(id) ? 'found' : 'missed'})</span>
+                    <br />
+                    {item.lifted[id]}
                   </span>
                 </li>
               ))}
             </ol>
-          </div>
-        )}
-      </section>
-    </div>
+          </Step>
+        ))}
+    </Stage>
   );
 }

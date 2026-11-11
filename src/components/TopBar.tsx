@@ -5,11 +5,12 @@ import type { DisciplineId } from '../content/types';
 import { useSettings } from '../lib/settings';
 import { href } from '../lib/router';
 
-export function Logo({ size = 28 }: { size?: number }) {
+/** Square brackets round a mark: a citation, and a nod to the name. */
+export function Logo({ size = 26 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z" />
-      <path d="M9.5 14.5a2.5 2.5 0 0 0 2.5 2.5" />
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M8 4H4v16h4M16 4h4v16h-4" />
+      <path d="M12 9v6" stroke="var(--accent)" strokeWidth="2.6" />
     </svg>
   );
 }
@@ -18,7 +19,7 @@ export function ConventionSelect({ id }: { id: string }) {
   const { style, effectiveStyle, setStyle } = useSettings();
   return (
     <label className="field" htmlFor={id}>
-      Style
+      Referencing style
       <select id={id} className="select" value={style ?? effectiveStyle} onChange={(e) => setStyle(e.target.value as StyleId)}>
         {STYLE_ORDER.map((s) => (
           <option key={s} value={s}>
@@ -56,15 +57,13 @@ export function TopBar() {
   return (
     <header className="topbar">
       <div className="wrap spread">
-        <a className="brand" href={href.intro} aria-label="Sauce Code — home">
+        <a className="brand" href={href.intro} aria-label="Source Code — home">
           <Logo />
-          <span>
-            Sauce <em>Code</em>
-          </span>
+          Source Code
         </a>
         <nav className="row" aria-label="Settings and navigation">
           <ConventionSelect id="topbar-convention" />
-          <a className="btn btn-small btn-ghost" href={href.menu}>
+          <a className="btn btn-small btn-ghost" href={href.modules}>
             Modules
           </a>
         </nav>

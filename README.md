@@ -1,7 +1,7 @@
-# Sauce Code
+# Source Code
 
-Learning to use sources well in academic writing — by comparing weaker and
-stronger paragraphs side by side.
+Practise using sources in academic writing: read a short paragraph, answer one
+question about it, and see why.
 
 Students look at short academic paragraphs, make a judgement, and get feedback
 that responds to what they chose. Every paragraph re-renders in the student's
@@ -22,16 +22,22 @@ npm run build      # static site in dist/
 
 ## What's here
 
-* **A short start**: a minimal intro, two setup questions (referencing style, then optional discipline), and a first exercise.
+* **A short start**: an intro, two setup questions (referencing style, then
+  optional discipline), a three-line explanation of how exercises work, and a
+  first exercise.
 * **Five modules**: Summarising, Paraphrasing, Quoting, Synthesising, and
   Stance and voice.
 * **Seven activity types**: Compare versions, Find where the source ends, Who
   is speaking?, Choose a reporting verb, Find the main problem, Spot copied
   phrases, Combine sources.
-* **Purpose first**: the task stays on screen above every text, and versions are
-  shown one at a time, then side by side for the decision.
+* **One layout for every exercise**: the task on one line at the top, the texts
+  on the left, and a single panel on the right that shows one step at a time
+  (read, answer, feedback, notes, key point). Buttons only appear in the panel.
+* **One accent colour, one meaning**: it marks where to look or act now — the
+  primary button, or the text to work in.
 * **21 seed items** (four or five per module) across six disciplines, all using **fictional sources**.
-* **Gradual reveal**: within each module, the next item unlocks when the student finishes the one before.
+* **Gradual reveal**: texts appear one at a time, and within each module the
+  next exercise unlocks when the student finishes the one before.
 * **Style switcher** always in the top bar; switching re-renders the
   current paragraph straight away, without losing your answers.
 * **Optional discipline**: puts matching items first and adds discipline notes.
@@ -49,4 +55,6 @@ npm run build      # static site in dist/
 | `src/content/items/*.json` | One file per activity — editable without code |
 | `CONTENT_GUIDE.md` | How to write and edit items |
 | `docs/DECISIONS.md` | Why a custom renderer rather than citation-js, editions followed, defaults chosen |
+| `src/components/Stage.tsx` | The shared exercise layout: texts, step panel, text cards |
+| `src/components/ItemShell.tsx` | The step sequence for one exercise |
 | `src/components/activities/` | The seven activity components |

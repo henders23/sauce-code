@@ -4,8 +4,8 @@ import { useRoute, type Route } from './lib/router';
 import { TopBar } from './components/TopBar';
 import { Intro } from './pages/Intro';
 import { Setup } from './pages/Setup';
-import { FirstTaste } from './pages/FirstTaste';
-import { Menu } from './pages/Menu';
+import { FirstExercise } from './pages/FirstExercise';
+import { Modules } from './pages/Modules';
 import { ModulePage } from './pages/ModulePage';
 
 function Page({ route }: { route: Route }) {
@@ -13,10 +13,10 @@ function Page({ route }: { route: Route }) {
   switch (route.page) {
     case 'setup':
       return <Setup />;
-    case 'taste':
-      return <FirstTaste />;
-    case 'menu':
-      return <Menu isDone={progress.isDone} onReset={progress.reset} />;
+    case 'first':
+      return <FirstExercise markDone={progress.markDone} />;
+    case 'modules':
+      return <Modules isDone={progress.isDone} onReset={progress.reset} />;
     case 'module':
       return <ModulePage moduleId={route.module} index={route.index} isDone={progress.isDone} markDone={progress.markDone} />;
     default:

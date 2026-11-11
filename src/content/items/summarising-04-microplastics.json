@@ -1,7 +1,7 @@
 {
   "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
-  "id": "reduction-04",
-  "module": "reduction",
+  "id": "summarising-04",
+  "module": "summarising",
   "activity": "find-seam",
   "title": "Where the summary stops",
   "disciplines": ["life-sciences"],
@@ -42,5 +42,5 @@
       "text": "Because this summarises the study as a whole, MLA needs no page number here."
     }
   ],
-  "chefsNote": "Keep the summary short, then make your own point."
+  "keyPoint": "Keep the summary short, then make your own point."
 }

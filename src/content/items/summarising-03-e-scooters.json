@@ -1,9 +1,9 @@
 {
   "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
-  "id": "reduction-03",
-  "module": "reduction",
-  "activity": "fix-sauce",
-  "title": "Reduced a little too far",
+  "id": "summarising-03",
+  "module": "summarising",
+  "activity": "find-problem",
+  "title": "Shortened too far",
   "disciplines": ["engineering"],
   "difficulty": 2,
   "context": "An engineering student is summarising a study of e-scooter battery fires. Compare their summary with the original.",
@@ -52,5 +52,5 @@
       "text": "In engineering and the sciences, a summary usually reports a finding together with its conditions (here, laboratory tests) and its limits. Dropping either changes what the source says."
     }
   ],
-  "chefsNote": "A summary shortens the source. It doesn't add claims the source didn't make."
+  "keyPoint": "A summary shortens the source. It doesn't add claims the source didn't make."
 }

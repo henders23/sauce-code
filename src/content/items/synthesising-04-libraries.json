@@ -1,8 +1,8 @@
 {
   "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
-  "id": "blend-04",
-  "module": "blend",
-  "activity": "build-blend",
+  "id": "synthesising-04",
+  "module": "synthesising",
+  "activity": "combine-sources",
   "title": "Checking out the evidence",
   "disciplines": ["social-sciences"],
   "difficulty": 2,
@@ -62,5 +62,5 @@
     "s3": "Two supporting sources answer the objection together, each adding a different kind of value.",
     "s4": "The writer's own conclusion turns the objection around — something no single source says. The Japanese comparison has been left out."
   },
-  "chefsNote": "Include the source that disagrees. Leaving it out makes the synthesis weaker, not stronger."
+  "keyPoint": "Include the source that disagrees. Leaving it out makes the synthesis weaker, not stronger."
 }

@@ -3,9 +3,10 @@ import type { FindSeamItem } from '../../content/types';
 import { Paragraph, spanOrder, spanText } from '../Paragraph';
 import { Feedback } from '../Feedback';
 import { InlineToggle } from '../InlineToggle';
+import { Continue, Stage, Step, TextCard } from '../Stage';
 import { useRendered, type ActivityProps } from './useRendered';
 
-export function FindTheSeam({ item, style, onAnswered }: ActivityProps<FindSeamItem>) {
+export function FindTheSeam({ item, style, outro, onContinue }: ActivityProps<FindSeamItem>) {
   const rendered = useRendered(item.text, style);
   const order = spanOrder(rendered);
   const [pick, setPick] = useState<string | null>(null);
@@ -15,64 +16,52 @@ export function FindTheSeam({ item, style, onAnswered }: ActivityProps<FindSeamI
   const verdict = diff === 0 ? 'correct' : diff < 0 ? 'early' : 'late';
 
   return (
-    <div className="stack" style={{ gap: 20 }}>
-      <article className="card stack">
-        <p className="faint">Tap a phrase. The phrases you can choose are underlined.</p>
-        <Paragraph
-          rendered={rendered}
-          idPrefix={item.id}
-          linkFootnotes={false}
-          renderSpan={(id, children) => {
-            const showCorrect = checked && id === item.answer;
-            const showPick = id === pick && !showCorrect;
-            return (
+    <Stage
+      texts={
+        <TextCard label="Paragraph" hint={checked ? undefined : 'Select an underlined phrase'}>
+          <Paragraph
+            rendered={rendered}
+            idPrefix={item.id}
+            linkFootnotes={false}
+            renderSpan={(id, children) => {
+              const showCorrect = checked && id === item.answer;
+              const showPick = id === pick && !showCorrect;
+              return (
+                <>
+                  {showCorrect && <span className="seam-marker correct" aria-hidden="true" />}
+                  {showPick && <span className="seam-marker" aria-hidden="true" />}
+                  <InlineToggle className={`phrase-btn${pick === id ? ' phrase-selected' : ''}`} pressed={pick === id} disabled={checked} onToggle={() => setPick(id)}>
+                    {children}
+                  </InlineToggle>
+                </>
+              );
+            }}
+          />
+        </TextCard>
+      }
+    >
+      {outro ??
+        (!checked ? (
+          <Step label="Your answer" actions={<Continue label="Check" disabled={pick === null} onClick={() => setChecked(true)} />}>
+            {pick === null ? (
+              <p className="muted">Select a phrase in the paragraph.</p>
+            ) : (
               <>
-                {showCorrect && <span className="seam-marker correct" aria-hidden="true" />}
-                {showPick && <span className="seam-marker" aria-hidden="true" />}
-                <InlineToggle
-                  className={`phrase-btn${pick === id ? ' phrase-selected' : ''}`}
-                  pressed={pick === id}
-                  disabled={checked}
-                  onToggle={() => setPick(id)}
-                >
-                  {children}
-                </InlineToggle>
+                <p className="muted">The writer’s own point begins at:</p>
+                <p className="chosen">“{spanText(rendered, pick)}”</p>
               </>
-            );
-          }}
-        />
-      </article>
-
-      <section className="panel stack" aria-label="Your answer">
-        <div className="spread">
-          <span className="muted">
-            {pick === null ? 'No phrase chosen yet.' : `You chose: “${spanText(rendered, pick)}”`}
-          </span>
-          {!checked && (
-            <button
-              type="button"
-              className="btn btn-primary"
-              disabled={pick === null}
-              onClick={() => {
-                setChecked(true);
-                onAnswered();
-              }}
-            >
-              Check
-            </button>
-          )}
-        </div>
-        {checked && (
-          <>
-            <Feedback tone={verdict === 'correct' ? 'good' : 'partial'} tag={verdict === 'correct' ? 'Correct' : 'Not quite'}>
+            )}
+          </Step>
+        ) : (
+          <Step label="Feedback" actions={<Continue onClick={onContinue} />}>
+            <Feedback tone={verdict === 'correct' ? 'good' : 'partial'} tag={verdict === 'correct' ? 'Correct' : verdict === 'early' ? 'Too early' : 'Too late'}>
               {item.feedback[verdict]}
             </Feedback>
-            <p className="faint">
-              <span className="seam-marker correct" aria-hidden="true" /> The green line marks the seam, just before “{spanText(rendered, item.answer)}”.
+            <p className="muted">
+              <span className="seam-marker correct" aria-hidden="true" /> The green line in the paragraph marks where the writer’s point begins.
             </p>
-          </>
-        )}
-      </section>
-    </div>
+          </Step>
+        ))}
+    </Stage>
   );
 }

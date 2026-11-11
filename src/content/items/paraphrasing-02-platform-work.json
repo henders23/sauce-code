@@ -1,8 +1,8 @@
 {
   "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
-  "id": "remix-02",
-  "module": "remix",
-  "activity": "taste-test",
+  "id": "paraphrasing-02",
+  "module": "paraphrasing",
+  "activity": "compare-versions",
   "title": "Same idea, different structure",
   "disciplines": ["social-sciences"],
   "difficulty": 2,
@@ -23,7 +23,7 @@
     {
       "id": "b",
       "label": "Version B",
-      "rating": "proper",
+      "rating": "strong",
       "text": "Delivery apps have grown quickly in UK cities over the last decade, usually on the promise that riders can work whenever they choose. {{cite:kowalczyk2020|integral}} {{v:turns|turned}} this promise around: in her account, the freedom belongs mainly to the platform, which can cut pay or withdraw work with little notice, while riders carry the cost when orders dry up. If that is the case, {{sq:flexibility}} describes the business model more than the job. Regulation that focuses only on hourly pay may therefore miss the deeper imbalance, which lies in who bears the risk when demand falls. That is a question about risk, not just about rates of pay."
     }
   ],
@@ -86,5 +86,5 @@
       "text": "In footnote styles, a reader of Version A sees only a small note number. Version B names Kowalczyk in the sentence, so it is clear whose argument this is without looking down at the footnote."
     }
   ],
-  "chefsNote": "A paraphrase keeps the source's ideas, but not its wording or sentence structure."
+  "keyPoint": "A paraphrase keeps the source's ideas, but not its wording or sentence structure."
 }

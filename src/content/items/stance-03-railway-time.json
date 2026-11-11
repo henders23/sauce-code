@@ -1,7 +1,7 @@
 {
   "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
-  "id": "seasoning-03",
-  "module": "seasoning",
+  "id": "stance-03",
+  "module": "stance",
   "activity": "find-seam",
   "title": "Find the seam",
   "disciplines": [
@@ -47,5 +47,5 @@
       "text": "In footnote styles, the note marker comes at the end of the sentence that reports the source — here, just before the seam. Readers rely on your wording, not the footnote, to see where your own point begins."
     }
   ],
-  "chefsNote": "Make it clear where the source's idea ends and your own point begins."
+  "keyPoint": "Make it clear where the source's idea ends and your own point begins."
 }

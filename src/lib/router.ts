@@ -3,15 +3,15 @@ import { useEffect, useState } from 'react';
 export type Route =
   | { page: 'intro' }
   | { page: 'setup' }
-  | { page: 'taste' }
-  | { page: 'menu' }
+  | { page: 'first' }
+  | { page: 'modules' }
   | { page: 'module'; module: string; index: number };
 
 export function parseHash(hash: string): Route {
   const parts = hash.replace(/^#\/?/, '').split('/').filter(Boolean);
-  if (parts[0] === 'menu') return { page: 'menu' };
+  if (parts[0] === 'modules') return { page: 'modules' };
   if (parts[0] === 'start') return { page: 'setup' };
-  if (parts[0] === 'taste') return { page: 'taste' };
+  if (parts[0] === 'first') return { page: 'first' };
   if (parts[0] === 'm' && parts[1]) {
     const index = Number(parts[2] ?? 0);
     return { page: 'module', module: parts[1], index: Number.isFinite(index) && index >= 0 ? index : 0 };
@@ -22,8 +22,8 @@ export function parseHash(hash: string): Route {
 export const href = {
   intro: '#/',
   setup: '#/start',
-  taste: '#/taste',
-  menu: '#/menu',
+  first: '#/first',
+  modules: '#/modules',
   item: (module: string, index: number) => `#/m/${module}/${index}`,
 };
 

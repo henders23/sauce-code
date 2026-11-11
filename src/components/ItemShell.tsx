@@ -1,76 +1,76 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState, type ReactNode } from 'react';
 import type { Item } from '../content/types';
-import { ACTIVITY_LABEL, MODULES, disciplineLabel } from '../content';
+import { ACTIVITY_LABEL, MODULES } from '../content';
 import { itemTexts } from '../content/texts';
 import { lookupSource } from '../content/sources';
 import { renderText, type RenderFlags } from '../citation/render';
 import { useSettings } from '../lib/settings';
-import { ConventionNotes } from './ConventionNotes';
 import { FollowUp } from './FollowUp';
-import { TasteTest } from './activities/TasteTest';
+import { Arrow } from './Stage';
+import { KeyPointStep, NotesStep, itemNotes } from './Summary';
+import { CompareVersions } from './activities/CompareVersions';
 import { FindTheSeam } from './activities/FindTheSeam';
 import { HighlightVoices } from './activities/HighlightVoices';
 import { PickTheVerb } from './activities/PickTheVerb';
-import { FixTheSauce } from './activities/FixTheSauce';
+import { FindProblem } from './activities/FindProblem';
 import { SpotPatchwriting } from './activities/SpotPatchwriting';
-import { BuildBlend } from './activities/BuildBlend';
+import { CombineSources } from './activities/CombineSources';
 
 /** What the reveal button shows, per activity. */
 function revealLabel(item: Item): string {
   switch (item.activity) {
-    case 'taste-test':
+    case 'compare-versions':
       return `Show ${item.versions[0].label}`;
     case 'spot-patchwriting':
       return 'Show the texts';
-    case 'build-blend':
-      return 'Show the sources';
+    case 'combine-sources':
+      return 'Show the claim';
+    case 'find-problem':
+      return item.sourcePassage ? 'Show the texts' : 'Show the paragraph';
     default:
       return 'Show the paragraph';
   }
 }
 
-/** What happens after the reveal, when it isn't obvious. */
-function revealHint(item: Item): string | null {
-  return item.activity === 'taste-test' ? 'You’ll read each version in turn, then compare them.' : null;
-}
-
-function Activity({ item, onAnswered }: { item: Item; onAnswered: () => void }) {
+function Activity({ item, outro, onContinue }: { item: Item; outro: ReactNode | null; onContinue: () => void }) {
   const { effectiveStyle: style } = useSettings();
+  const props = { style, outro, onContinue };
   switch (item.activity) {
-    case 'taste-test':
-      return <TasteTest item={item} style={style} onAnswered={onAnswered} />;
+    case 'compare-versions':
+      return <CompareVersions item={item} {...props} />;
     case 'find-seam':
-      return <FindTheSeam item={item} style={style} onAnswered={onAnswered} />;
+      return <FindTheSeam item={item} {...props} />;
     case 'highlight-voices':
-      return <HighlightVoices item={item} style={style} onAnswered={onAnswered} />;
+      return <HighlightVoices item={item} {...props} />;
     case 'pick-verb':
-      return <PickTheVerb item={item} style={style} onAnswered={onAnswered} />;
-    case 'fix-sauce':
-      return <FixTheSauce item={item} style={style} onAnswered={onAnswered} />;
+      return <PickTheVerb item={item} {...props} />;
+    case 'find-problem':
+      return <FindProblem item={item} {...props} />;
     case 'spot-patchwriting':
-      return <SpotPatchwriting item={item} style={style} onAnswered={onAnswered} />;
-    case 'build-blend':
-      return <BuildBlend item={item} style={style} onAnswered={onAnswered} />;
+      return <SpotPatchwriting item={item} {...props} />;
+    case 'combine-sources':
+      return <CombineSources item={item} {...props} />;
   }
 }
 
+type Phase = 'intro' | 'activity' | 'followup' | 'notes' | 'keypoint';
+
 interface Props {
   item: Item;
+  /** Called once, when the student has answered everything in the item. */
   onFinished: () => void;
   next: { href: string; label: string };
 }
 
+/**
+ * One item, one step at a time: the task, the activity, an optional follow-up,
+ * notes, then the key point. After the first screen the task stays above the
+ * texts, and every later step appears in the activity's own panel.
+ */
 export function ItemShell({ item, onFinished, next }: Props) {
   const { effectiveStyle: style, discipline } = useSettings();
-  const hint = revealHint(item);
-  const [shown, setShown] = useState(false);
-  const [answered, setAnswered] = useState(false);
-  const [followUpDone, setFollowUpDone] = useState(false);
+  const [phase, setPhase] = useState<Phase>('intro');
   const module = MODULES.find((m) => m.id === item.module)!;
-  const activity = ACTIVITY_LABEL[item.activity];
-  // Compare-versions asks its follow-up inside its own answer panel, beside the texts.
-  const ownFollowUp = item.activity === 'taste-test';
-  const finished = answered && (ownFollowUp || !item.followUp || followUpDone);
 
   const flags = useMemo<RenderFlags>(() => {
     const all = itemTexts(item).map((t) => renderText(t.text, style, lookupSource, { gap: { present: 'x', past: 'x' } }).flags);
@@ -82,90 +82,54 @@ export function ItemShell({ item, onFinished, next }: Props) {
       quotation: all.some((f) => f.quotation),
     };
   }, [item, style]);
+  const notes = itemNotes(item, style, discipline, flags);
 
-  return (
-    <div className="stack" style={{ gap: 24 }}>
-      <header className="stack" style={{ gap: 20, maxWidth: 820 }}>
+  const wrapUp = () => {
+    onFinished();
+    setPhase(notes.length > 0 ? 'notes' : 'keypoint');
+  };
+
+  if (phase === 'intro') {
+    return (
+      <section className="item-intro stack fade-in" aria-labelledby={`${item.id}-task`}>
+        <p className="label">
+          {module.name} · {ACTIVITY_LABEL[item.activity]}
+        </p>
+        {item.context && <p className="lede">{item.context}</p>}
         <div className="stack" style={{ gap: 6 }}>
-          <p className="eyebrow">{module.name}</p>
-          <p className="faint" style={{ fontSize: 14 }}>
-            {[activity, ...item.disciplines.map(disciplineLabel)].join(' · ')}
-          </p>
-        </div>
-        {item.context && <p style={{ fontSize: 18, color: 'var(--text-2)' }}>{item.context}</p>}
-        <section className="task" aria-labelledby={`${item.id}-task`}>
-          <span className="eyebrow">Your task</span>
-          <h1 id={`${item.id}-task`} className="serif task-title">
+          <p className="label">Your task</p>
+          <h1 id={`${item.id}-task`} className="task-title">
             {item.question}
           </h1>
-          {!shown && (
-            <div className="spread">
-              {hint ? <span className="faint" style={{ fontSize: 14 }}>{hint}</span> : <span />}
-              <button type="button" className="btn btn-primary btn-large" onClick={() => setShown(true)}>
-                {revealLabel(item)}
-              </button>
-            </div>
-          )}
-        </section>
-      </header>
-
-      {shown && (
-        <div className="fade-in">
-          <Activity item={item} onAnswered={() => setAnswered(true)} />
         </div>
-      )}
+        <div>
+          <button type="button" className="btn btn-primary btn-large" onClick={() => setPhase('activity')}>
+            {revealLabel(item)}
+            <Arrow />
+          </button>
+        </div>
+      </section>
+    );
+  }
 
-      {answered && item.followUp && !ownFollowUp && <FollowUp data={item.followUp} onAnswered={() => setFollowUpDone(true)} />}
+  const outro =
+    phase === 'followup' && item.followUp ? (
+      <FollowUp data={item.followUp} onContinue={wrapUp} />
+    ) : phase === 'notes' ? (
+      <NotesStep notes={notes} style={style} onContinue={() => setPhase('keypoint')} />
+    ) : phase === 'keypoint' ? (
+      <KeyPointStep text={item.keyPoint} next={next} style={style} showBasics={notes.length === 0} />
+    ) : null;
 
-      {finished && (
-        <FinishedSection
-          item={item}
-          flags={flags}
-          discipline={discipline}
-          style={style}
-          next={next}
-          onShown={onFinished}
-        />
-      )}
-    </div>
-  );
-}
-
-function FinishedSection({
-  item,
-  flags,
-  discipline,
-  style,
-  next,
-  onShown,
-}: {
-  item: Item;
-  flags: RenderFlags;
-  discipline: ReturnType<typeof useSettings>['discipline'];
-  style: ReturnType<typeof useSettings>['effectiveStyle'];
-  next: Props['next'];
-  onShown: () => void;
-}) {
-  useEffect(() => {
-    onShown();
-    // Runs once, when the student first reaches the end of the item.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
   return (
-    <div id={`${item.id}-end`} className="stack" style={{ gap: 24, scrollMarginTop: 84 }}>
-      <ConventionNotes style={style} discipline={discipline} itemDisciplines={item.disciplines} notes={item.notes} flags={flags} />
-      <div className="key-point stack fade-in" style={{ gap: 4 }}>
-        <span className="eyebrow">Key point</span>
-        <p>{item.chefsNote}</p>
-      </div>
-      <div className="row" style={{ justifyContent: 'flex-end' }}>
-        <a className="btn btn-primary" href={next.href}>
-          {next.label}
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <path d="M5 12h14M13 6l6 6-6 6" />
-          </svg>
-        </a>
-      </div>
-    </div>
+    <>
+      <header className="task">
+        <p className="label">Task</p>
+        <h1 id={`${item.id}-task`} className="task-title">
+          {item.question}
+        </h1>
+      </header>
+      <Activity item={item} outro={outro} onContinue={() => (item.followUp ? setPhase('followup') : wrapUp())} />
+    </>
   );
 }

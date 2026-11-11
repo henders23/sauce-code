@@ -1,20 +1,20 @@
 import type { StyleId } from '../citation/types';
 
-export type ModuleId = 'reduction' | 'remix' | 'garnish' | 'blend' | 'seasoning';
+export type ModuleId = 'summarising' | 'paraphrasing' | 'quoting' | 'synthesising' | 'stance';
 
 export type DisciplineId = 'humanities' | 'social-sciences' | 'life-sciences' | 'engineering' | 'law' | 'health';
 
 export type ActivityType =
-  | 'taste-test'
+  | 'compare-versions'
   | 'find-seam'
   | 'highlight-voices'
   | 'pick-verb'
-  | 'fix-sauce'
+  | 'find-problem'
   | 'spot-patchwriting'
-  | 'build-blend';
+  | 'combine-sources';
 
 /** Ratings describe paragraphs, never students. */
-export type Rating = 'weak' | 'getting' | 'proper' | 'michelin';
+export type Rating = 'weak' | 'developing' | 'strong' | 'excellent';
 
 export interface FollowUpOption {
   id: string;
@@ -59,11 +59,11 @@ interface ItemBase {
   question: string;
   followUp?: FollowUp;
   notes?: ItemNote[];
-  chefsNote: string;
+  keyPoint: string;
 }
 
-export interface TasteTestItem extends ItemBase {
-  activity: 'taste-test';
+export interface CompareVersionsItem extends ItemBase {
+  activity: 'compare-versions';
   sourcePassage?: SourcePassage;
   versions: { id: string; label: string; rating: Rating; text: string }[];
   best: string;
@@ -105,8 +105,8 @@ export interface PickVerbItem extends ItemBase {
   }[];
 }
 
-export interface FixSauceItem extends ItemBase {
-  activity: 'fix-sauce';
+export interface FindProblemItem extends ItemBase {
+  activity: 'find-problem';
   /** Optional original passage, when the problem is how faithfully the source is reported. */
   sourcePassage?: SourcePassage;
   /** The flawed paragraph. */
@@ -127,21 +127,21 @@ export interface SpotPatchwritingItem extends ItemBase {
   feedback: { all: string; some: string; none: string; falsePositives: string };
 }
 
-export type BlendRole = 'supports' | 'complicates' | 'irrelevant';
+export type SourceRole = 'supports' | 'complicates' | 'irrelevant';
 
-export interface BuildBlendItem extends ItemBase {
-  activity: 'build-blend';
+export interface CombineSourcesItem extends ItemBase {
+  activity: 'combine-sources';
   claim: string;
-  summaries: { id: string; source: string; text: string; role: BlendRole; feedback: Record<BlendRole, string> }[];
+  summaries: { id: string; source: string; text: string; role: SourceRole; feedback: Record<SourceRole, string> }[];
   synthesis: string;
   annotations: Record<string, string>;
 }
 
 export type Item =
-  | TasteTestItem
+  | CompareVersionsItem
   | FindSeamItem
   | HighlightVoicesItem
   | PickVerbItem
-  | FixSauceItem
+  | FindProblemItem
   | SpotPatchwritingItem
-  | BuildBlendItem;
+  | CombineSourcesItem;

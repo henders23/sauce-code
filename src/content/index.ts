@@ -7,21 +7,21 @@ export interface ModuleMeta {
 }
 
 export const MODULES: ModuleMeta[] = [
-  { id: 'reduction', name: 'Summarising', blurb: 'Keep only what your argument needs from a source — and know when a summary beats a quotation.' },
-  { id: 'remix', name: 'Paraphrasing', blurb: 'Real paraphrase versus patchwriting: keep the meaning, change the structure.' },
-  { id: 'garnish', name: 'Quoting', blurb: 'When a quotation earns its place, and how to introduce it and comment on it.' },
-  { id: 'blend', name: 'Synthesising', blurb: 'Combine sources around your point instead of listing them one per sentence.' },
-  { id: 'seasoning', name: 'Stance and voice', blurb: 'Reporting verbs, and where your own voice comes through.' },
+  { id: 'summarising', name: 'Summarising', blurb: 'Keep only what your argument needs.' },
+  { id: 'paraphrasing', name: 'Paraphrasing', blurb: 'Keep the meaning. Change the wording and the structure.' },
+  { id: 'quoting', name: 'Quoting', blurb: 'Introduce each quotation, then comment on it.' },
+  { id: 'synthesising', name: 'Synthesising', blurb: 'Combine sources around your own point.' },
+  { id: 'stance', name: 'Stance and voice', blurb: 'Show what you think of each source.' },
 ];
 
 export const ACTIVITY_LABEL: Record<ActivityType, string> = {
-  'taste-test': 'Compare versions',
+  'compare-versions': 'Compare versions',
   'find-seam': 'Find where the source ends',
   'highlight-voices': 'Who is speaking?',
   'pick-verb': 'Choose a reporting verb',
-  'fix-sauce': 'Find the main problem',
+  'find-problem': 'Find the main problem',
   'spot-patchwriting': 'Spot copied phrases',
-  'build-blend': 'Combine sources',
+  'combine-sources': 'Combine sources',
 };
 
 export const DISCIPLINES: { id: DisciplineId; label: string }[] = [

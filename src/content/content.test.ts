@@ -14,13 +14,13 @@ import type { Item } from './types';
 function texts(item: Item): { label: string; text: string; paragraph: boolean }[] {
   const out: { label: string; text: string; paragraph: boolean }[] = [];
   switch (item.activity) {
-    case 'taste-test':
+    case 'compare-versions':
       item.versions.forEach((v) => out.push({ label: `version ${v.id}`, text: v.text, paragraph: true }));
       break;
-    case 'fix-sauce':
+    case 'find-problem':
       out.push({ label: 'flawed', text: item.text, paragraph: true }, { label: 'repaired', text: item.repaired, paragraph: true });
       break;
-    case 'build-blend':
+    case 'combine-sources':
       out.push({ label: 'synthesis', text: item.synthesis, paragraph: true });
       break;
     default:
@@ -67,7 +67,7 @@ describe('seed content', () => {
 
   it('covers every activity type', () => {
     const types = new Set(ITEMS.map((i) => i.activity));
-    for (const t of ['taste-test', 'find-seam', 'highlight-voices', 'pick-verb', 'fix-sauce', 'spot-patchwriting', 'build-blend'])
+    for (const t of ['compare-versions', 'find-seam', 'highlight-voices', 'pick-verb', 'find-problem', 'spot-patchwriting', 'combine-sources'])
       expect(types.has(t as Item['activity']), t).toBe(true);
   });
 
@@ -112,7 +112,7 @@ describe.each(ITEMS.map((i) => [i.id, i] as const))('%s', (_id, item) => {
 
   it('activity data is consistent', () => {
     switch (item.activity) {
-      case 'taste-test':
+      case 'compare-versions':
         expect(item.versions.map((v) => v.id)).toContain(item.best);
         for (const v of item.versions) expect(item.picks[v.id], `pick feedback for ${v.id}`).toBeTruthy();
         expect(item.reasons.some((r) => r.verdict === 'strong')).toBe(true);
@@ -130,7 +130,7 @@ describe.each(ITEMS.map((i) => [i.id, i] as const))('%s', (_id, item) => {
       case 'highlight-voices':
         expect(spanIds(tokenize(item.text)).sort()).toEqual(Object.keys(item.key).sort());
         break;
-      case 'fix-sauce':
+      case 'find-problem':
         expect(item.problems.filter((p) => p.correct).length).toBeGreaterThanOrEqual(1);
         expect(spanIds(tokenize(item.repaired)).sort()).toEqual(Object.keys(item.annotations).sort());
         break;
@@ -146,12 +146,12 @@ describe.each(ITEMS.map((i) => [i.id, i] as const))('%s', (_id, item) => {
             expect(item.sourcePassage.text, tok.span).toContain(tok.text);
         break;
       }
-      case 'build-blend':
+      case 'combine-sources':
         for (const s of item.summaries) expect(lookupSource(s.source), s.source).toBeTruthy();
         expect(spanIds(tokenize(item.synthesis)).sort()).toEqual(Object.keys(item.annotations).sort());
         break;
     }
-    if ((item.activity === 'taste-test' || item.activity === 'fix-sauce') && item.sourcePassage)
+    if ((item.activity === 'compare-versions' || item.activity === 'find-problem') && item.sourcePassage)
       expect(lookupSource(item.sourcePassage.source)).toBeTruthy();
   });
 });

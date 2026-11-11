@@ -1,9 +1,9 @@
 {
   "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
-  "id": "seasoning-01",
-  "module": "seasoning",
+  "id": "stance-01",
+  "module": "stance",
   "activity": "pick-verb",
-  "title": "A pinch of 'suggests'",
+  "title": "When 'suggests' is right",
   "disciplines": ["social-sciences"],
   "difficulty": 1,
   "context": "An education student is writing about smartphone bans in schools. Read the whole paragraph before you choose.",
@@ -88,5 +88,5 @@
       "text": "This convention doesn't fix a tense for reporting verbs. The present tense (suggests) is common, but follow your department's practice and be consistent."
     }
   ],
-  "chefsNote": "'Suggests' and 'proves' make very different claims. Check the evidence before you choose."
+  "keyPoint": "'Suggests' and 'proves' make very different claims. Check the evidence before you choose."
 }

@@ -1,9 +1,9 @@
 {
   "_note": "Fictional sources for teaching: every source cited here is invented. See sources.json.",
-  "id": "reduction-01",
-  "module": "reduction",
-  "activity": "taste-test",
-  "title": "Too much in the pan",
+  "id": "summarising-01",
+  "module": "summarising",
+  "activity": "compare-versions",
+  "title": "Too much detail",
   "disciplines": ["health"],
   "difficulty": 1,
   "context": "A student is arguing that hospitals should target hand-hygiene training at night shifts. Both versions use the same study.",
@@ -18,7 +18,7 @@
     {
       "id": "b",
       "label": "Version B",
-      "rating": "proper",
+      "rating": "strong",
       "text": "Hand-hygiene training is usually timed for day shifts, but the evidence suggests that night shifts need it most. In a six-month observational study across three regional hospitals, {{cite:mensah2020|integral}} found that compliance fell from 78 per cent during the day to 61 per cent at night, and linked the drop to fatigue and thinner senior cover. For a hospital planning its training budget, this is the detail that matters: the problem is not that staff do not know the rules, but that the conditions of night work make the rules harder to follow. Training that ignores those conditions is likely to have limited effect."
     }
   ],
@@ -85,5 +85,5 @@
       "text": "Because this paragraph summarises the study as a whole, MLA needs no page number here — just the authors' names. A page number is needed when you quote, or paraphrase a specific passage."
     }
   ],
-  "chefsNote": "Summarise only the findings your argument needs."
+  "keyPoint": "Summarise only the findings your argument needs."
 }

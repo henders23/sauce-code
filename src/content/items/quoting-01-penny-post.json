@@ -1,8 +1,8 @@
 {
   "_note": "Fictional sources for teaching: every source cited here, and every quotation from it, is invented. See sources.json.",
-  "id": "garnish-01",
-  "module": "garnish",
-  "activity": "taste-test",
+  "id": "quoting-01",
+  "module": "quoting",
+  "activity": "compare-versions",
   "title": "The dropped quote",
   "disciplines": ["humanities"],
   "difficulty": 1,
@@ -18,19 +18,19 @@
     {
       "id": "b",
       "label": "Version B",
-      "rating": "proper",
+      "rating": "strong",
       "text": "The introduction of the penny post in 1840 is often described as a turning point in British communication, but historians disagree about whose lives it changed. {{cite:fairbairn2018|integral|page:42}} {{v:locates|located}} its significance in how far down the social scale it reached: {{q:For the first time, a servant in Manchester could write to her mother in Cornwall as often as a merchant could write to his agent}}. The comparison is telling, because it measures the reform against business correspondence, which had always been able to absorb high postage. Yet it may overstate the case: a penny was still a meaningful sum for a servant, and many could not write at all. The reform widened access to letter-writing, then, but it did not make it equal."
     }
   ],
   "best": "b",
   "picks": {
     "a": "A reasonable instinct — Version A's quotation is vivid, and it's correctly cited. But it's 'dropped' into the paragraph: nothing introduces it, and nothing afterwards says what it shows. The reader is left to work out why it's there.",
-    "b": "Yes. Version B builds a quote sandwich: it introduces the quotation (who is speaking, and what point they're making), quotes, and then comments on it — and even questions it."
+    "b": "Yes. Version B follows a three-part pattern: it introduces the quotation (who is speaking, and what point they're making), quotes, and then comments on it — and even questions it."
   },
   "reasonQuestion": "What makes the difference?",
   "reasons": [
     {
-      "id": "sandwich",
+      "id": "pattern",
       "text": "B introduces the quotation and then explains what it shows.",
       "verdict": "strong",
       "feedback": "Exactly — introduce, quote, comment. The comment is where the writer's own thinking appears."
@@ -55,7 +55,7 @@
     }
   ],
   "followUp": {
-    "question": "In Version B, which sentence is the 'comment' slice of the quote sandwich?",
+    "question": "In Version B, which sentence is the comment on the quotation?",
     "options": [
       {
         "id": "comment",
@@ -93,5 +93,5 @@
       "text": "This convention is shown with British punctuation: single quotation marks, and the sentence's full stop outside them."
     }
   ],
-  "chefsNote": "Every quotation needs an introduction and a comment."
+  "keyPoint": "Every quotation needs an introduction and a comment."
 }
